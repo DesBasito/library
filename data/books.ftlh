@@ -13,7 +13,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-
+<div class = "container">
 <table class="table">
     <thead>
     <tr>
@@ -24,9 +24,9 @@
     </thead>
     <tbody>
 
-    </#list books as book>
+    <#list books as book>
     <tr>
-        <th>${book.counter}</th>
+        <th>${book?counter}</th>
         <td>${book.name}</td>
         <td>${book.author}</td>
     </tr>
@@ -34,6 +34,7 @@
 
 </tbody>
 </table>
+</div>
 
 </body>
 </html>

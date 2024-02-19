@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/freemarker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HT-44.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/another_folder/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/another_folder/page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/bg/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/books.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/css/forms.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/freemarker.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/BasicServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/ContentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/ResponseCodes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/RouteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lesson/BooksDataModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/BasicServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
