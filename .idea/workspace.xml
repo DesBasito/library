@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/employees.ftlh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lesson/EmployeesDataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lesson/DataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/freemarker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/freemarker.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HT-44.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HT-44.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/employees.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/BooksDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/EmployeesDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Util.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +52,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/data",
+    "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/vendor",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -51,11 +60,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vendor" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/src/config" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vendor" />
       <recent name="$PROJECT_DIR$/data" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">

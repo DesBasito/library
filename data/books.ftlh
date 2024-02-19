@@ -20,15 +20,17 @@
         <th scope="col">#</th>
         <th scope="col">Book</th>
         <th scope="col">Author</th>
+        <th scope="col">Where</th>
     </tr>
     </thead>
     <tbody>
 
     <#list books as book>
     <tr>
-        <th>${book?counter}</th>
-        <td>${book.name}</td>
+        <th><a>${book?counter}<a></th>
+        <td>${book.title}</td>
         <td>${book.author}</td>
+        <td>${book.where!"in library"}</td>
     </tr>
 </#list>
 

@@ -9,11 +9,11 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 
-import java.awt.print.Book;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.List;
 
 public class Lesson44Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
@@ -22,23 +22,29 @@ public class Lesson44Server extends BasicServer {
         super(host, port);
         registerGet("/books",this::booksHandler);
         registerGet("/employees",this::employeesHandler);
+        registerGet("/journal",this::journalHandler);
     }
 
     private void booksHandler(HttpExchange exchange) {
-        renderTemplate(exchange,"books.ftlh",getBooksDataModel());
+        renderTemplate(exchange,"books.ftlh",getDataModel());
     }
 
     private void employeesHandler(HttpExchange exchange){
-        renderTemplate(exchange,"employees.ftlh",getEmployeesDataModel());
+        renderTemplate(exchange,"employees.ftlh",getDataModel());
     }
 
-    private BooksDataModel getBooksDataModel() {
-        return new BooksDataModel();
+    private void journalHandler(HttpExchange exchange){
+        renderTemplate(exchange,"journal.ftlh",getDataModel());
     }
 
-    private EmployeesDataModel getEmployeesDataModel(){
-        return new EmployeesDataModel();
+    private DataModel getDataModel()  {
+        try {
+         return new DataModel();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
+
 
 
     private static Configuration initFreeMarker() {
