@@ -21,14 +21,23 @@ public class Lesson44Server extends BasicServer {
     public Lesson44Server(String host, int port) throws IOException {
         super(host, port);
         registerGet("/books",this::booksHandler);
+        registerGet("/employees",this::employeesHandler);
     }
 
     private void booksHandler(HttpExchange exchange) {
         renderTemplate(exchange,"books.ftlh",getBooksDataModel());
     }
 
+    private void employeesHandler(HttpExchange exchange){
+        renderTemplate(exchange,"employees.ftlh",getEmployeesDataModel());
+    }
+
     private BooksDataModel getBooksDataModel() {
         return new BooksDataModel();
+    }
+
+    private EmployeesDataModel getEmployeesDataModel(){
+        return new EmployeesDataModel();
     }
 
 

@@ -1,0 +1,62 @@
+[
+  {
+    "author": "Alexander Belyaev",
+    "title": "Lord of world",
+    "free": true
+  },
+  {
+    "author": "Aleksandr Volkov",
+    "title": "Wizard of the Emerald City",
+    "free": false
+  },
+  {
+    "author": "Paulo Coelho",
+    "title": "Alchemist",
+    "free": true
+  },
+  {
+    "author": "Harry Harrison",
+    "title": "Invasion",
+    "free": false
+  },
+  {
+    "author": "Alexander Belyaev",
+    "title": "Professor Dowell's head",
+    "free": true
+  },
+  {
+    "author": "Robert Kiyosaki",
+    "title": "Rich dad, poor dad",
+    "free": false
+  },
+  {
+    "author": "Tologon Kasymbekov",
+    "title": "Broken sword",
+    "free": true
+  },
+  {
+    "author": "Mukay Elebayev",
+    "title": "Long haul",
+    "free": false
+  },
+  {
+    "author": "Aaly Tokombayev",
+    "title": "Bloody years",
+    "free": true
+  },
+  {
+    "author": "Joanne Rowling",
+    "title": "Harry Potter",
+    "free": false
+  },
+  {
+    "author": "Oscar Wilde",
+    "title": "Dorian Grey",
+    "free": true
+  },
+  {
+    "author": "Alexander Pushkin",
+    "title": "Dubrovskiy",
+    "free": false
+  }
+]

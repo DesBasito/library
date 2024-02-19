@@ -1,0 +1,62 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Smith",
+    "isReading": true
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "Johnson",
+    "isReading": false
+  },
+  {
+    "firstName": "Michael",
+    "lastName": "Williams",
+    "isReading": true
+  },
+  {
+    "firstName": "Emily",
+    "lastName": "Jones",
+    "isReading": false
+  },
+  {
+    "firstName": "Christopher",
+    "lastName": "Brown",
+    "isReading": true
+  },
+  {
+    "firstName": "Jessica",
+    "lastName": "Davis",
+    "isReading": false
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Miller",
+    "isReading": true
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Wilson",
+    "isReading": false
+  },
+  {
+    "firstName": "Matthew",
+    "lastName": "Moore",
+    "isReading": true
+  },
+  {
+    "firstName": "Ava",
+    "lastName": "Taylor",
+    "isReading": false
+  },
+  {
+    "firstName": "David",
+    "lastName": "Anderson",
+    "isReading": true
+  },
+  {
+    "firstName": "Sophia",
+    "lastName": "Thomas",
+    "isReading": false
+  }
+]
