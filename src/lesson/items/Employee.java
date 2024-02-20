@@ -8,13 +8,21 @@ public class Employee {
     private String lastName;
     private String isReading;
     private int id;
+    private String position;
+    private String hobby;
+    private String birthdate;
+    private String phone;
     private String fullName;
 
-    public Employee(String firstName, String lastName, String isReading,int id) {
+    public Employee(String firstName, String lastName, String isReading, int id, String position, String hobby, String birthdate, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.isReading = isReading;
         this.id = id;
+        this.position = position;
+        this.hobby = hobby;
+        this.birthdate = birthdate;
+        this.phone = phone;
     }
 
     public String getFirstName() {
@@ -31,6 +39,22 @@ public class Employee {
 
     public int getId() {
         return id;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public String getFullName() {

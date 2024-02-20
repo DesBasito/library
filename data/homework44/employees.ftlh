@@ -86,13 +86,13 @@
         </nav>
     </head>
 
-<body>
+<body class="bg-secondary">
 <div class = "container ">
 <table class="table table-dark table-striped">
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
+        <th scope="col">First name</th>
         <th scope="col">Last name</th>
         <th scope="col">Reading book</th>
     </tr>

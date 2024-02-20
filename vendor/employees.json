@@ -3,72 +3,120 @@
     "id": 1,
     "firstName": "John",
     "lastName": "Smith",
-    "isReading": null
+    "isReading": null,
+    "position": "Software Engineer",
+    "birthdate": "15.03.1985",
+    "hobby": "reading",
+    "phone": "+1234567890"
   },
   {
-     "id": 2,
+    "id": 2,
     "firstName": "Emma",
     "lastName": "Johnson",
-    "isReading": null
+    "isReading": null,
+    "position": "Marketing Manager",
+    "birthdate": "20.07.1990",
+    "hobby": "painting",
+    "phone": "+1987654321"
   },
   {
-     "id": 3,
+    "id": 3,
     "firstName": "Michael",
     "lastName": "Williams",
-    "isReading":null
+    "isReading": null,
+    "position": "Financial Analyst",
+    "birthdate": "10.11.1988",
+    "hobby": "playing basketball",
+    "phone": "+1122334455"
   },
   {
-     "id": 4,
+    "id": 4,
     "firstName": "Emily",
     "lastName": "Jones",
-    "isReading": null
+    "isReading": null,
+    "position": "Teacher",
+    "birthdate": "02.05.1983",
+    "hobby": "gardening",
+    "phone": "+1555666777"
   },
   {
-     "id": 5,
+    "id": 5,
     "firstName": "Christopher",
     "lastName": "Brown",
-    "isReading":null
+    "isReading": null,
+    "position": "Graphic Designer",
+    "birthdate": "28.09.1992",
+    "hobby": "photography",
+    "phone": "+1444333222"
   },
   {
-     "id": 6,
+    "id": 6,
     "firstName": "Jessica",
     "lastName": "Davis",
-    "isReading": null
+    "isReading": null,
+    "position": "Human Resources Manager",
+    "birthdate": "18.12.1987",
+    "hobby": "yoga",
+    "phone": "+1666777888"
   },
   {
-     "id": 7,
+    "id": 7,
     "firstName": "Daniel",
     "lastName": "Miller",
-    "isReading":null
+    "isReading": null,
+    "position": "Sales Representative",
+    "birthdate": "30.04.1995",
+    "hobby": "fishing",
+    "phone": "+1777888999"
   },
   {
-     "id": 8,
+    "id": 8,
     "firstName": "Olivia",
     "lastName": "Wilson",
-    "isReading": "Harry Potter"
+    "isReading": "Harry Potter",
+    "position": "Accountant",
+    "birthdate": "12.08.1993",
+    "hobby": "drawing",
+    "phone": "+1888999000"
   },
   {
-     "id": 9,
+    "id": 9,
     "firstName": "Matthew",
     "lastName": "Moore",
-    "isReading":null
+    "isReading": null,
+    "position": "Project Manager",
+    "birthdate": "25.02.1980",
+    "hobby": "playing piano",
+    "phone": "+1999000111"
   },
   {
-     "id": 10,
+    "id": 10,
     "firstName": "Ava",
     "lastName": "Taylor",
-    "isReading": null
+    "isReading": null,
+    "position": "Software Developer",
+    "birthdate": "08.06.1991",
+    "hobby": "baking",
+    "phone": "+1000111222"
   },
   {
-     "id": 11,
+    "id": 11,
     "firstName": "David",
     "lastName": "Anderson",
-    "isReading":null
+    "isReading": null,
+    "position": "Customer Service Representative",
+    "birthdate": "15.10.1989",
+    "hobby": "playing soccer",
+    "phone": "+2000222333"
   },
   {
-     "id": 12,
+    "id": 12,
     "firstName": "Sophia",
     "lastName": "Thomas",
-    "isReading": null
+    "isReading": null,
+    "position": "Graphic Designer",
+    "birthdate": "22.03.1994",
+    "hobby": "painting",
+    "phone": "+3000333444"
   }
 ]

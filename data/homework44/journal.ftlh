@@ -20,7 +20,7 @@
 <head>
         <nav class="navbar navbar-expand-md bg-dark mb-5" data-bs-theme="dark">
             <div class="container-xxl">
-                <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="instroom"></a>
+                <a class="navbar-brand" href="/books"><img class="logo" src="images/logo.png" alt="instroom"></a>
                 <button class="navbar-toggler text-light bg-orange btn-user ms-auto" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,7 @@
         </nav>
     </head>
 
-<body>
+<body class="bg-secondary">
 <div class = "container ">
 <table class="table table-info table-striped">
     <thead>

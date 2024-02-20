@@ -90,14 +90,19 @@
 <div class="bg-secondary py-5">
     <div class="container book-info">
         <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-            <div class="col"><img class="mw-100 rounded-2 shadow-sm" src="images/Oliwia.jpg" alt="Professor Dowel's head"></div>
+            <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm" src="images/Oliwia.jpg" alt="Professor Dowel's head"><br>
+            <h1 class ="mt-3">${employees[7].fullName}</h1>
+                                     Position: ${employees[7].position}
+                                        <br>Hobby: ${employees[7].hobby}
+                                        <br>Birth date: ${employees[7].birthdate}
+                                        <br>Phone number: ${employees[7].phone}
+            </div>
             <div class="col deWALT text-light ps-5">
                 <#assign borrowerFound = false>
                 <#list journal as jour>
                     <#if jour.borrower == employees[7].fullName>
                         <#if !borrowerFound>
-                            <h1><borrower>${jour.borrower}</borrower></h1>
-                                   <br> <h3>borrowed books:</h3>
+                                  <h3>borrowed books:</h3>
                             <#assign borrowerFound = true>
                         </#if>
                        <table class="table table-dark table-striped">
