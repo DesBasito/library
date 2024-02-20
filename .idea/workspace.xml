@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/homework44/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/homework44/employees.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/homework44/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/homework44/info.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson/items/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/items/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/journal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
