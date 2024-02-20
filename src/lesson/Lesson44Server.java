@@ -13,7 +13,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.List;
 
 public class Lesson44Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
@@ -24,6 +23,7 @@ public class Lesson44Server extends BasicServer {
         registerGet("/employees",this::employeesHandler);
         registerGet("/journal",this::journalHandler);
         registerGet("/about",this::aboutBook);
+        registerGet("/info",this::journalHandler);
     }
 
     private void booksHandler(HttpExchange exchange) {
@@ -73,9 +73,6 @@ public class Lesson44Server extends BasicServer {
         }
     }
 
-//    private void freemarkerSampleHandler(HttpExchange exchange) {
-//        renderTemplate(exchange, "sample.html", getSampleDataModel());
-//    }
 
     protected void renderTemplate(HttpExchange exchange, String templateFile, Object dataModel) {
         try {
@@ -107,10 +104,4 @@ public class Lesson44Server extends BasicServer {
             e.printStackTrace();
         }
     }
-
-//    private SampleDataModel getSampleDataModel() {
-//        // возвращаем экземпляр тестовой модели-данных
-//        // которую freemarker будет использовать для наполнения шаблона
-//        return new SampleDataModel();
-//    }
 }
