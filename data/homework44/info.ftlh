@@ -94,7 +94,7 @@
             <h1 class ="mt-3">${employees[7].fullName}</h1>
                                      Position: ${employees[7].position}
                                         <br>Hobby: ${employees[7].hobby}
-                                        <br>Birth date: ${employees[7].birthdate}
+                                        <br>Birth date: ${employees[7].birthdate?string["dd.MM.yyyy"]}
                                         <br>Phone number: ${employees[7].phone}
             </div>
             <div class="col deWALT text-light ps-5">

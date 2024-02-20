@@ -1,6 +1,7 @@
 package lesson.items;
 
 import java.lang.annotation.Target;
+import java.util.Date;
 
 public class Employee {
 
@@ -10,11 +11,11 @@ public class Employee {
     private int id;
     private String position;
     private String hobby;
-    private String birthdate;
+    private Date birthdate;
     private String phone;
     private String fullName;
 
-    public Employee(String firstName, String lastName, String isReading, int id, String position, String hobby, String birthdate, String phone) {
+    public Employee(String firstName, String lastName, String isReading, int id, String position, String hobby, Date birthdate, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.isReading = isReading;
@@ -49,7 +50,7 @@ public class Employee {
         return hobby;
     }
 
-    public String getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
