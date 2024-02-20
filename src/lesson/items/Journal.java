@@ -1,14 +1,16 @@
 package lesson.items;
 
+import java.util.Date;
+
 public class Journal {
     private String book;
     private String author;
     private String borrower;
-    private String borrowed_date;
-    private String returned_date;
+    private Date borrowed_date;
+    private Date returned_date;
     private int id;
 
-    public Journal(String book, String author, String borrower, String borrowed_date, String returned_date,int id) {
+    public Journal(String book, String author, String borrower, Date borrowed_date, Date returned_date,int id) {
         this.book = book;
         this.author = author;
         this.borrower = borrower;
@@ -29,11 +31,11 @@ public class Journal {
         return borrower;
     }
 
-    public String getBorrowed_date() {
+    public Date getBorrowed_date() {
         return borrowed_date;
     }
 
-    public String getReturned_date() {
+    public Date getReturned_date() {
         return returned_date;
     }
 

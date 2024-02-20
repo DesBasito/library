@@ -118,8 +118,14 @@
                            <tr>
                                <th>${jour.id}</th>
                                <th>${jour.book}</th>
-                               <td>${jour.borrowed_date}</td>
-                               <td>${jour.returned_date!"Still reading"}</td>
+                               <td>${jour.borrowed_date?string["dd.MM.yyyy"]}</td>
+                               <td>
+                                               <#if jour.returned_date?has_content>
+                                                   ${jour.returned_date?string["dd.MM.yyyy"]}
+                                               <#else>
+                                                   Still reading
+                                               </#if>
+                                           </td>
                            </tr>
                        </tbody>
                        </table>

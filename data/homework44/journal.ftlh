@@ -107,8 +107,14 @@
         <td>${journal.book}</td>
         <td>${journal.author}</td>
         <td>${journal.borrower}</td>
-        <td>${journal.borrowed_date}</td>
-        <td>${journal.returned_date!"Still reading"}</td>
+        <td>${journal.borrowed_date?string["dd.MM.yyyy"]}</td>
+        <td>
+                <#if journal.returned_date?has_content>
+                    ${journal.returned_date?string["dd.MM.yyyy"]}
+                <#else>
+                    Still reading
+                </#if>
+            </td>
     </tr>
 </#list>
 

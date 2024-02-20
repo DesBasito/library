@@ -1,14 +1,16 @@
 package lesson.items;
 
+import java.time.Year;
+
 public class Book {
     private String author;
     private String title;
     private String where;
     private int id;
     private String description;
-    private int written_date;
+    private String written_date;
 
-    public Book(String author, String name,String where,int id,String description, int written_date) {
+    public Book(String author, String name,String where,int id,String description, String written_date) {
         this.author = author;
         this.title = name;
         this.where = where;
@@ -37,7 +39,7 @@ public class Book {
         return description;
     }
 
-    public int getWritten_date() {
+    public String getWritten_date() {
         return written_date;
     }
 }
