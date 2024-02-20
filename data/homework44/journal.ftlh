@@ -108,7 +108,7 @@
         <td>${journal.author}</td>
         <td>${journal.borrower}</td>
         <td>${journal.borrowed_date}</td>
-        <td>${journal.returned_date}</td>
+        <td>${journal.returned_date!"Still reading"}</td>
     </tr>
 </#list>
 

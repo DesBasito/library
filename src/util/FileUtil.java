@@ -30,26 +30,29 @@ public class FileUtil {
 
     public static List<Book> readBook() throws IOException {
         String str = Files.readString(BOOKS_PATH);
-        return GSON.fromJson(str, new TypeToken<List<Book>>() {}.getType());
+        return GSON.fromJson(str, new TypeToken<List<Book>>() {
+        }.getType());
     }
 
-    public static List<Employee> readEmplyee() throws IOException {
+    public static List<Employee> readEmployee() throws IOException {
         String str = Files.readString(EMPLOYEES_PATH);
-        return GSON.fromJson(str, new TypeToken<List<Employee>>() {}.getType());
+        return GSON.fromJson(str, new TypeToken<List<Employee>>() {
+        }.getType());
     }
 
-    public static List<Journal> readJournal()throws IOException{
+    public static List<Journal> readJournal() throws IOException {
         String str = Files.readString(JOURNAL_PATH);
-        return GSON.fromJson(str,new TypeToken<List<Journal>>() {}.getType());
+        return GSON.fromJson(str, new TypeToken<List<Journal>>() {
+        }.getType());
     }
 
-public static void writeFile(List<Journal> tasks) {
-    String json = GSON.toJson(tasks);
-    try {
-        Files.writeString(JOURNAL_PATH, json);
-    } catch (IOException e) {
-        System.out.println(e.getMessage());
-        e.printStackTrace();
+    public static void writeFile(List<Journal> tasks) {
+        String json = GSON.toJson(tasks);
+        try {
+            Files.writeString(JOURNAL_PATH, json);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
-}
 }

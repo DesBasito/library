@@ -15,7 +15,7 @@ public class DataModel {
 
     public DataModel() throws IOException {
         this.books = FileUtil.readBook();
-        this.employees = FileUtil.readEmplyee();
+        this.employees = FileUtil.readEmployee();
         this.journal = FileUtil.readJournal();
     }
 

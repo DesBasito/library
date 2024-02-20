@@ -110,14 +110,12 @@
                            </tr>
                            </thead>
                            <tbody>
-
                            <tr>
                                <th>${jour.id}</th>
                                <th>${jour.book}</th>
                                <td>${jour.borrowed_date}</td>
-                               <td>${jour.returned_date}</td>
+                               <td>${jour.returned_date!"Still reading"}</td>
                            </tr>
-
                        </tbody>
                        </table>
                     </#if>
