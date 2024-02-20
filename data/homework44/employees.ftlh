@@ -102,8 +102,8 @@
     <#list employees as employee>
     <tr>
         <th>${employee.id}</th>
-        <td><a class="nav-link" href="#">${employee.firstName}</a></td>
-        <td><a class="nav-link" href="#">${employee.lastName}</a></td>
+        <td><a class="nav-link" href="/info">${employee.firstName}</a></td>
+        <td><a class="nav-link" href="/info">${employee.lastName}</a></td>
         <td>${employee.isReading!"on Tik Tok"}</td>
     </tr>
 </#list>

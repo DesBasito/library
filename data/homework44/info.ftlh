@@ -18,9 +18,9 @@
 </head>
 
 <head>
-        <nav class="navbar navbar-expand-md bg-dark mb-5" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md bg-dark " data-bs-theme="dark">
             <div class="container-xxl">
-                <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="instroom"></a>
+                <a class="navbar-brand" href="/books"><img class="logo" src="images/logo.png" alt="instroom"></a>
                 <button class="navbar-toggler text-light bg-orange btn-user ms-auto" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -86,33 +86,48 @@
         </nav>
     </head>
 <body>
-<div class = "container ">
-<table class="table table-success table-striped">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Book</th>
-        <th scope="col">Author</th>
-        <th scope="col">Status</th>
-    </tr>
-    </thead>
-    <tbody>
 
-    <#list books as book>
-    <tr>
-        <th>${book.id}</th>
-        <td><a class = "nav-link" href="/about">${book.title}</a></td>
-        <td>${book.author}</td>
-        <td>${book.where!"in library"}</td>
-    </tr>
-</#list>
+<div class="bg-secondary py-5">
+    <div class="container book-info">
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
+            <div class="col"><img class="mw-100 rounded-2 shadow-sm" src="images/Oliwia.jpg" alt="Professor Dowel's head"></div>
+            <div class="col deWALT text-light ps-5">
+                <#assign borrowerFound = false>
+                <#list journal as jour>
+                    <#if jour.borrower == employees[7].fullName>
+                        <#if !borrowerFound>
+                            <h1><borrower>${jour.borrower}</borrower></h1>
+                                   <br> <h3>borrowed books:</h3>
+                            <#assign borrowerFound = true>
+                        </#if>
+                       <table class="table table-dark table-striped">
+                           <thead>
+                           <tr>
+                               <th scope="col">#</th>
+                               <th scope="col">Book</th>
+                               <th scope="col">Borrowed date</th>
+                               <th scope="col">returned date</th>
+                           </tr>
+                           </thead>
+                           <tbody>
 
-</tbody>
-</table>
+                           <tr>
+                               <th>${jour.id}</th>
+                               <th>${jour.book}</th>
+                               <td>${jour.borrowed_date}</td>
+                               <td>${jour.returned_date}</td>
+                           </tr>
+
+                       </tbody>
+                       </table>
+                    </#if>
+                </#list>
+            </div>
+        </div>
+    </div>
 </div>
 
-</body>
-<footer class="bg-dark py-5 mt-5">
+<footer class="bg-dark py-5">
         <div class="container footer-container ">
             <div class=" opacity-75 mb-2 ">
                 <a href="#" class="text-decoration-none text-light">Соглашение пользователя </a>
@@ -131,4 +146,5 @@
             </div>
         </div>
     </footer>
+</body>
 </html>

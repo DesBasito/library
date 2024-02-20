@@ -8,6 +8,7 @@ public class Employee {
     private String lastName;
     private String isReading;
     private int id;
+    private String fullName;
 
     public Employee(String firstName, String lastName, String isReading,int id) {
         this.firstName = firstName;
@@ -30,5 +31,10 @@ public class Employee {
 
     public int getId() {
         return id;
+    }
+
+    public String getFullName() {
+        fullName = firstName+" "+lastName;
+        return fullName;
     }
 }

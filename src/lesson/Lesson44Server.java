@@ -23,7 +23,7 @@ public class Lesson44Server extends BasicServer {
         registerGet("/employees",this::employeesHandler);
         registerGet("/journal",this::journalHandler);
         registerGet("/about",this::aboutBook);
-        registerGet("/info",this::journalHandler);
+        registerGet("/info",this::employeeInfo);
     }
 
     private void booksHandler(HttpExchange exchange) {
@@ -40,6 +40,10 @@ public class Lesson44Server extends BasicServer {
 
     private void aboutBook(HttpExchange exchange){
         renderTemplate(exchange,"about.ftlh",getDataModel());
+    }
+
+    private void employeeInfo(HttpExchange exchange){
+        renderTemplate(exchange,"info.ftlh",getDataModel());
     }
 
     private DataModel getDataModel()  {

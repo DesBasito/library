@@ -43,13 +43,13 @@ public class FileUtil {
         return GSON.fromJson(str,new TypeToken<List<Journal>>() {}.getType());
     }
 
-//    public static void writeFile(List<Task> tasks) {
-//        String json = GSON.toJson(tasks);
-//        try {
-//            Files.writeString(PATH, json);
-//        } catch (IOException e) {
-//            System.out.println(e.getMessage());
-//            e.printStackTrace();
-//        }
-//    }
+public static void writeFile(List<Journal> tasks) {
+    String json = GSON.toJson(tasks);
+    try {
+        Files.writeString(JOURNAL_PATH, json);
+    } catch (IOException e) {
+        System.out.println(e.getMessage());
+        e.printStackTrace();
+    }
+}
 }
