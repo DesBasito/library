@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "book": "Lord of world",
     "author": "Alexander Belyaev",
     "borrower": "John Smith",
@@ -7,6 +8,7 @@
     "returned_date": "15.01.2023"
   },
   {
+     "id": 2,
     "book": "Wizard of the Emerald City",
     "author": "Aleksandr Volkov",
     "borrower": "Emma Johnson",
@@ -14,6 +16,7 @@
     "returned_date": "25.02.2023"
   },
   {
+     "id": 3,
     "book": "Alchemist",
     "author": "Paulo Coelho",
     "borrower": "Michael Williams",
@@ -21,6 +24,7 @@
     "returned_date": "20.03.2023"
   },
   {
+     "id": 4,
     "book": "Invasion",
     "author": "Harry Harrison",
     "borrower": "Emily Jones",
@@ -28,6 +32,7 @@
     "returned_date": "10.05.2023"
   },
   {
+     "id": 5,
     "book": "Professor Dowell's head",
     "author": "Alexander Belyaev",
     "borrower": "Christopher Brown",
@@ -35,6 +40,7 @@
     "returned_date": "05.06.2023"
   },
   {
+     "id": 6,
     "book": "Rich dad, poor dad",
     "author": "Robert Kiyosaki",
     "borrower": "Jessica Davis",
@@ -42,6 +48,7 @@
     "returned_date": "15.07.2023"
   },
   {
+     "id": 7,
     "book": "Broken sword",
     "author": "Tologon Kasymbekov",
     "borrower": "Daniel Miller",
@@ -49,6 +56,7 @@
     "returned_date": "20.08.2023"
   },
   {
+     "id": 8,
     "book": "Long haul",
     "author": "Mukay Elebayev",
     "borrower": "Olivia Wilson",
@@ -56,6 +64,7 @@
     "returned_date": "25.09.2023"
   },
   {
+     "id": 9,
     "book": "Bloody years",
     "author": "Aaly Tokombayev",
     "borrower": "Matthew Moore",
@@ -63,6 +72,7 @@
     "returned_date": "05.11.2023"
   },
   {
+     "id": 10,
     "book": "Harry Potter",
     "author": "Joanne Rowling",
     "borrower": "Ava Taylor",
@@ -70,6 +80,7 @@
     "returned_date": "10.12.2023"
   },
   {
+     "id":11,
     "book": "Dorian Grey",
     "author": "Oscar Wilde",
     "borrower": "David Anderson",
@@ -77,6 +88,7 @@
     "returned_date": "15.01.2024"
   },
   {
+     "id": 12,
     "book": "Dubrovskiy",
     "author": "Alexander Pushkin",
     "borrower": "Sophia Thomas",

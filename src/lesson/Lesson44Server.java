@@ -23,6 +23,7 @@ public class Lesson44Server extends BasicServer {
         registerGet("/books",this::booksHandler);
         registerGet("/employees",this::employeesHandler);
         registerGet("/journal",this::journalHandler);
+        registerGet("/about",this::aboutBook);
     }
 
     private void booksHandler(HttpExchange exchange) {
@@ -35,6 +36,10 @@ public class Lesson44Server extends BasicServer {
 
     private void journalHandler(HttpExchange exchange){
         renderTemplate(exchange,"journal.ftlh",getDataModel());
+    }
+
+    private void aboutBook(HttpExchange exchange){
+        renderTemplate(exchange,"about.ftlh",getDataModel());
     }
 
     private DataModel getDataModel()  {
@@ -53,7 +58,7 @@ public class Lesson44Server extends BasicServer {
             // путь к каталогу в котором у нас хранятся шаблоны
             // это может быть совершенно другой путь, чем тот, откуда сервер берёт файлы
             // которые отправляет пользователю
-            cfg.setDirectoryForTemplateLoading(new File("data"));
+            cfg.setDirectoryForTemplateLoading(new File("data/homework44"));
 
             // прочие стандартные настройки о них читать тут
             // https://freemarker.apache.org/docs/pgui_quickstart_createconfiguration.html

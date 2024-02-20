@@ -7,12 +7,13 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String isReading;
+    private int id;
 
-
-    public Employee(String firstName, String lastName, String isReading) {
+    public Employee(String firstName, String lastName, String isReading,int id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.isReading = isReading;
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -25,5 +26,9 @@ public class Employee {
 
     public String getIsReading() {
         return isReading;
+    }
+
+    public int getId() {
+        return id;
     }
 }

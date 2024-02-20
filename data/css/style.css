@@ -1,0 +1,163 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    padding: 15px auto;
+    font-weight: 600;
+}
+
+.bg-orange {
+    background-color: #F05A00;
+}
+
+.text-orange {
+    color: #F05A00;
+}
+
+
+
+.shop {
+    border: 1px solid #F05A00;
+    color: #F05A00;
+    background-color: white;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 15px;
+}
+
+.link1,
+.bi-check2 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.bi-cart2:hover{
+    color: #F05A00;
+    border: #F05A00;
+}
+
+
+
+.btn-user {
+    height: 60px;
+    font-size: 30px;
+}
+
+.absolute {
+    font-size: 14px;
+    padding: 3px 10px;
+    background: #180940;
+    top: 10px;
+    left: 10px;
+}
+
+.btn-user:hover {
+    color: rgb(152, 91, 47);
+    background-color: #F05A00;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.deWALT p {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.deWALT a {
+    padding: 10px 25px;
+    border-radius: 3px;
+}
+
+.popular-products {
+    padding: 100px 0 70px;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h6 {
+    font-weight: 600;
+}
+
+.card {
+    max-width: 380px;
+    border: 0;
+}
+
+.card img{
+    max-width: 212px;
+    height: auto;
+    margin: 60px  auto 15px auto;
+}
+
+.logo {
+    width: 110px;
+}
+
+.bg-orange:hover {
+    background-color: #b34500;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.modal-header {
+    background: #F05A00;
+}
+
+#btn {
+    background-color: #F05A00;
+}
+
+.sign-up:hover,
+.btn:hover {
+    background-color: #b34500;
+}
+
+.btn {
+    background: #F05A00;
+}
+
+.sign-up {
+    padding: 14px 40px;
+    background-color: #F05A00;
+}
+
+.col h5 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.col p {
+    font-weight: 500;
+}
+
+.footer-container {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.numbers {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 0.6rem;
+}
+
+.links a {
+    border-radius: 100%;
+}
+
+
+.book-info{
+padding: 100px 0;
+}
