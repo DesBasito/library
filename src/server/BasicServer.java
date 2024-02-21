@@ -1,8 +1,9 @@
-package config;
+package server;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.file.Files;
@@ -114,8 +115,9 @@ public abstract class BasicServer {
 
     private void respond404(HttpExchange exchange) {
         try {
-            var data = "404 Not found".getBytes();
-            sendByteData(exchange, ResponseCodes.NOT_FOUND, ContentType.TEXT_PLAIN, data);
+            File file = new File("data/html/404.html");
+            byte[] data = Files.readAllBytes(file.toPath());
+            sendByteData(exchange, ResponseCodes.NOT_FOUND, ContentType.TEXT_HTML, data);
         } catch (IOException e) {
             e.printStackTrace();
         }

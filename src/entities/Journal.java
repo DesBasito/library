@@ -1,4 +1,4 @@
-package lesson.items;
+package entities;
 
 import java.util.Date;
 

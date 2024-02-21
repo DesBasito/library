@@ -1,4 +1,4 @@
-package config;
+package server;
 
 import com.sun.net.httpserver.HttpExchange;
 

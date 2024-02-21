@@ -1,6 +1,5 @@
-package lesson.items;
+package entities;
 
-import java.lang.annotation.Target;
 import java.util.Date;
 
 public class Employee {

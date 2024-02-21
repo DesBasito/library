@@ -1,6 +1,4 @@
-package lesson.items;
-
-import java.time.Year;
+package entities;
 
 public class Book {
     private String author;

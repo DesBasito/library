@@ -1,14 +1,13 @@
-package lesson;
+package Service;
 
 import com.sun.net.httpserver.HttpExchange;
-import config.BasicServer;
-import config.ContentType;
-import config.ResponseCodes;
+import server.BasicServer;
+import server.ContentType;
+import server.ResponseCodes;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
-import lesson.items.Book;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -60,7 +59,7 @@ public class Lesson44Server extends BasicServer {
                 return Map.of(promp,model.getJournal());
             }
             else {
-                return null;
+                throw new RuntimeException();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -75,7 +74,7 @@ public class Lesson44Server extends BasicServer {
             // путь к каталогу в котором у нас хранятся шаблоны
             // это может быть совершенно другой путь, чем тот, откуда сервер берёт файлы
             // которые отправляет пользователю
-            cfg.setDirectoryForTemplateLoading(new File("data/homework44"));
+            cfg.setDirectoryForTemplateLoading(new File("data/config"));
 
             // прочие стандартные настройки о них читать тут
             // https://freemarker.apache.org/docs/pgui_quickstart_createconfiguration.html

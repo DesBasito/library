@@ -1,8 +1,8 @@
-package lesson;
+package Service;
 
-import lesson.items.Book;
-import lesson.items.Employee;
-import lesson.items.Journal;
+import entities.Book;
+import entities.Employee;
+import entities.Journal;
 import util.FileUtil;
 
 import java.io.IOException;

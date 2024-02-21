@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/css/404.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/html/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/homework44/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/homework44/info.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/homework44/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/homework44/journal.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson/items/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/items/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lesson/items/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lesson/items/Journal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/homework44/about.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/about.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/homework44/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/books.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/homework44/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/employees.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/homework44/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/info.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/homework44/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/journal.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/BasicServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ContentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ContentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/ResponseCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ResponseCodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/RouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/RouteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Lesson44Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/items/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/items/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lesson/items/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Journal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/employees.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/config/journal.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +39,16 @@
       <list>
         <option value="Class" />
         <option value="Enum" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2cYGer572dh4Qdjwa5XQanofcS1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,10 +58,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "HT-45",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/data/images",
     "project.structure.last.edited": "Libraries",
@@ -59,6 +79,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/html" />
+      <recent name="$PROJECT_DIR$/data/config" />
       <recent name="$PROJECT_DIR$/data/homework44" />
       <recent name="$PROJECT_DIR$/vendor" />
       <recent name="$PROJECT_DIR$/data" />
@@ -80,6 +102,13 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-18.0.2-corretto-18.0.2-e1d2075fd9a7-4b5fc4ff" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

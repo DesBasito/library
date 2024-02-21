@@ -3,9 +3,9 @@ package util;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import lesson.items.Book;
-import lesson.items.Employee;
-import lesson.items.Journal;
+import entities.Book;
+import entities.Employee;
+import entities.Journal;
 
 import java.util.List;
 
@@ -23,9 +23,9 @@ public class FileUtil {
             .setDateFormat("dd.MM.yyyy") // Updated date format pattern
             .create();
 
-    private static final Path BOOKS_PATH = Paths.get("vendor/books.json");
-    private static final Path EMPLOYEES_PATH = Paths.get("vendor/employees.json");
-    private static final Path JOURNAL_PATH = Paths.get("vendor/journal.json");
+    private static final Path BOOKS_PATH = Paths.get("data/config/books.json");
+    private static final Path EMPLOYEES_PATH = Paths.get("data/config/employees.json");
+    private static final Path JOURNAL_PATH = Paths.get("data/config/journal.json");
 
 
     public static List<Book> readBook() throws IOException {

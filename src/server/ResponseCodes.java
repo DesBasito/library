@@ -1,4 +1,4 @@
-package config;
+package server;
 
 public enum ResponseCodes {
     OK(200),
