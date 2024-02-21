@@ -1,8 +1,9 @@
 html,
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
+    font-weight: 600;
 }
 
 body {
@@ -68,7 +69,7 @@ fieldset label {
     display: block;
     width: 100%;
     padding: 15px 0;
-    background-color: #2da562;
+    background-color: #507591;
     border: 0;
     border-radius: 5px;
     text-transform: uppercase;
@@ -76,3 +77,19 @@ fieldset label {
     color: white;
     cursor: pointer;
 }
+
+
+.logo {
+    width: 110px;
+}
+
+
+.footer-container {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+

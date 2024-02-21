@@ -59,7 +59,7 @@ public class FreeMarkerServer extends BasicServer {
                 return Map.of(promp,model.getJournal());
             }
             else {
-                throw new RuntimeException();
+                throw new IllegalArgumentException();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

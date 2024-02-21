@@ -33,17 +33,20 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/books">О книгах
-                            </a>
-                        </li>
-                        <li class="mx-3 nav-item">
-                            <a class="nav-link " href="/employees">Сотрудники</a>
-                        </li>
-                        <li class="mx-3 nav-item">
-                            <a class="nav-link " href="/journal">Журнал</a>
-                        </li>
-                    </ul>
+                                        <li class="mx-3 nav-item">
+                                                                   <a class="nav-link" href="/login">Авторизоватся</a>
+                                                                </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="/books">О книгах
+                                                </a>
+                                            </li>
+                                            <li class="mx-3 nav-item">
+                                                <a class="nav-link " href="/employees">Сотрудники</a>
+                                            </li>
+                                            <li class="mx-3 nav-item">
+                                                <a class="nav-link" href="/journal">Журнал</a>
+                                            </li>
+                                        </ul>
                 </div>
                 <!-- Modal 1 -->
                 <div class="modal fade" id="Modal-form-registration" tabindex="-1" aria-labelledby="exampleModalLabel"

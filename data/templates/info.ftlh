@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/books">О книгах
+                            <a class="nav-link" aria-current="page" href="/books">О книгах
                             </a>
                         </li>
                         <li class="mx-3 nav-item">
