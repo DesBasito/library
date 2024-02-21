@@ -5,22 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employees</title>
+    <title>Books</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-            <link rel="stylesheet" href="css/style.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 </head>
 
 <head>
         <nav class="navbar navbar-expand-md bg-dark mb-5" data-bs-theme="dark">
             <div class="container-xxl">
-                <a class="navbar-brand" href="/books"><img class="logo" src="images/logo.png" alt="instroom"></a>
+                <a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="instroom"></a>
                 <button class="navbar-toggler text-light bg-orange btn-user ms-auto" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -56,11 +56,11 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="myModal">
-                                <form id="touch">
+                                <form id="touch" method ="post">
                                     <div class="mb-3">
                                         <label for="guest" class="form-label">Имя</label>
                                         <input type="text" name="name" class="form-control" placeholder="Aaron Hizzler"
-                                            id="guest">
+                                            id="guest" autofocus>
                                     </div>
                                     <div class="mb-3">
                                         <label for="guest" class="form-label">Email</label>
@@ -85,26 +85,25 @@
             </div>
         </nav>
     </head>
-
-<body class="bg-secondary">
+<body class ="bg-secondary">
 <div class = "container ">
-<table class="table table-dark table-striped">
+<table class="table table-success table-striped">
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">First name</th>
-        <th scope="col">Last name</th>
-        <th scope="col">Reading book</th>
+        <th scope="col">Book</th>
+        <th scope="col">Author</th>
+        <th scope="col">Status</th>
     </tr>
     </thead>
     <tbody>
 
-    <#list employees as employee>
+    <#list books as book>
     <tr>
-        <th>${employee.id}</th>
-        <td><a class="nav-link" href="/info">${employee.firstName}</a></td>
-        <td><a class="nav-link" href="/info">${employee.lastName}</a></td>
-        <td>${employee.isReading!"on Tik Tok"}</td>
+        <th>${book.id}</th>
+        <td><a class = "nav-link" href="/about">${book.title}</a></td>
+        <td>${book.author}</td>
+        <td>${book.where!"in library"}</td>
     </tr>
 </#list>
 

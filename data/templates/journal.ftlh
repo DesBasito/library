@@ -5,20 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Books</title>
+    <title>Journal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
 </head>
 
 <head>
-        <nav class="navbar navbar-expand-md bg-dark " data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md bg-dark mb-5" data-bs-theme="dark">
             <div class="container-xxl">
                 <a class="navbar-brand" href="/books"><img class="logo" src="images/logo.png" alt="instroom"></a>
                 <button class="navbar-toggler text-light bg-orange btn-user ms-auto" type="button"
@@ -56,11 +56,11 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body" id="myModal">
-                                <form id="touch">
+                                <form id="touch" method="post">
                                     <div class="mb-3">
                                         <label for="guest" class="form-label">Имя</label>
                                         <input type="text" name="name" class="form-control" placeholder="Aaron Hizzler"
-                                            id="guest">
+                                            id="guest" autofocus>
                                     </div>
                                     <div class="mb-3">
                                         <label for="guest" class="form-label">Email</label>
@@ -85,58 +85,46 @@
             </div>
         </nav>
     </head>
-<body>
 
-<div class="bg-secondary py-5">
-    <div class="container book-info">
-        <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-            <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm" src="images/Oliwia.jpg" alt="Professor Dowel's head"><br>
-            <h1 class ="mt-3">${employees[7].fullName}</h1>
-                                     Position: ${employees[7].position}
-                                        <br>Hobby: ${employees[7].hobby}
-                                        <br>Birth date: ${employees[7].birthdate?string["dd.MM.yyyy"]}
-                                        <br>Phone number: ${employees[7].phone}
-            </div>
-            <div class="col deWALT text-light ps-5">
-                <#assign borrowerFound = false>
-                <#list journal as jour>
-                    <#if jour.borrower == employees[7].fullName>
-                        <#if !borrowerFound>
-                                  <h3>borrowed books:</h3>
-                            <#assign borrowerFound = true>
-                        </#if>
-                       <table class="table table-dark table-striped">
-                           <thead>
-                           <tr>
-                               <th scope="col">#</th>
-                               <th scope="col">Book</th>
-                               <th scope="col">Borrowed date</th>
-                               <th scope="col">returned date</th>
-                           </tr>
-                           </thead>
-                           <tbody>
-                           <tr>
-                               <th>${jour.id}</th>
-                               <th>${jour.book}</th>
-                               <td>${jour.borrowed_date?string["dd.MM.yyyy"]}</td>
-                               <td>
-                                               <#if jour.returned_date?has_content>
-                                                   ${jour.returned_date?string["dd.MM.yyyy"]}
-                                               <#else>
-                                                   Still reading
-                                               </#if>
-                                           </td>
-                           </tr>
-                       </tbody>
-                       </table>
-                    </#if>
-                </#list>
-            </div>
-        </div>
-    </div>
+<body class="bg-secondary">
+<div class = "container ">
+<table class="table table-info table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Book</th>
+        <th scope="col">Author</th>
+        <th scope="col">Borrower</th>
+        <th scope="col">Borrowed date</th>
+        <th scope="col">Returned date</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <#list journal as journal>
+    <tr>
+        <th>${journal.id}</th>
+        <td>${journal.book}</td>
+        <td>${journal.author}</td>
+        <td>${journal.borrower}</td>
+        <td>${journal.borrowed_date?string["dd.MM.yyyy"]}</td>
+        <td>
+                <#if journal.returned_date?has_content>
+                    ${journal.returned_date?string["dd.MM.yyyy"]}
+                <#else>
+                    Still reading
+                </#if>
+            </td>
+    </tr>
+</#list>
+
+</tbody>
+</table>
 </div>
 
-<footer class="bg-dark py-5">
+</body>
+
+ <footer class="bg-dark py-5 mt-5">
         <div class="container footer-container ">
             <div class=" opacity-75 mb-2 ">
                 <a href="#" class="text-decoration-none text-light">Соглашение пользователя </a>
@@ -155,5 +143,4 @@
             </div>
         </div>
     </footer>
-</body>
 </html>

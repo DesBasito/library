@@ -5,20 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Books</title>
+    <title>Employees</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
 </head>
 
 <head>
-        <nav class="navbar navbar-expand-md bg-dark " data-bs-theme="dark">
+        <nav class="navbar navbar-expand-md bg-dark mb-5" data-bs-theme="dark">
             <div class="container-xxl">
                 <a class="navbar-brand" href="/books"><img class="logo" src="images/logo.png" alt="instroom"></a>
                 <button class="navbar-toggler text-light bg-orange btn-user ms-auto" type="button"
@@ -60,7 +60,7 @@
                                     <div class="mb-3">
                                         <label for="guest" class="form-label">Имя</label>
                                         <input type="text" name="name" class="form-control" placeholder="Aaron Hizzler"
-                                            id="guest">
+                                            id="guest" autofocus>
                                     </div>
                                     <div class="mb-3">
                                         <label for="guest" class="form-label">Email</label>
@@ -85,24 +85,35 @@
             </div>
         </nav>
     </head>
-<body>
 
-<div class="bg-secondary py-5">
-        <div class="container book-info">
-            <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-                <div class="col "><img class="mw-100 rounded-2 shadow-sm" src="images/urkun.jpg" alt="Professor Dowel's head">
-                </div>
-                <div class="col deWALT  text-light ps-5">
-                    <h1 class="pt-5 pb-3">${books[7].title}</h1>
-                    <p class="pb-2 mb-5 ">${books[7].title} - ${books[7].description}</p>
-                    <p class"year">year: ${books[7].written_date}<br>author: ${books[7].author}</p>
-                    <a href="#" class="bg-orange text-decoration-none text-light" id="liveToastBtn">Заказать книгу</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<body class="bg-secondary">
+<div class = "container ">
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Reading book</th>
+    </tr>
+    </thead>
+    <tbody>
 
-<footer class="bg-dark py-5">
+    <#list employees as employee>
+    <tr>
+        <th>${employee.id}</th>
+        <td><a class="nav-link" href="/info">${employee.firstName}</a></td>
+        <td><a class="nav-link" href="/info">${employee.lastName}</a></td>
+        <td>${employee.isReading!"on Tik Tok"}</td>
+    </tr>
+</#list>
+
+</tbody>
+</table>
+</div>
+
+</body>
+<footer class="bg-dark py-5 mt-5">
         <div class="container footer-container ">
             <div class=" opacity-75 mb-2 ">
                 <a href="#" class="text-decoration-none text-light">Соглашение пользователя </a>
@@ -121,5 +132,4 @@
             </div>
         </div>
     </footer>
-</body>
 </html>

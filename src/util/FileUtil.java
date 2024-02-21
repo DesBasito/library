@@ -23,9 +23,9 @@ public class FileUtil {
             .setDateFormat("dd.MM.yyyy") // Updated date format pattern
             .create();
 
-    private static final Path BOOKS_PATH = Paths.get("data/config/books.json");
-    private static final Path EMPLOYEES_PATH = Paths.get("data/config/employees.json");
-    private static final Path JOURNAL_PATH = Paths.get("data/config/journal.json");
+    private static final Path BOOKS_PATH = Paths.get("data/books.json");
+    private static final Path EMPLOYEES_PATH = Paths.get("data/employees.json");
+    private static final Path JOURNAL_PATH = Paths.get("data/journal.json");
 
 
     public static List<Book> readBook() throws IOException {

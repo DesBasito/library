@@ -115,7 +115,7 @@ public abstract class BasicServer {
 
     private void respond404(HttpExchange exchange) {
         try {
-            File file = new File("data/html/404.html");
+            File file = new File("data/templates/404.html");
             byte[] data = Files.readAllBytes(file.toPath());
             sendByteData(exchange, ResponseCodes.NOT_FOUND, ContentType.TEXT_HTML, data);
         } catch (IOException e) {
