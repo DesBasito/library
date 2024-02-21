@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/login/login.ftlh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/PostServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FreeMarkerServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/index.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/BasicServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
