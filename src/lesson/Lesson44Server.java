@@ -8,11 +8,14 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
+import lesson.items.Book;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.List;
+import java.util.Map;
 
 public class Lesson44Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
@@ -27,28 +30,38 @@ public class Lesson44Server extends BasicServer {
     }
 
     private void booksHandler(HttpExchange exchange) {
-        renderTemplate(exchange,"books.ftlh",getDataModel());
+        renderTemplate(exchange,"books.ftlh",getDataModel("books"));
     }
 
     private void employeesHandler(HttpExchange exchange){
-        renderTemplate(exchange,"employees.ftlh",getDataModel());
+        renderTemplate(exchange,"employees.ftlh",getDataModel("employees"));
     }
 
     private void journalHandler(HttpExchange exchange){
-        renderTemplate(exchange,"journal.ftlh",getDataModel());
+        renderTemplate(exchange,"journal.ftlh",getDataModel("journal"));
     }
 
     private void aboutBook(HttpExchange exchange){
-        renderTemplate(exchange,"about.ftlh",getDataModel());
+        renderTemplate(exchange,"about.ftlh",getDataModel("books"));
     }
 
-    private void employeeInfo(HttpExchange exchange){
-        renderTemplate(exchange,"info.ftlh",getDataModel());
+    private void employeeInfo(HttpExchange exchange) throws IOException {
+        renderTemplate(exchange,"info.ftlh",new DataModel());
     }
 
-    private DataModel getDataModel()  {
+    private Map<String, List> getDataModel(String promp)  {
         try {
-         return new DataModel();
+            DataModel model = new DataModel();
+            if (promp.equalsIgnoreCase("books")){
+                return Map.of(promp,model.getBooks());
+            } else if (promp.equalsIgnoreCase("employees")) {
+                return Map.of(promp,model.getEmployees());
+            }else if (promp.equalsIgnoreCase("journal")){
+                return Map.of(promp,model.getJournal());
+            }
+            else {
+                return null;
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

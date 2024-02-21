@@ -123,7 +123,12 @@ public abstract class BasicServer {
 
     private void handleIncomingServerRequests(HttpExchange exchange) {
         var route = getRoutes().getOrDefault(makeKey(exchange), this::respond404);
-        route.handle(exchange);
+        try{
+            route.handle(exchange);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
     }
 
     public final void start() {
