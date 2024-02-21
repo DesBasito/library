@@ -1,4 +1,6 @@
-import service.Lesson44Server;
+import service.FreeMarkerServer;
+import service.PostServer;
+
 import java.io.*;
 
 
@@ -6,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
        try {
-           new Lesson44Server("localhost",8999).start();
+           new PostServer("localhost",8998).start();
        }catch (IOException e){
            e.printStackTrace();
        }

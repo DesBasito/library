@@ -16,10 +16,10 @@ import java.io.OutputStreamWriter;
 import java.util.List;
 import java.util.Map;
 
-public class Lesson44Server extends BasicServer {
+public class FreeMarkerServer extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
 
-    public Lesson44Server(String host, int port) throws IOException {
+    public FreeMarkerServer(String host, int port) throws IOException {
         super(host, port);
         registerGet("/books",this::booksHandler);
         registerGet("/employees",this::employeesHandler);

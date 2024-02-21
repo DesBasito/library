@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/bg/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/background/bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/about.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/about.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/books.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/employees.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/info.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/journal.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/config/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/journal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/html/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/login/login.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/PostServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Lesson44Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Lesson44Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FreeMarkerServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -57,7 +45,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "HT-45",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/data/images",
+    "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/data/templates",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -65,18 +53,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/templates" />
       <recent name="$PROJECT_DIR$/data/images" />
       <recent name="$PROJECT_DIR$/vendor" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/src/config" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/login" />
       <recent name="$PROJECT_DIR$/data/templates" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/data/html" />
       <recent name="$PROJECT_DIR$/data/config" />
-      <recent name="$PROJECT_DIR$/data/homework44" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lesson" />
