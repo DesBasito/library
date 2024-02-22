@@ -95,8 +95,9 @@
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">First name</th>
-        <th scope="col">Last name</th>
+        <th scope="col">Name</th>
+        <th scope="col">Position</th>
+        <th scope="col">Birth date</th>
         <th scope="col">Reading book</th>
     </tr>
     </thead>
@@ -105,9 +106,15 @@
     <#list employees as employee>
     <tr>
         <th>${employee.id}</th>
-        <td><a class="nav-link" href="/info">${employee.firstName}</a></td>
-        <td><a class="nav-link" href="/info">${employee.lastName}</a></td>
-        <td>${employee.isReading!"on Tik Tok"}</td>
+        <td><a class="nav-link" href="/info">${employee.firstName} ${employee.lastName}</a></td>
+        <td>${employee.position!"не указан."}</td>
+        <td>${employee.birthdate?string["dd.MM.yyyy"]}.</td>
+        <td>    <#assign x = employee.isReading>
+                <#if x == 0>
+                    on Tik Tok
+                <#else>
+                    ${books[x-1].title}
+                </#if> </td>
     </tr>
 </#list>
 

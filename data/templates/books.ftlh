@@ -106,7 +106,17 @@
         <th>${book.id}</th>
         <td><a class = "nav-link" href="/about">${book.title}</a></td>
         <td>${book.author}</td>
-        <td>${book.where!"in library"}</td>
+        <td>
+           <#if book.where == 0>
+               in library
+           <#else>
+               <#list employees as employee>
+                   <#if book.where == employee.id>
+                       ${employee.firstName} ${employee.lastName}
+                   </#if>
+               </#list>
+           </#if>
+        </td>
     </tr>
 </#list>
 

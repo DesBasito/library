@@ -1,122 +1,178 @@
 [
   {
-    "id": 1,
     "firstName": "John",
     "lastName": "Smith",
-    "isReading": null,
+    "isReading": 0,
+    "id": 1,
     "position": "Software Engineer",
-    "birthdate": "15.03.1985",
     "hobby": "reading",
-    "phone": "+1234567890"
+    "birthdate": "15.03.1985",
+    "phone": "+1234567890",
+    "email": "john.smith@example.com",
+    "password": "password123"
   },
   {
-    "id": 2,
     "firstName": "Emma",
     "lastName": "Johnson",
-    "isReading": null,
+    "isReading": 0,
+    "id": 2,
     "position": "Marketing Manager",
-    "birthdate": "20.07.1990",
     "hobby": "painting",
-    "phone": "+1987654321"
+    "birthdate": "20.07.1990",
+    "phone": "+1987654321",
+    "email": "emma.johnson@example.com",
+    "password": "emma123"
   },
   {
-    "id": 3,
     "firstName": "Michael",
     "lastName": "Williams",
-    "isReading": null,
+    "isReading": 0,
+    "id": 3,
     "position": "Financial Analyst",
-    "birthdate": "10.11.1988",
     "hobby": "playing basketball",
-    "phone": "+1122334455"
+    "birthdate": "10.11.1988",
+    "phone": "+1122334455",
+    "email": "michael.williams@example.com",
+    "password": "michael321"
   },
   {
-    "id": 4,
     "firstName": "Emily",
     "lastName": "Jones",
-    "isReading": null,
+    "isReading": 0,
+    "id": 4,
     "position": "Teacher",
-    "birthdate": "02.05.1983",
     "hobby": "gardening",
-    "phone": "+1555666777"
+    "birthdate": "02.05.1983",
+    "phone": "+1555666777",
+    "email": "emily.jones@example.com",
+    "password": "emily456"
   },
   {
-    "id": 5,
     "firstName": "Christopher",
     "lastName": "Brown",
-    "isReading": null,
+    "isReading": 0,
+    "id": 5,
     "position": "Graphic Designer",
-    "birthdate": "28.09.1992",
     "hobby": "photography",
-    "phone": "+1444333222"
+    "birthdate": "28.09.1992",
+    "phone": "+1444333222",
+    "email": "christopher.brown@example.com",
+    "password": "brown789"
   },
   {
-    "id": 6,
     "firstName": "Jessica",
     "lastName": "Davis",
-    "isReading": null,
+    "isReading": 0,
+    "id": 6,
     "position": "Human Resources Manager",
-    "birthdate": "18.12.1987",
     "hobby": "yoga",
-    "phone": "+1666777888"
+    "birthdate": "18.12.1987",
+    "phone": "+1666777888",
+    "email": "jessica.davis@example.com",
+    "password": "jessica123"
   },
   {
-    "id": 7,
     "firstName": "Daniel",
     "lastName": "Miller",
-    "isReading": null,
+    "isReading": 0,
+    "id": 7,
     "position": "Sales Representative",
-    "birthdate": "30.04.1995",
     "hobby": "fishing",
-    "phone": "+1777888999"
+    "birthdate": "30.04.1995",
+    "phone": "+1777888999",
+    "email": "daniel.miller@example.com",
+    "password": "miller567"
   },
   {
-    "id": 8,
     "firstName": "Olivia",
     "lastName": "Wilson",
-    "isReading": "Harry Potter",
+    "isReading": 10,
+    "id": 8,
     "position": "Accountant",
-    "birthdate": "12.08.1993",
     "hobby": "drawing",
-    "phone": "+1888999000"
+    "birthdate": "12.08.1993",
+    "phone": "+1888999000",
+    "email": "olivia.wilson@example.com",
+    "password": "olivia789"
   },
   {
-    "id": 9,
     "firstName": "Matthew",
     "lastName": "Moore",
-    "isReading": null,
+    "isReading": 0,
+    "id": 9,
     "position": "Project Manager",
-    "birthdate": "25.02.1980",
     "hobby": "playing piano",
-    "phone": "+1999000111"
+    "birthdate": "25.02.1980",
+    "phone": "+1999000111",
+    "email": "matthew.moore@example.com",
+    "password": "moore123"
   },
   {
-    "id": 10,
     "firstName": "Ava",
     "lastName": "Taylor",
-    "isReading": null,
+    "isReading": 0,
+    "id": 10,
     "position": "Software Developer",
-    "birthdate": "08.06.1991",
     "hobby": "baking",
-    "phone": "+1000111222"
+    "birthdate": "08.06.1991",
+    "phone": "+1000111222",
+    "email": "ava.taylor@example.com",
+    "password": "ava456"
   },
   {
-    "id": 11,
     "firstName": "David",
     "lastName": "Anderson",
-    "isReading": null,
+    "isReading": 0,
+    "id": 11,
     "position": "Customer Service Representative",
-    "birthdate": "15.10.1989",
     "hobby": "playing soccer",
-    "phone": "+2000222333"
+    "birthdate": "15.10.1989",
+    "phone": "+2000222333",
+    "email": "david.anderson@example.com",
+    "password": "anderson789"
   },
   {
-    "id": 12,
     "firstName": "Sophia",
     "lastName": "Thomas",
-    "isReading": null,
+    "isReading": 0,
+    "id": 12,
     "position": "Graphic Designer",
-    "birthdate": "22.03.1994",
     "hobby": "painting",
-    "phone": "+3000333444"
+    "birthdate": "22.03.1994",
+    "phone": "+3000333444",
+    "email": "sophia.thomas@example.com",
+    "password": "thomas123"
+  },
+  {
+    "firstName": "Абдулбасит",
+    "lastName": "Мануров",
+    "isReading": 0,
+    "id": 13,
+    "position": "Designer ",
+    "hobby": "Gardening",
+    "birthdate": "03.04.2003",
+    "phone": "0708696169",
+    "email": "basit.03.kg@gmail.com"
+  },
+  {
+    "firstName": "Daniel",
+    "lastName": "Ajiev",
+    "isReading": 0,
+    "id": 14,
+    "position": "Алдап саяр",
+    "birthdate": "03.04.2003",
+    "phone": "0996093999",
+    "email": "Dancho@icloud.com"
+  },
+  {
+    "firstName": "Jack ",
+    "lastName": "Sparrow",
+    "isReading": 0,
+    "id": 15,
+    "position": "pirate",
+    "hobby": "Swimming",
+    "birthdate": "01.01.1670",
+    "phone": "0708696169",
+    "email": "captainjack@gmail.com"
   }
 ]

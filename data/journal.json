@@ -1,114 +1,100 @@
 [
   {
     "id": 1,
-    "book": "Lord of world",
-    "author": "Alexander Belyaev",
-    "borrower": "John Smith",
-    "borrowed_date": "01.01.2023",
-    "returned_date": "15.01.2023"
+    "book": 1,
+    "borrower": 1,
+    "borrowedDate": "01.01.2023",
+    "returnedDate": "15.01.2023"
   },
   {
     "id": 2,
-    "book": "Wizard of the Emerald City",
-    "author": "Aleksandr Volkov",
-    "borrower": "Emma Johnson",
-    "borrowed_date": "05.02.2023",
-    "returned_date": "25.02.2023"
+    "book": 2,
+    "borrower": 2,
+    "borrowedDate": "05.02.2023",
+    "returnedDate": "25.02.2023"
   },
   {
     "id": 3,
-    "book": "Alchemist",
-    "author": "Paulo Coelho",
-    "borrower": "Michael Williams",
-    "borrowed_date": "10.03.2023",
-    "returned_date": "20.03.2023"
+    "book": 3,
+    "borrower": 3,
+    "borrowedDate": "10.03.2023",
+    "returnedDate": "20.03.2023"
   },
   {
     "id": 4,
-    "book": "Invasion",
-    "author": "Harry Harrison",
-    "borrower": "Emily Jones",
-    "borrowed_date": "15.04.2023",
-    "returned_date": "10.05.2023"
+    "book": 4,
+    "borrower": 4,
+    "borrowedDate": "15.04.2023",
+    "returnedDate": "10.05.2023"
   },
   {
     "id": 5,
-    "book": "Professor Dowell's head",
-    "author": "Alexander Belyaev",
-    "borrower": "Christopher Brown",
-    "borrowed_date": "20.05.2023",
-    "returned_date": "05.06.2023"
+    "book": 5,
+    "borrower": 5,
+    "borrowedDate": "20.05.2023",
+    "returnedDate": "05.06.2023"
   },
   {
     "id": 6,
-    "book": "Rich dad, poor dad",
-    "author": "Robert Kiyosaki",
-    "borrower": "Jessica Davis",
-    "borrowed_date": "25.06.2023",
-    "returned_date": "15.07.2023"
+    "book": 6,
+    "borrower": 6,
+    "borrowedDate": "25.06.2023",
+    "returnedDate": "15.07.2023"
   },
   {
     "id": 7,
-    "book": "Broken sword",
-    "author": "Tologon Kasymbekov",
-    "borrower": "Daniel Miller",
-    "borrowed_date": "01.08.2023",
-    "returned_date": "20.08.2023"
+    "book": 7,
+    "borrower": 7,
+    "borrowedDate": "01.08.2023",
+    "returnedDate": "20.08.2023"
   },
   {
     "id": 8,
-    "book": "Long haul",
-    "author": "Mukay Elebayev",
-    "borrower": "Olivia Wilson",
-    "borrowed_date": "05.09.2023",
-    "returned_date": "25.09.2023"
+    "book": 8,
+    "borrower": 8,
+    "borrowedDate": "05.09.2023",
+    "returnedDate": "25.09.2023"
   },
   {
     "id": 9,
-    "book": "Bloody years",
-    "author": "Aaly Tokombayev",
-    "borrower": "Matthew Moore",
-    "borrowed_date": "10.10.2023",
-    "returned_date": "05.11.2023"
+    "book": 9,
+    "borrower": 9,
+    "borrowedDate": "10.10.2023",
+    "returnedDate": "05.11.2023"
   },
   {
     "id": 10,
-    "book": "Harry Potter",
-    "author": "Joanne Rowling",
-    "borrower": "Ava Taylor",
-    "borrowed_date": "15.11.2023",
-    "returned_date": "10.12.2023"
+    "book": 10,
+    "borrower": 10,
+    "borrowedDate": "15.11.2023",
+    "returnedDate": "10.12.2023"
   },
   {
     "id": 11,
-    "book": "Dorian Grey",
-    "author": "Oscar Wilde",
-    "borrower": "David Anderson",
-    "borrowed_date": "20.12.2023",
-    "returned_date": "15.01.2024"
+    "book": 11,
+    "borrower": 11,
+    "borrowedDate": "20.12.2023",
+    "returnedDate": "15.01.2024"
   },
   {
     "id": 12,
-    "book": "Dubrovskiy",
-    "author": "Alexander Pushkin",
-    "borrower": "Sophia Thomas",
-    "borrowed_date": "25.01.2024",
-    "returned_date": "10.02.2024"
+    "book": 12,
+    "borrower": 12,
+    "borrowedDate": "25.01.2024",
+    "returnedDate": "10.02.2024"
   },
   {
     "id": 13,
-    "book": "Dubrovskiy",
-    "author": "Alexander Pushkin",
-    "borrower": "Olivia Wilson",
-    "borrowed_date": "15.10.2023",
-    "returned_date": "05.11.2023"
+    "book": 12,
+    "borrower": 8,
+    "borrowedDate": "15.10.2023",
+    "returnedDate": "05.11.2023"
   },
   {
     "id": 14,
-    "book": "Harry Potter",
-    "author": "Joanne Rowling",
-    "borrower": "Olivia Wilson",
-    "borrowed_date": "31.01.2024",
-    "returned_date": null
+    "book": 10,
+    "borrower": 8,
+    "borrowedDate": "31.01.2024",
+    "returnedDate": null
   }
 ]

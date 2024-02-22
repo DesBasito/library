@@ -1,6 +1,7 @@
 package service;
 
 import com.sun.net.httpserver.HttpExchange;
+import server.BasicServer;
 import server.ContentType;
 import server.ResponseCodes;
 import server.RouteHandler;
@@ -16,25 +17,17 @@ public class Post45Server extends FreeMarkerServer {
         super(host, port);
         registerGet("/login",this::loginGet);
         registerPost("/login",this::loginPost);
+        registerPost("/books",this::loginPost);
     }
 
     private void loginPost(HttpExchange exchange) {
-        String cType = getContentType(exchange);
-        String raw = getBody(exchange);
-
-        Map<String,List<String>> parsed = FileUtil.parseUrlEncoded(raw, "&");
-
-        String fmt = "<p>Необработанные данные: <b>%s</b></p>"
-                + "<p>Content-type: <b>%s</b></p>"
-                + "<p>После обработки: <b>%s</b></p>";
-        String data = String.format(fmt, raw, cType, parsed);
+        AddingNewUser user = new AddingNewUser(exchange);
         try {
-            sendByteData(exchange, ResponseCodes.OK,
-                    ContentType.TEXT_HTML, data.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
+            user.newUser(exchange);
+            redirect303(exchange,"/employees");
+        }catch (IOException e){
+            BasicServer.registrErr(exchange);
         }
-//        redirect303(exchange,"/employees");
     }
 
 

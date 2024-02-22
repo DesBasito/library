@@ -13,6 +13,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -29,41 +30,28 @@ public class FreeMarkerServer extends BasicServer {
     }
 
     private void booksHandler(HttpExchange exchange) {
-        renderTemplate(exchange,"books.ftlh",getDataModel("books"));
+        renderTemplate(exchange,"books.ftlh",getDataModel());
     }
 
     private void employeesHandler(HttpExchange exchange){
-        renderTemplate(exchange,"employees.ftlh",getDataModel("employees"));
+        renderTemplate(exchange,"employees.ftlh",getDataModel());
     }
 
     private void journalHandler(HttpExchange exchange){
-        renderTemplate(exchange,"journal.ftlh",getDataModel("journal"));
+        renderTemplate(exchange,"journal.ftlh",getDataModel());
     }
 
     private void aboutBook(HttpExchange exchange){
-        renderTemplate(exchange,"about.ftlh",getDataModel("books"));
+        renderTemplate(exchange,"about.ftlh",getDataModel());
     }
 
     private void employeeInfo(HttpExchange exchange) throws IOException {
         renderTemplate(exchange,"info.ftlh",new DataModel());
     }
 
-    private Map<String, List> getDataModel(String promp)  {
-        try {
-            DataModel model = new DataModel();
-            if (promp.equalsIgnoreCase("books")){
-                return Map.of(promp,model.getBooks());
-            } else if (promp.equalsIgnoreCase("employees")) {
-                return Map.of(promp,model.getEmployees());
-            }else if (promp.equalsIgnoreCase("journal")){
-                return Map.of(promp,model.getJournal());
-            }
-            else {
-                throw new IllegalArgumentException();
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    private DataModel getDataModel()  {
+        DataModel model = new DataModel();
+        return model;
     }
 
 

@@ -91,16 +91,17 @@
     <div class="container book-info">
         <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
             <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm" src="images/Oliwia.jpg" alt="Professor Dowel's head"><br>
-            <h1 class ="mt-3">${employees[7].fullName}</h1>
+            <h1 class ="mt-3">${employees[7].firstName} ${employees[7].lastName}</h1>
                                      Position: ${employees[7].position}
                                         <br>Hobby: ${employees[7].hobby}
                                         <br>Birth date: ${employees[7].birthdate?string["dd.MM.yyyy"]}
                                         <br>Phone number: ${employees[7].phone}
+                                        <br>Email address: ${employees[7].email}
             </div>
             <div class="col deWALT text-light ps-5">
                 <#assign borrowerFound = false>
                 <#list journal as jour>
-                    <#if jour.borrower == employees[7].fullName>
+                    <#if jour.borrower == employees[7].id>
                         <#if !borrowerFound>
                                   <h3>borrowed books:</h3>
                             <#assign borrowerFound = true>
@@ -118,10 +119,10 @@
                            <tr>
                                <th>${jour.id}</th>
                                <th>${jour.book}</th>
-                               <td>${jour.borrowed_date?string["dd.MM.yyyy"]}</td>
+                               <td>${jour.borrowedDate?string["dd.MM.yyyy"]}</td>
                                <td>
-                                               <#if jour.returned_date?has_content>
-                                                   ${jour.returned_date?string["dd.MM.yyyy"]}
+                                               <#if jour.returnedDate?has_content>
+                                                   ${jour.returnedDate?string["dd.MM.yyyy"]}
                                                <#else>
                                                    Still reading
                                                </#if>

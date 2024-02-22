@@ -51,15 +51,15 @@
                 </div>
                <div class="form-element">
                                    <label for="guest">Имя</label>
-                                   <input type="text" name="name" required placeholder="Имя" autofocus>
+                                   <input type="text" name="firstName" required placeholder="Имя" autofocus>
                                </div>
                                <div class="form-element">
                                    <label for="guest">фамилия</label>
-                                   <input type="text" name="second name" required placeholder="Фамилия">
+                                   <input type="text" name="lastName" required placeholder="Фамилия">
                                </div>
                                <div class="form-element">
                                    <label for="guest">Дата рождения</label>
-                                   <input type="date" name="birth date" required placeholder="Дата рождения">
+                                   <input type="date" name="birthdate" required placeholder="Дата рождения">
                                </div>
                                <div class="form-element">
                                    <label for="guest">номер телефона</label>
@@ -100,7 +100,7 @@
                     <input type="email" name="email" id="user-email" placeholder="your email" required autofocus>
                 </div>
                 <div class="form-element">
-                    <label for="user-password">password</label>
+                    <label for="password">password</label>
                     <input type="password" name="user-password" id="user-password" placeholder="your password" required>
                 </div>
                 <div class="hr-line">

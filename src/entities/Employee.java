@@ -4,17 +4,18 @@ import java.util.Date;
 
 public class Employee {
 
-    private String firstName;
-    private String lastName;
-    private String isReading;
+    private final String firstName;
+    private final String lastName;
+    private int isReading;
     private int id;
     private String position;
     private String hobby;
-    private Date birthdate;
+    private final Date birthdate;
     private String phone;
-    private String fullName;
+    private String email;
+    private String password;
 
-    public Employee(String firstName, String lastName, String isReading, int id, String position, String hobby, Date birthdate, String phone) {
+    public Employee(String firstName, String lastName, int isReading, int id, String position, String hobby, Date birthdate, String phone,String email,String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.isReading = isReading;
@@ -23,6 +24,12 @@ public class Employee {
         this.hobby = hobby;
         this.birthdate = birthdate;
         this.phone = phone;
+        this.email = email;
+        this.password = password;
+    }
+
+    public void setIsReading(int isReading) {
+        this.isReading = isReading;
     }
 
     public String getFirstName() {
@@ -33,7 +40,7 @@ public class Employee {
         return lastName;
     }
 
-    public String getIsReading() {
+    public int getIsReading() {
         return isReading;
     }
 
@@ -57,8 +64,11 @@ public class Employee {
         return phone;
     }
 
-    public String getFullName() {
-        fullName = firstName+" "+lastName;
-        return fullName;
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

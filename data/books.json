@@ -4,7 +4,7 @@
     "author": "Alexander Belyaev",
     "title": "Lord of the World",
     "description": "A science fiction novel exploring themes of utopia, dystopia, and the consequences of technological advancement.",
-    "written_date": 1926,
+    "writtenDate": 1926,
     "where": null
   },
   {
@@ -12,7 +12,7 @@
     "author": "Aleksandr Volkov",
     "title": "Wizard of the Emerald City",
     "description": "A children's fantasy novel inspired by L. Frank Baum's Wizard of Oz series, set in the magical land of Magic Land.",
-    "written_date": 1939,
+    "writtenDate": 1939,
     "where": null
   },
   {
@@ -20,7 +20,7 @@
     "author": "Paulo Coelho",
     "title": "The Alchemist",
     "description": "An allegorical novel about a young Andalusian shepherd who sets out to discover his personal legend and find treasure.",
-    "written_date": 1988,
+    "writtenDate": 1988,
     "where": null
   },
   {
@@ -28,7 +28,7 @@
     "author": "Harry Harrison",
     "title": "Invasion",
     "description": "A science fiction novel depicting humanity's struggle against an alien invasion and its aftermath.",
-    "written_date": 1982,
+    "writtenDate": 1982,
     "where": null
   },
   {
@@ -36,7 +36,7 @@
     "author": "Alexander Belyaev",
     "title": "Professor Dowell's Head",
     "description": "A science fiction novel exploring the consequences of a scientist's experiment to transplant a living human head onto another body.",
-    "written_date": 1925,
+    "writtenDate": 1925,
     "where": null
   },
   {
@@ -44,7 +44,7 @@
     "author": "Robert Kiyosaki",
     "title": "Rich Dad, Poor Dad",
     "description": "A personal finance book discussing the differences in mindset between the author's 'rich dad' and 'poor dad'.",
-    "written_date": 1997,
+    "writtenDate": 1997,
     "where": null
   },
   {
@@ -52,7 +52,7 @@
     "author": "Tologon Kasymbekov",
     "title": "Broken Sword",
     "description": "A historical novel set in Central Asia during the time of the Russian conquests, focusing on the clash of cultures and the struggles of the Kazakh people.",
-    "written_date": 1938,
+    "writtenDate": 1938,
     "where": null
   },
   {
@@ -60,7 +60,7 @@
     "author": "Mukay Elebayev",
     "title": "Long Haul",
     "description": "Mukai Elebaev made a significant innovation in Kyrgyz literature in the 30s of the last century by writing the novel “Uzak Zhol”. With this first novel, he suddenly raised national prose to a professional level. The novel vividly describes the terrible tragic face of Urkun in 1916, the result of the hardships of the tsarist colonialists, and the fate of the people who fled to China.",
-    "written_date": 1936,
+    "writtenDate": 1936,
     "where": null
   },
   {
@@ -68,7 +68,7 @@
     "author": "Aaly Tokombayev",
     "title": "Bloody Years",
     "description": "A historical novel set during the turbulent times of political upheaval in Kyrgyzstan, exploring themes of power, corruption, and revolution.",
-    "written_date": 1982,
+    "writtenDate": 1982,
     "where": null
   },
   {
@@ -76,8 +76,8 @@
     "author": "Joanne Rowling",
     "title": "Harry Potter",
     "description": "A fantasy series following the life and adventures of a young wizard, Harry Potter, and his friends as they battle the dark wizard Voldemort.",
-    "written_date": 1997,
-    "where": "Oliwia Wilson"
+    "writtenDate": 1997,
+    "where": 8
   },
   {
     "id": 11,

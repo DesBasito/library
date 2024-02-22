@@ -93,10 +93,11 @@
                 <div class="col "><img class="mw-100 rounded-2 shadow-sm" src="images/urkun.jpg" alt="Professor Dowel's head">
                 </div>
                 <div class="col deWALT  text-light ps-5">
-                    <h1 class="pt-5 pb-3">${books[7].title}</h1>
-                    <p class="pb-2 mb-5 ">${books[7].title} - ${books[7].description}</p>
-                    <p class"year">year: ${books[7].written_date}<br>author: ${books[7].author}</p>
-                    <a href="#" class="bg-orange text-decoration-none text-light" id="liveToastBtn">Заказать книгу</a>
+                <#assign b = books[7]>
+                    <h1 class="pt-5 pb-3">${b.title}</h1>
+                    <p class="pb-2 mb-5 ">${b.title} - ${b.description}</p>
+                    <p class"year">year: ${b.writtenDate}<br>author: ${b.author}</p>
+                    <a href="#" class="bg-orange text-decoration-none text-light" id="liveToastBtn">Читать книгу</a>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ public class DataModel {
     private  List<Employee> employees;
     private List<Journal> journal;
 
-    public DataModel() throws IOException {
+    public DataModel() {
         this.books = FileUtil.readBook();
         this.employees = FileUtil.readEmployee();
         this.journal = FileUtil.readJournal();
@@ -29,5 +29,9 @@ public class DataModel {
 
     public List<Journal> getJournal() {
         return journal;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

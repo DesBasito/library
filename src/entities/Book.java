@@ -1,20 +1,24 @@
 package entities;
 
+import service.DataModel;
+
+import java.util.List;
+
 public class Book {
     private String author;
     private String title;
-    private String where;
+    private int where;
     private int id;
     private String description;
-    private String written_date;
+    private int writtenDate;
 
-    public Book(String author, String name,String where,int id,String description, String written_date) {
+    public Book(String author, String name,int where,int id,String description, int writtenDate) {
         this.author = author;
         this.title = name;
         this.where = where;
         this.id = id;
         this.description = description;
-        this.written_date = written_date;
+        this.writtenDate = writtenDate;
     }
 
     public String getAuthor() {
@@ -25,19 +29,19 @@ public class Book {
         return title;
     }
 
-    public String getWhere() {
+    public int getWhere() {
         return where;
     }
 
     public int getId() {
-        return id;
+       return id;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getWritten_date() {
-        return written_date;
+    public int getWrittenDate() {
+        return writtenDate;
     }
 }

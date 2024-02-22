@@ -62,7 +62,7 @@ public abstract class BasicServer {
         // обработчик для корневого запроса
         // именно этот обработчик отвечает что отображать,
         // когда пользователь запрашивает localhost:9889
-        registerGet("/", exchange -> sendFile(exchange, makeFilePath("index.ftlh" ), ContentType.TEXT_HTML));
+        registerGet("/", exchange -> sendFile(exchange, makeFilePath("login/login.ftlh" ), ContentType.TEXT_HTML));
 
         // эти обрабатывают запросы с указанными расширениями
         registerFileHandler(".css", ContentType.TEXT_CSS);
@@ -106,8 +106,8 @@ public abstract class BasicServer {
         return Path.of(dataDir, s);
     }
 
-    protected final void sendByteData(HttpExchange exchange, ResponseCodes responseCode,
-                                      ContentType contentType, byte[] data) throws IOException {
+    protected static final void sendByteData(HttpExchange exchange, ResponseCodes responseCode,
+                                             ContentType contentType, byte[] data) throws IOException {
         try (var output = exchange.getResponseBody()) {
             setContentType(exchange, contentType);
             exchange.sendResponseHeaders(responseCode.getCode(), 0);
@@ -121,6 +121,26 @@ public abstract class BasicServer {
             File file = new File("data/templates/404.html");
             byte[] data = Files.readAllBytes(file.toPath());
             sendByteData(exchange, ResponseCodes.NOT_FOUND, ContentType.TEXT_HTML, data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void registrErr(HttpExchange exchange) {
+        try {
+            File file = new File("data/templates/registrError.html");
+            byte[] data = Files.readAllBytes(file.toPath());
+            sendByteData(exchange, ResponseCodes.REGISTRED, ContentType.TEXT_HTML, data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void autorisationErr(HttpExchange exchange) {
+        try {
+            File file = new File("data/templates/autorisationErr.html");
+            byte[] data = Files.readAllBytes(file.toPath());
+            sendByteData(exchange, ResponseCodes.UNAUTHORIZED, ContentType.TEXT_HTML, data);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -142,7 +162,7 @@ public abstract class BasicServer {
                 .get(0);
     }
 
-    protected String getBody(HttpExchange exchange) {
+    public static String getBody(HttpExchange exchange) {
         InputStream input = exchange.getRequestBody();
         Charset utf8 = StandardCharsets.UTF_8;
         InputStreamReader isr = new InputStreamReader(input, utf8);
