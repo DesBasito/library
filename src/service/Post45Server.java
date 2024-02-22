@@ -3,33 +3,40 @@ package service;
 import com.sun.net.httpserver.HttpExchange;
 import server.BasicServer;
 import server.ContentType;
-import server.ResponseCodes;
 import server.RouteHandler;
-import util.FileUtil;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.List;
-import java.util.Map;
 
 public class Post45Server extends FreeMarkerServer {
     public Post45Server(String host, int port) throws IOException {
         super(host, port);
+        registerGet("/register",this::registerGet);
+        registerPost("/register",this::registerPost);
         registerGet("/login",this::loginGet);
         registerPost("/login",this::loginPost);
-        registerPost("/books",this::loginPost);
+    }
+
+    private void registerPost(HttpExchange exchange) {
+        AddCheckUser user = new AddCheckUser(exchange);
+        user.newUser(exchange);
+//        redirect303(exchange,"/employees");
+        BasicServer.registrErr(exchange);
     }
 
     private void loginPost(HttpExchange exchange) {
-        AddingNewUser user = new AddingNewUser(exchange);
-        try {
-            user.newUser(exchange);
-            redirect303(exchange,"/employees");
-        }catch (IOException e){
-            BasicServer.registrErr(exchange);
-        }
+        AddCheckUser user = new AddCheckUser(exchange);
+        user.checkUser(exchange);
+        //        redirect303(exchange,"/employees");
+        BasicServer.registrErr(exchange);
     }
 
+
+
+    private void registerGet(HttpExchange exchange) {
+        Path path = makeFilePath("login/register.ftlh");
+        sendFile(exchange,path, ContentType.TEXT_HTML);
+    }
 
 
     private void loginGet(HttpExchange exchange) {
@@ -39,6 +46,5 @@ public class Post45Server extends FreeMarkerServer {
 
     protected void registerPost(String rout, RouteHandler handler){
         getRoutes().put("POST "+rout,handler);
-
     }
 }

@@ -5,31 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/css/autorisationErr.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/css/autorisationErr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/css/registrError.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/templates/autorisationError.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/templates/registrError.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/login/register.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/css/autorisationErr.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/css/autorisationErr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/css/registrError.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/js/registrError.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/index.ftlh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/journal.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/login/login.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/login.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/books.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/employees.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/info.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/journal.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Journal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/autorisationError.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/autorisationError.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/registrError.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/registrError.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/BasicServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ResponseCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ResponseCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AddingNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AddingNewUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/AddingNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/AddCheckUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/FreeMarkerServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FreeMarkerServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Post45Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Post45Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +57,8 @@
     "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/data/templates",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode.XML"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -81,11 +70,11 @@
       <recent name="$PROJECT_DIR$/src/config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data/js" />
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/data/css" />
       <recent name="$PROJECT_DIR$/data/templates" />
-      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/data/login" />
-      <recent name="$PROJECT_DIR$/data/html" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lesson" />

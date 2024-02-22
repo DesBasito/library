@@ -45,14 +45,14 @@ public class FreeMarkerServer extends BasicServer {
         renderTemplate(exchange,"about.ftlh",getDataModel());
     }
 
-    private void employeeInfo(HttpExchange exchange) throws IOException {
-        renderTemplate(exchange,"info.ftlh",new DataModel());
+    private void employeeInfo(HttpExchange exchange) {
+        renderTemplate(exchange,"info.ftlh",getDataModel());
     }
 
     private DataModel getDataModel()  {
-        DataModel model = new DataModel();
-        return model;
+        return new DataModel();
     }
+
 
 
 

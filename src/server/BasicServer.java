@@ -62,7 +62,7 @@ public abstract class BasicServer {
         // обработчик для корневого запроса
         // именно этот обработчик отвечает что отображать,
         // когда пользователь запрашивает localhost:9889
-        registerGet("/", exchange -> sendFile(exchange, makeFilePath("login/login.ftlh" ), ContentType.TEXT_HTML));
+        registerGet("/", exchange -> sendFile(exchange, makeFilePath("login/register.ftlh" ), ContentType.TEXT_HTML));
 
         // эти обрабатывают запросы с указанными расширениями
         registerFileHandler(".css", ContentType.TEXT_CSS);
