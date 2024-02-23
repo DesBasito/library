@@ -13,14 +13,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
-public class FreeMarkerServer extends BasicServer {
+public class Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
 
-    public FreeMarkerServer(String host, int port) throws IOException {
+    public Server(String host, int port) throws IOException {
         super(host, port);
         registerGet("/books",this::booksHandler);
         registerGet("/employees",this::employeesHandler);

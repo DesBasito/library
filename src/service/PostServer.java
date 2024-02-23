@@ -9,10 +9,10 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Map;
 
-public class Post45Server extends FreeMarkerServer {
+public class PostServer extends Server {
 
     private static DataModel model = new DataModel();
-    public Post45Server(String host, int port) throws IOException {
+    public PostServer(String host, int port) throws IOException {
         super(host, port);
         registerGet("/register", this::registrationGet);
         registerPost("/register", this::registrationPost);
