@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/js/tootlip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/templates/authorisationError.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/templates/profile.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/css/registrError.css" beforeDir="false" afterPath="$PROJECT_DIR$/data/css/registrError.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/login/login.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/login.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/login/register.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/register.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/autorisationError.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/books.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/employees.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/info.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/journal.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/registrError.html" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/registerError.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Journal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/BasicServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/ResponseCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ResponseCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/AddCheckUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/DataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DataModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/Post45Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Post45Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "HT-45",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44/data/images",
     "project.structure.last.edited": "Libraries",

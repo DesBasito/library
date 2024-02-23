@@ -12,7 +12,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/forms.css">
+     <link rel="stylesheet" href="../css/forms.css">
+        <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -25,6 +26,11 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list-nested"></i>
                 </button>
+                <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
+                          onclick="window.location.href='/register'"
+                          data-bs-toggle="tooltip" data-bs-placement="left" title="Registration">
+                          <i class="bi bi-person-circle"></i>
+                  </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
                         <li class="nav-item">
@@ -46,7 +52,7 @@
         <form action="/login" method="post">
             <fieldset>
                 <div class="legend">
-                    <p>Welcome!</p>
+                    <p>Login</p>
                     <img src="../images/1.jpg" alt="coins" style="display:block; width: 200px; height: 200px;">
                 </div>
                <div class="form-element">
