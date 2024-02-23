@@ -65,7 +65,7 @@
                                </div>
                                <div class="form-element">
                                    <label for="guest">Дата рождения</label>
-                                   <input type="date" name="birthdate" placeholder="Дата рождения (не обезятельно)">
+                                   <input type="date" name="birthdate" required placeholder="Дата рождения">
                                </div>
                                <div class="form-element">
                                    <label for="guest">номер телефона</label>

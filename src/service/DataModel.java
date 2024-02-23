@@ -47,7 +47,7 @@ public class DataModel {
         String name = parsed.get("firstName");
         String lastName = parsed.get("lastName");
         Date birthdate = birthDate(birth);
-        String phone = parsed.get("phone");
+        String phone = parsed.getOrDefault("phone",null);
         String email = parsed.get("email");
         String password = parsed.get("user-password");
         Employee emp = new Employee(name,lastName, 0, n, position, hobby, birthdate, phone,email , password);

@@ -201,5 +201,26 @@
     "phone": "911922342",
     "email": "Jacky@opppa.com",
     "password": "asd"
+  },
+  {
+    "firstName": "Абдулбасит",
+    "lastName": "Мануров",
+    "isReading": 0,
+    "id": 18,
+    "position": "123",
+    "hobby": "123",
+    "birthdate": "12.12.2003",
+    "phone": "0708696169",
+    "email": "ba123sit.03.kg@gmail.com",
+    "password": "123"
+  },
+  {
+    "firstName": "Абдулбасит",
+    "lastName": "Мануров",
+    "isReading": 0,
+    "id": 19,
+    "birthdate": "12.12.2003",
+    "email": "bas222it.03.kg@gmail.com",
+    "password": "123"
   }
 ]
