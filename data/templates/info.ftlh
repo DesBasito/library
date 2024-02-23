@@ -90,7 +90,7 @@
 <div class="bg-secondary py-5">
     <div class="container book-info">
         <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-            <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm" src="images/Oliwia.jpg" alt="Professor Dowel's head"><br>
+            <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm w-100" src="images/Oliwia.jpg" alt="Professor Dowel's head"><br>
             <h1 class ="mt-3">${employees[7].firstName} ${employees[7].lastName}</h1>
                                      Position: ${employees[7].position}
                                         <br>Hobby: ${employees[7].hobby}

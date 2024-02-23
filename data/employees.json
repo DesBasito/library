@@ -152,7 +152,8 @@
     "hobby": "Gardening",
     "birthdate": "03.04.2003",
     "phone": "0708696169",
-    "email": "basit.03.kg@gmail.com"
+    "email": "basit.03.kg@gmail.com",
+    "password": "password123"
   },
   {
     "firstName": "Daniel",
@@ -162,7 +163,8 @@
     "position": "Алдап саяр",
     "birthdate": "03.04.2003",
     "phone": "0996093999",
-    "email": "Dancho@icloud.com"
+    "email": "Dancho@icloud.com",
+    "password": "password123"
   },
   {
     "firstName": "Jack ",
@@ -173,7 +175,8 @@
     "hobby": "Swimming",
     "birthdate": "01.01.1670",
     "phone": "0708696169",
-    "email": "captainjack@gmail.com"
+    "email": "captainjack@gmail.com",
+    "password": "password123"
   },
   {
     "firstName": "Jayil",
@@ -184,6 +187,19 @@
     "hobby": "singing",
     "birthdate": "17.10.2003",
     "phone": "0708696169",
-    "email": "Jayil@isuck.com"
+    "email": "Jayil@isuck.com",
+    "password": "password123"
+  },
+  {
+    "firstName": "Jack ",
+    "lastName": "Smith",
+    "isReading": 0,
+    "id": 17,
+    "position": "animator",
+    "hobby": "Cycling",
+    "birthdate": "02.03.1996",
+    "phone": "911922342",
+    "email": "Jacky@opppa.com",
+    "password": "asd"
   }
 ]

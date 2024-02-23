@@ -3,12 +3,11 @@ package entities;
 import java.util.Date;
 
 public class Journal {
+    private int id;
     private int book;
     private int borrower;
     private Date borrowedDate;
     private Date returnedDate;
-    private int id;
-
     public Journal(int book, int borrower, Date borrowedDate, Date returnedDate,int id) {
         this.book = book;
         this.borrower = borrower;

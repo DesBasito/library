@@ -126,9 +126,9 @@ public abstract class BasicServer {
         }
     }
 
-    public static void registrErr(HttpExchange exchange) {
+    protected static void registerErr(HttpExchange exchange) {
         try {
-            File file = new File("data/templates/registrError.html");
+            File file = new File("data/templates/registerError.html");
             byte[] data = Files.readAllBytes(file.toPath());
             sendByteData(exchange, ResponseCodes.REGISTRED, ContentType.TEXT_HTML, data);
         } catch (IOException e) {
@@ -136,9 +136,9 @@ public abstract class BasicServer {
         }
     }
 
-    private void autorisationErr(HttpExchange exchange) {
+    protected static void authorisationErr(HttpExchange exchange) {
         try {
-            File file = new File("data/templates/autorisationErr.html");
+            File file = new File("data/templates/authorisationError.html");
             byte[] data = Files.readAllBytes(file.toPath());
             sendByteData(exchange, ResponseCodes.UNAUTHORIZED, ContentType.TEXT_HTML, data);
         } catch (IOException e) {
@@ -156,13 +156,13 @@ public abstract class BasicServer {
 
     }
 
-    public static String getContentType(HttpExchange exchange) {
+    protected static String getContentType(HttpExchange exchange) {
         return exchange.getRequestHeaders()
                 .getOrDefault("Content-Type", List.of(""))
                 .get(0);
     }
 
-    public static String getBody(HttpExchange exchange) {
+    protected static String getBody(HttpExchange exchange) {
         InputStream input = exchange.getRequestBody();
         Charset utf8 = StandardCharsets.UTF_8;
         InputStreamReader isr = new InputStreamReader(input, utf8);

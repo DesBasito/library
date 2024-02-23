@@ -1,50 +1,65 @@
 package service;
 
 import com.sun.net.httpserver.HttpExchange;
-import server.BasicServer;
 import server.ContentType;
 import server.RouteHandler;
+import util.FileUtil;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Map;
 
 public class Post45Server extends FreeMarkerServer {
+
+    private static DataModel model = new DataModel();
     public Post45Server(String host, int port) throws IOException {
         super(host, port);
-        registerGet("/register",this::registerGet);
-        registerPost("/register",this::registerPost);
-        registerGet("/login",this::loginGet);
-        registerPost("/login",this::loginPost);
+        registerGet("/register", this::registrationGet);
+        registerPost("/register", this::registrationPost);
+        registerGet("/login", this::loginGet);
+        registerPost("/login", this::loginPost);
+        registerGet("/profile",this::profileGet);
     }
 
-    private void registerPost(HttpExchange exchange) {
-        AddCheckUser user = new AddCheckUser(exchange);
-        user.newUser(exchange);
-//        redirect303(exchange,"/employees");
-        BasicServer.registrErr(exchange);
+    private void profileGet(HttpExchange exchange) {
+        Path path = makeFilePath("templates/profile.ftlh");
+        sendFile(exchange, path, ContentType.TEXT_HTML);
+    }
+
+    private void registrationPost(HttpExchange exchange) {
+        String raw = getBody(exchange);
+        Map<String,String> parsed = FileUtil.parseUrlEncoded(raw,"&");
+        if (model.check(parsed)){
+            model.addUser(parsed);
+            redirect303(exchange,"/employees");
+        }else {
+            registerErr(exchange);
+        }
     }
 
     private void loginPost(HttpExchange exchange) {
-        AddCheckUser user = new AddCheckUser(exchange);
-        user.checkUser(exchange);
-        //        redirect303(exchange,"/employees");
-        BasicServer.registrErr(exchange);
+        String raw = getBody(exchange);
+        Map<String,String> parsed = FileUtil.parseUrlEncoded(raw,"&");
+        if (model.checkUser(parsed)){
+            redirect303(exchange,"/profile");
+        }else {
+            authorisationErr(exchange);
+        }
     }
 
 
-
-    private void registerGet(HttpExchange exchange) {
+    private void registrationGet(HttpExchange exchange) {
         Path path = makeFilePath("login/register.ftlh");
-        sendFile(exchange,path, ContentType.TEXT_HTML);
+        sendFile(exchange, path, ContentType.TEXT_HTML);
     }
 
 
     private void loginGet(HttpExchange exchange) {
         Path path = makeFilePath("login/login.ftlh");
-        sendFile(exchange,path, ContentType.TEXT_HTML);
+        sendFile(exchange, path, ContentType.TEXT_HTML);
     }
 
-    protected void registerPost(String rout, RouteHandler handler){
-        getRoutes().put("POST "+rout,handler);
+    protected void registerPost(String rout, RouteHandler handler) {
+        getRoutes().put("POST " + rout, handler);
     }
 }

@@ -57,44 +57,6 @@
                                    <label for="guest">фамилия</label>
                                    <input type="text" name="lastName" required placeholder="Фамилия">
                                </div>
-                               <div class="form-element">
-                                   <label for="guest">Дата рождения</label>
-                                   <input type="date" name="birthdate" required placeholder="Дата рождения">
-                               </div>
-                               <div class="form-element">
-                                   <label for="guest">номер телефона</label>
-                                   <input type="number" name="phone" required placeholder="номер телефона"
-                                       id="guest">
-                               </div>
-                                <div class="form-element">
-                                                   <label for="guest">Профессия</label>
-                                                   <input type="text" name="position" placeholder="Профессия (не обязательно)">
-                                               </div>
-                                               <div class="form-element">
-                                                   <input  list="datalistOptions" name="hobby"  placeholder="Хобби (не обезятельно)">
-                                                   <datalist id="datalistOptions">
-                                                     <option value="Reading">Reading</option>
-                                                     <option value="Writing">Writing</option>
-                                                     <option value="Painting">Painting</option>
-                                                     <option value="Drawing">Drawing</option>
-                                                     <option value="Cooking">Cooking</option>
-                                                     <option value="Gardening">Gardening</option>
-                                                     <option value="Photography">Photography</option>
-                                                     <option value="Hiking">Hiking</option>
-                                                     <option value="Running">Running</option>
-                                                     <option value="Swimming">Swimming</option>
-                                                     <option value="Cycling">Cycling</option>
-                                                     <option value="Skiing">Skiing</option>
-                                                     <option value="Knitting">Knitting</option>
-                                                     <option value="Woodworking">Woodworking</option>
-                                                     <option value="Playing an Instrument">Playing an Instrument</option>
-                                                     <option value="Dancing">Dancing</option>
-                                                     <option value="Sculpting">Sculpting</option>
-                                                     <option value="Fishing">Fishing</option>
-                                                     <option value="Traveling">Traveling</option>
-                                                     <option value="Collecting stamps">Collecting stamps</option>
-                                                   </datalist>
-                                               </div>
                 <div class="form-element">
                     <label for="user-email">email</label>
                     <input type="email" name="email" id="user-email" placeholder="your email" required autofocus>

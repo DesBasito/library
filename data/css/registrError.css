@@ -135,6 +135,11 @@ body {
   font-family: 'Righteous', cursive;
 }
 
+.error__button,a{
+text-decoration:none;
+color:#576375;
+}
+
 .error__button:hover {
   color: #21252c;
 }
@@ -381,4 +386,4 @@ body {
 .decor{
 color:white;
 text-decoration: none;
-}
+

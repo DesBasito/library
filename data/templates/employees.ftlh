@@ -26,15 +26,16 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list-nested"></i>
                 </button>
-                <button type="button" class="btn btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
-                    data-bs-toggle="modal" data-bs-target="#Modal-form-registration">
-                    <i class="bi bi-person-circle"></i>
-                </button>
+               <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
+                               onclick="window.location.href='/login'"
+                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Authorisation">
+                                   <i class="bi bi-person-circle"></i>
+                               </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
                                         <li class="mx-3 nav-item">
-                                                                   <a class="nav-link" href="/login">Авторизоватся</a>
+                                                                   <a class="nav-link" href="/register">Зарегестрироватся</a>
                                                                 </li>
                                             <li class="nav-item">
                                                 <a class="nav-link" aria-current="page" href="/books">О книгах
@@ -47,43 +48,6 @@
                                                 <a class="nav-link" href="/journal">Журнал</a>
                                             </li>
                                         </ul>
-                </div>
-                <!-- Modal 1 -->
-                <div class="modal fade" id="Modal-form-registration" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content bg-light">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Авторизация</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" id="myModal">
-                                <form id="touch">
-                                    <div class="mb-3">
-                                        <label for="guest" class="form-label">Имя</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Aaron Hizzler"
-                                            id="guest" autofocus>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="guest" class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control"
-                                            placeholder="name@example.com" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputPassword">Пароль</label>
-                                        <input type="password" name="password" class="form-control" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputPassword">Повторите пароль</label>
-                                        <input type="password" name="repeatPassword" class="form-control" required>
-                                    </div>
-                                </form>
-                            </div>
-                            <button form="touch" type="submit" class="btn btn-dark text-light border-0 rounded-0 py-3"
-                                >Зарегистрироваться </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </nav>

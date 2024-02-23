@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login form</title>
+    <title>Registration form</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
         </nav>
     </head>
     <main>
-        <form action="/login" method="post">
+        <form action="/register" method="post">
             <fieldset>
                 <div class="legend">
                     <p>Welcome!</p>
@@ -59,11 +59,11 @@
                                </div>
                                <div class="form-element">
                                    <label for="guest">Дата рождения</label>
-                                   <input type="date" name="birthdate" required placeholder="Дата рождения">
+                                   <input type="date" name="birthdate" placeholder="Дата рождения (не обезятельно)">
                                </div>
                                <div class="form-element">
                                    <label for="guest">номер телефона</label>
-                                   <input type="number" name="phone" required placeholder="номер телефона"
+                                   <input type="number" name="phone" placeholder="номер телефона (не обезятельно)"
                                        id="guest">
                                </div>
                                 <div class="form-element">
@@ -107,7 +107,7 @@
                     <span class="details">one more step to go</span>
                 </div>
                 <div class="form-element">
-                    <button class="register-button" type="submit">Login!</button>
+                    <button class="register-button" type="submit">Register!</button>
                 </div>
             </fieldset>
         </form>
