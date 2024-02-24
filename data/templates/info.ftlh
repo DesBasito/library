@@ -118,7 +118,7 @@
                            <tbody>
                            <tr>
                                <th>${jour.id}</th>
-                               <th>${jour.book}</th>
+                               <th>${jour.book.title}</th>
                                <td>${jour.borrowedDate?string["dd.MM.yyyy"]}</td>
                                <td>
                                                <#if jour.returnedDate?has_content>

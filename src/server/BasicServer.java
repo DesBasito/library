@@ -166,8 +166,6 @@ public abstract class BasicServer {
         InputStream input = exchange.getRequestBody();
         Charset utf8 = StandardCharsets.UTF_8;
         InputStreamReader isr = new InputStreamReader(input, utf8);
-        // сейчас мы предполагаем, что клиент
-        // отправляет текстовые данные
         try (BufferedReader reader = new BufferedReader(isr)) {
             return reader.lines().collect(Collectors.joining(""));
         } catch (IOException e) {
@@ -194,8 +192,12 @@ public abstract class BasicServer {
 
     protected void setCookie(HttpExchange exchange, Cookie cookie) {
         exchange.getResponseHeaders().add("Set-Cookie", cookie.toString());
-
     }
+
+    protected void registerPost(String rout, RouteHandler handler) {
+        getRoutes().put("POST " + rout, handler);
+    }
+
 
     public final void start() {
         server.start();

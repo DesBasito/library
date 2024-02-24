@@ -1,8 +1,6 @@
 package entities;
 
-import service.DataModel;
-
-import java.util.List;
+import service.UserService;
 
 public class Book {
     private String author;
@@ -29,8 +27,13 @@ public class Book {
         return title;
     }
 
-    public int getWhere() {
-        return where;
+    public String getWhere() {
+        for (Employee emp : new UserService().getEmployees()){
+            if (emp.getId()==this.where){
+                return emp.getFirstName() +" "+ emp.getLastName();
+            }
+        }
+        return "in library";
     }
 
     public int getId() {

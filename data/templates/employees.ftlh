@@ -73,12 +73,7 @@
         <td><a class="nav-link" href="/info">${employee.firstName} ${employee.lastName}</a></td>
         <td>${employee.position!"не указан."}</td>
         <td>${employee.birthdate?string["dd.MM.yyyy"]}.</td>
-        <td>    <#assign x = employee.isReading>
-                <#if x == 0>
-                    on Tik Tok
-                <#else>
-                    ${books[x-1].title}
-                </#if> </td>
+        <td>${employee.isReading}</td>
     </tr>
 </#list>
 

@@ -71,8 +71,8 @@
     <#list journal as journal>
     <tr>
         <th>${journal.id}</th>
-        <td>${books[journal.book-1].title}</td>
-        <td>${books[journal.book-1].author}</td>
+        <td>${journal.book.title}</td>
+        <td>${journal.book.author}</td>
         <td>${employees[journal.borrower-1].firstName} ${employees[journal.borrower-1].lastName}</td>
         <td>${journal.borrowedDate?string["dd.MM.yyyy"]}</td>
         <td>

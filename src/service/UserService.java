@@ -5,26 +5,21 @@ import entities.Employee;
 import entities.Journal;
 import util.FileUtil;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-public class DataModel {
-    private  List<Book> books;
+public class UserService {
     private  List<Employee> employees;
     private List<Journal> journal;
 
-    public DataModel() {
-        this.books = FileUtil.readBook();
+    private Map<Employee,String> userId;
+
+    public UserService() {
         this.employees = FileUtil.readEmployee();
         this.journal = FileUtil.readJournal();
-    }
-
-    public List<Book> getBooks() {
-        return books;
     }
 
     public List<Employee> getEmployees() {
@@ -39,7 +34,7 @@ public class DataModel {
         this.employees = employees;
     }
 
-    public void addUser(Map<String,String> parsed) {
+    public void handleUser(Map<String,String> parsed) {
         int n = employees.size() + 1;
         String birth = parsed.get("birthdate");
         String position = parsed.getOrDefault("position", null);
@@ -51,11 +46,14 @@ public class DataModel {
         String email = parsed.get("email");
         String password = parsed.get("user-password");
         Employee emp = new Employee(name,lastName, 0, n, position, hobby, birthdate, phone,email , password);
+        addUser(emp);
+    }
+
+    private void addUser(Employee emp){
         List<Employee> employeeList = employees;
         employeeList.add(emp);
         FileUtil.writeFile(employeeList);
     }
-
 
     public boolean checkUser(Map<String, String> parsed) {
         String providedPassword = parsed.get("user-password");

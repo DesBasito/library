@@ -1,5 +1,7 @@
 package entities;
 
+import service.BooksService;
+
 import java.util.Date;
 
 public class Employee {
@@ -40,8 +42,13 @@ public class Employee {
         return lastName;
     }
 
-    public int getIsReading() {
-        return isReading;
+    public String getIsReading() {
+        for (Book book : new BooksService().getBooks()){
+            if (book.getId() == this.isReading){
+                return book.getTitle();
+            }
+        }
+        return "On tik tok";
     }
 
     public int getId() {
