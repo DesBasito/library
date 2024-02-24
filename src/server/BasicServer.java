@@ -62,7 +62,7 @@ public abstract class BasicServer {
         // обработчик для корневого запроса
         // именно этот обработчик отвечает что отображать,
         // когда пользователь запрашивает localhost:9889
-        registerGet("/", exchange -> sendFile(exchange, makeFilePath("login/register.ftlh" ), ContentType.TEXT_HTML));
+        registerGet("/", exchange -> sendFile(exchange, makeFilePath("login/register.ftlh"), ContentType.TEXT_HTML));
 
         // эти обрабатывают запросы с указанными расширениями
         registerFileHandler(".css", ContentType.TEXT_CSS);
@@ -148,9 +148,9 @@ public abstract class BasicServer {
 
     private void handleIncomingServerRequests(HttpExchange exchange) {
         var route = getRoutes().getOrDefault(makeKey(exchange), this::respond404);
-        try{
+        try {
             route.handle(exchange);
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -184,6 +184,17 @@ public abstract class BasicServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    protected String getCookies(HttpExchange exchange) {
+        return exchange.getRequestHeaders()
+                .getOrDefault("Cookie", List.of("not found"))
+                .get(0);
+    }
+
+    protected void setCookie(HttpExchange exchange, Cookie cookie) {
+        exchange.getResponseHeaders().add("Set-Cookie", cookie.toString());
+
     }
 
     public final void start() {

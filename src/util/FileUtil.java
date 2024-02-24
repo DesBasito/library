@@ -102,8 +102,8 @@ public class FileUtil {
         }
 
         Charset utf8 = StandardCharsets.UTF_8;
-        String key = URLDecoder.decode(pair[0], utf8);
-        String value = URLDecoder.decode(pair[1], utf8);
+        String key = URLDecoder.decode(pair[0], utf8).strip();
+        String value = URLDecoder.decode(pair[1], utf8).strip();
         return Optional.of(Map.entry(key, value));
     }
 
