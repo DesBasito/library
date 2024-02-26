@@ -1,6 +1,8 @@
 package service;
 
 import com.sun.net.httpserver.HttpExchange;
+import entities.Book;
+import entities.Employee;
 import server.BasicServer;
 import server.ContentType;
 import server.Cookie;
@@ -16,81 +18,98 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
-    private static UserService model = new UserService();
+    private static UserService userService = new UserService();
+
+    private final static int ten = 600;
 
     public Server(String host, int port) throws IOException {
         super(host, port);
         //lesson 44
-        registerGet("/books",this::booksHandler);
-        registerGet("/employees",this::employeesHandler);
-        registerGet("/journal",this::journalHandler);
-        registerGet("/about",this::aboutBook);
-        registerGet("/info",this::employeeInfo);
-        // lesson 45
+        registerGet("/books", this::booksHandler);
+        registerGet("/employees", this::employeesHandler);
+        registerGet("/journal", this::journalHandler);
+        registerGet("/about", this::aboutBook);
+        registerGet("/info", this::employeeInfo);
+        // lesson 45-46
         registerGet("/register", this::registrationGet);
         registerPost("/register", this::registrationPost);
         registerGet("/login", this::loginGet);
         registerPost("/login", this::loginPost);
-        registerGet("/profile",this::profileGet);
-        // lesson 46
-        registerGet("/profile",this::cookieHandler);
-
+        registerGet("/profile", this::profileGet);
     }
 
     private void booksHandler(HttpExchange exchange) {
-        renderTemplate(exchange,"books.ftlh",getBooksDataModel());
+        renderTemplate(exchange, "books.ftlh", getBooksDataModel());
     }
 
-    private void employeesHandler(HttpExchange exchange){
-        renderTemplate(exchange,"employees.ftlh",getDataModel());
+    private void employeesHandler(HttpExchange exchange) {
+        renderTemplate(exchange, "employees.ftlh", getDataModel());
     }
 
-    private void journalHandler(HttpExchange exchange){
-        renderTemplate(exchange,"journal.ftlh",getDataModel());
+    private void journalHandler(HttpExchange exchange) {
+        renderTemplate(exchange, "journal.ftlh", getDataModel());
     }
 
-    private void aboutBook(HttpExchange exchange){
-        renderTemplate(exchange,"about.ftlh",getBooksDataModel());
+    private void aboutBook(HttpExchange exchange) {
+        renderTemplate(exchange, "about.ftlh", getBooksDataModel());
     }
 
     private void employeeInfo(HttpExchange exchange) {
-        renderTemplate(exchange,"info.ftlh",getDataModel());
+        renderTemplate(exchange, "info.ftlh", getDataModel());
     }
 
-    private UserService getDataModel()  {
+    private UserService getDataModel() {
         return new UserService();
     }
-    private BooksService getBooksDataModel(){
+
+    private BooksService getBooksDataModel() {
         return new BooksService();
     }
 
     private void profileGet(HttpExchange exchange) {
-        Path path = makeFilePath("templates/profile.ftlh");
-        sendFile(exchange, path, ContentType.TEXT_HTML);
+
+        String cookieString = getCookies(exchange);
+        Map<String, String> cookies = Cookie.parse(cookieString);
+        int userId = Integer.parseInt(cookies.get("userId"));
+        var user = userService.getUserById(userId);
+        List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
+        List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
+
+        ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
+            renderTemplate(exchange, "profile.ftlh", authorized);
+//        if (cookie.getValue().equals(userService.getUser().getEmail())) {
+//        } else {
+//            redirect303(exchange, "/books");
+//        }
+
     }
 
     private void registrationPost(HttpExchange exchange) {
         String raw = getBody(exchange);
-        Map<String,String> parsed = FileUtil.parseUrlEncoded(raw,"&");
-        if (model.check(parsed)){
-            model.handleUser(parsed);
-            redirect303(exchange,"/employees");
-        }else {
+        Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
+        if (userService.checkRegisteredUser(parsed)) {
+            userService.handleUser(parsed);
+            redirect303(exchange, "/login");
+        } else {
             registerErr(exchange);
         }
     }
 
     private void loginPost(HttpExchange exchange) {
         String raw = getBody(exchange);
-        Map<String,String> parsed = FileUtil.parseUrlEncoded(raw,"&");
-        if (model.checkUser(parsed)){
-            redirect303(exchange,"/profile");
-        }else {
+        Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
+        if (userService.checkAuthorizedUser(parsed)) {
+            Employee user = userService.getUserById(userService.autorizedUserId(parsed));// логика по поиску юзера
+
+            Cookie cookie = Cookie.make("userId", user.getId());
+            setCookie(exchange, cookie);
+
+            redirect303(exchange, "/profile");
+        } else {
             authorisationErr(exchange);
         }
     }
@@ -104,46 +123,6 @@ public class Server extends BasicServer {
         Path path = makeFilePath("login/login.ftlh");
         sendFile(exchange, path, ContentType.TEXT_HTML);
     }
-
-
-    private void cookieHandler(HttpExchange exchange) {
-        Map<String, Object> data = new HashMap<>();
-        String name = "times";
-
-        Cookie c1 = Cookie.make("user%Id", "456");
-        setCookie(exchange, c1);
-
-        Cookie c2 = Cookie.make("user-email", "example@mail");
-        setCookie(exchange, c2);
-
-        Cookie c3 = Cookie.make("restricted-()<>@,;:\\\"/[]?={}", "()<>@,;:\\\"/[]?={}");
-        setCookie(exchange, c3);
-
-
-
-        String cookieString = getCookies(exchange);
-        Map<String, String> cookies = Cookie.parse(cookieString);
-
-        String cookieValue = cookies.getOrDefault(name,"0");
-        int times  =Integer.parseInt(cookieValue)+1;
-
-        Cookie cookie = Cookie.make(name,times);
-        setCookie(exchange,cookie);
-
-        data.put(name,times);
-        data.put("cookies", cookies);
-
-
-        renderTemplate(exchange, "profile.ftlh", data);
-    }
-
-
-
-
-
-
-
-
 
 
     private static Configuration initFreeMarker() {

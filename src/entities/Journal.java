@@ -27,6 +27,10 @@ public class Journal {
         return null;
     }
 
+    public int getBookId(){
+        return id;
+    }
+
     public int getBorrower() {
         return borrower;
     }

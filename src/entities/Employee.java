@@ -10,22 +10,14 @@ public class Employee {
     private final String lastName;
     private int isReading;
     private int id;
-    private String position;
-    private String hobby;
-    private final Date birthdate;
-    private String phone;
     private String email;
     private String password;
 
-    public Employee(String firstName, String lastName, int isReading, int id, String position, String hobby, Date birthdate, String phone,String email,String password) {
+    public Employee(String firstName, String lastName, int isReading, int id,String email,String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.isReading = isReading;
         this.id = id;
-        this.position = position;
-        this.hobby = hobby;
-        this.birthdate = birthdate;
-        this.phone = phone;
         this.email = email;
         this.password = password;
     }
@@ -53,22 +45,6 @@ public class Employee {
 
     public int getId() {
         return id;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public String getHobby() {
-        return hobby;
-    }
-
-    public Date getBirthdate() {
-        return birthdate;
-    }
-
-    public String getPhone() {
-        return phone;
     }
 
     public String getEmail() {

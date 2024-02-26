@@ -60,8 +60,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
-        <th scope="col">Position</th>
-        <th scope="col">Birth date</th>
+        <th scope="col">Email</th>
         <th scope="col">Reading book</th>
     </tr>
     </thead>
@@ -71,8 +70,7 @@
     <tr>
         <th>${employee.id}</th>
         <td><a class="nav-link" href="/info">${employee.firstName} ${employee.lastName}</a></td>
-        <td>${employee.position!"не указан."}</td>
-        <td>${employee.birthdate?string["dd.MM.yyyy"]}.</td>
+        <td>${employee.email}.</td>
         <td>${employee.isReading}</td>
     </tr>
 </#list>

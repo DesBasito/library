@@ -50,12 +50,12 @@
   <div class="container book-info">
     <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
       <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm w-75" src="../images/user.png" alt="Professor Dowel's head"><br>
-        <h1 class ="mt-3">Name</h1>
+        <h1 class ="mt-3"></h1>
         Position: position
         <br>Hobby: hobby
         <br>Birth date: birthdate
         <br>Phone number: phone
-        <br>Email address: email
+        <br>Email address:email
       </div>
       <div class="col deWALT text-light ps-5">
         <h3>borrowed books:</h3>

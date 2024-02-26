@@ -36,6 +36,10 @@ public class Book {
         return "in library";
     }
 
+    public int getEmployeeId(){
+        return where;
+    }
+
     public int getId() {
        return id;
     }
