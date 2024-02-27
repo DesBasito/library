@@ -49,6 +49,12 @@
                                             <li class="mx-3 nav-item">
                                                 <a class="nav-link" href="/journal">Журнал</a>
                                             </li>
+                                             <li class="mx-3 nav-item">
+                                                  <a class="nav-link " href="/profile">Профиль</a>
+                                                </li>
+                                                <li class="mx-3 nav-item">
+                                                  <a class="nav-link " href="/takeBook">взять книгу</a>
+                                                </li>
                                         </ul>
                 </div>
 
@@ -64,7 +70,7 @@
         <th scope="col">#</th>
         <th scope="col">Book</th>
         <th scope="col">Author</th>
-        <th scope="col">Status</th>
+        <th scope="col">Written year</th>
     </tr>
     </thead>
     <tbody>
@@ -74,9 +80,7 @@
         <th>${book.id}</th>
         <td><a class = "nav-link" href="/about">${book.title}</a></td>
         <td>${book.author}</td>
-        <td>
-           ${book.where}
-        </td>
+        <td>${book.writtenDate} - year</td>
     </tr>
 </#list>
 

@@ -43,6 +43,9 @@
                         <li class="mx-3 nav-item">
                             <a class="nav-link " href="/journal">Журнал</a>
                         </li>
+                         <li class="mx-3 nav-item">
+                                                            <a class="nav-link " href="/profile">Профиль</a>
+                                                          </li>
                     </ul>
                 </div>
                 <!-- Modal 1 -->

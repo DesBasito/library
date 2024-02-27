@@ -6,16 +6,15 @@ import entities.Journal;
 import util.FileUtil;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserService {
     private  List<Employee> employees;
     private List<Journal> journal;
-    private List<Book> books;
 
     public UserService(){
         this.employees = FileUtil.readEmployee();
         this.journal = FileUtil.readJournal();
-        this.books = FileUtil.readBook();
     }
 
     public List<Employee> getEmployees() {
@@ -81,25 +80,28 @@ public class UserService {
         return employees.stream().filter(u -> u.getId() == id).findFirst().orElseThrow();
     }
 
-    public List<Book> getBooksOnHandByUserId(int userId) {
-        List<Book> books = new ArrayList<>();
+    public List<Book> getJournalBooksByUserId(int userId) {
         List<Journal> journals = journal;
-        List<Book> booksServices = this.books;
-        for (Journal journal : journals){
-            if (userId == journal.getBorrower() && journal.getReturnedDate() == null){
-                books.add(booksServices.get(journal.getBook()));
+        List<Book> booksServices = FileUtil.readBook();
+        List<Book> books = new ArrayList<>();
+        for (Journal journal1 : journals) {
+            if (journal1.getReturnedDate() == null){
+                if (userId == journal1.getBorrower()) {
+                    books.add(booksServices.get(journal1.getBook()-1));
+                }
             }
+
         }
         return books;
     }
 
-    public List<Book> getJournalBooksByUserId(int userId) {
-        List<Book> books = new ArrayList<>();
+    public List<Book> getBooksOnHandByUserId(int userId) {
         List<Journal> journals = journal;
-        List<Book> booksServices = this.books;
-        for (Journal journal : journals){
-            if (userId == journal.getBorrower() && journal.getReturnedDate() != null){
-                books.add(booksServices.get(journal.getBook()));
+        List<Book> booksServices = FileUtil.readBook();
+        List<Book> books = new ArrayList<>();
+        for (Journal journal1 : journals) {
+            if (userId == journal1.getBorrower()) {
+                books.add(booksServices.get(journal1.getBook()-1));
             }
         }
         return books;

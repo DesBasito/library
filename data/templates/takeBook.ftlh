@@ -89,7 +89,7 @@
                     </table></div>
                     <div class="col deWALT  text-light ps-5 align-self-center">
                    <main>
-                           <form action="/getGiveBackBook" method="post">
+                           <form action="/takeBook" method="post">
                                <fieldset>
                                <div class="d-grid gap-2 col-7 mx-auto">
                                   <div class="form-element">

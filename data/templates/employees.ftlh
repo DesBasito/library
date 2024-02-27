@@ -47,6 +47,9 @@
                                             <li class="mx-3 nav-item">
                                                 <a class="nav-link" href="/journal">Журнал</a>
                                             </li>
+                                             <li class="mx-3 nav-item">
+                                                                                <a class="nav-link " href="/profile">Профиль</a>
+                                                                              </li>
                                         </ul>
                 </div>
             </div>
@@ -61,7 +64,6 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-        <th scope="col">Reading book</th>
     </tr>
     </thead>
     <tbody>
@@ -71,7 +73,6 @@
         <th>${employee.id}</th>
         <td><a class="nav-link" href="/info">${employee.firstName} ${employee.lastName}</a></td>
         <td>${employee.email}.</td>
-        <td>${employee.isReading}</td>
     </tr>
 </#list>
 

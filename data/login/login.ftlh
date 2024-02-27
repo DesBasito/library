@@ -55,14 +55,6 @@
                     <p>Login</p>
                     <img src="../images/1.jpg" alt="coins" style="display:block; width: 200px; height: 200px;">
                 </div>
-               <div class="form-element">
-                                   <label for="guest">Имя</label>
-                                   <input type="text" name="firstName" required placeholder="Имя" autofocus>
-                               </div>
-                               <div class="form-element">
-                                   <label for="guest">фамилия</label>
-                                   <input type="text" name="lastName" required placeholder="Фамилия">
-                               </div>
                 <div class="form-element">
                     <label for="user-email">email</label>
                     <input type="email" name="email" id="user-email" placeholder="your email" required autofocus>

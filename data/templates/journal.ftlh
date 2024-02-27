@@ -47,6 +47,9 @@
                         <li class="mx-3 nav-item">
                             <a class="nav-link active" href="/journal">Журнал</a>
                         </li>
+                         <li class="mx-3 nav-item">
+                                    <a class="nav-link " href="/profile">Профиль</a>
+                                  </li>
                     </ul>
                 </div>
             </div>
@@ -68,11 +71,11 @@
     </thead>
     <tbody>
 
-    <#list journal as journal>
+    <#list journals as journal>
     <tr>
         <th>${journal.id}</th>
-        <td>${journal.book.title}</td>
-        <td>${journal.book.author}</td>
+        <td>${books[journal.book-1].title}</td>
+        <td>${books[journal.book-1].author}</td>
         <td>${employees[journal.borrower-1].firstName} ${employees[journal.borrower-1].lastName}</td>
         <td>${journal.borrowedDate?string["dd.MM.yyyy"]}</td>
         <td>

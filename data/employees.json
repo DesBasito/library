@@ -1,146 +1,105 @@
 [
   {
-    "firstName": "John",
-    "lastName": "Smith",
-    "isReading": 0,
     "id": 1,
-    "email": "john.smith@example.com",
-    "password": "password123"
+    "book": 1,
+    "borrower": 1,
+    "borrowedDate": "01.01.2023",
+    "returnedDate": "15.01.2023"
   },
   {
-    "firstName": "Emma",
-    "lastName": "Johnson",
-    "isReading": 0,
     "id": 2,
-    "email": "emma.johnson@example.com",
-    "password": "emma123"
+    "book": 2,
+    "borrower": 2,
+    "borrowedDate": "05.02.2023",
+    "returnedDate": "25.02.2023"
   },
   {
-    "firstName": "Michael",
-    "lastName": "Williams",
-    "isReading": 0,
     "id": 3,
-    "email": "michael.williams@example.com",
-    "password": "michael321"
+    "book": 3,
+    "borrower": 3,
+    "borrowedDate": "10.03.2023",
+    "returnedDate": "20.03.2023"
   },
   {
-    "firstName": "Emily",
-    "lastName": "Jones",
-    "isReading": 0,
     "id": 4,
-    "email": "emily.jones@example.com",
-    "password": "emily456"
+    "book": 4,
+    "borrower": 4,
+    "borrowedDate": "15.04.2023",
+    "returnedDate": "10.05.2023"
   },
   {
-    "firstName": "Christopher",
-    "lastName": "Brown",
-    "isReading": 0,
     "id": 5,
-    "email": "christopher.brown@example.com",
-    "password": "brown789"
+    "book": 5,
+    "borrower": 5,
+    "borrowedDate": "20.05.2023",
+    "returnedDate": "05.06.2023"
   },
   {
-    "firstName": "Jessica",
-    "lastName": "Davis",
-    "isReading": 0,
     "id": 6,
-    "email": "jessica.davis@example.com",
-    "password": "jessica123"
+    "book": 6,
+    "borrower": 6,
+    "borrowedDate": "25.06.2023",
+    "returnedDate": "15.07.2023"
   },
   {
-    "firstName": "Daniel",
-    "lastName": "Miller",
-    "isReading": 0,
     "id": 7,
-    "email": "daniel.miller@example.com",
-    "password": "miller567"
+    "book": 7,
+    "borrower": 7,
+    "borrowedDate": "01.08.2023",
+    "returnedDate": "20.08.2023"
   },
   {
-    "firstName": "Olivia",
-    "lastName": "Wilson",
-    "isReading": 10,
     "id": 8,
-    "email": "olivia.wilson@example.com",
-    "password": "olivia789"
+    "book": 8,
+    "borrower": 8,
+    "borrowedDate": "05.09.2023",
+    "returnedDate": "25.09.2023"
   },
   {
-    "firstName": "Matthew",
-    "lastName": "Moore",
-    "isReading": 0,
     "id": 9,
-    "email": "matthew.moore@example.com",
-    "password": "moore123"
+    "book": 9,
+    "borrower": 9,
+    "borrowedDate": "10.10.2023",
+    "returnedDate": "05.11.2023"
   },
   {
-    "firstName": "Ava",
-    "lastName": "Taylor",
-    "isReading": 0,
     "id": 10,
-    "email": "ava.taylor@example.com",
-    "password": "ava456"
+    "book": 10,
+    "borrower": 10,
+    "borrowedDate": "15.11.2023",
+    "returnedDate": "10.12.2023"
   },
   {
-    "firstName": "David",
-    "lastName": "Anderson",
-    "isReading": 0,
     "id": 11,
-    "email": "david.anderson@example.com",
-    "password": "anderson789"
+    "book": 11,
+    "borrower": 11,
+    "borrowedDate": "20.12.2023",
+    "returnedDate": "15.01.2024"
   },
   {
-    "firstName": "Sophia",
-    "lastName": "Thomas",
-    "isReading": 0,
     "id": 12,
-    "email": "sophia.thomas@example.com",
-    "password": "thomas123"
+    "book": 12,
+    "borrower": 12,
+    "borrowedDate": "25.01.2024",
+    "returnedDate": "10.02.2024"
   },
   {
-    "firstName": "Абдулбасит",
-    "lastName": "Мануров",
-    "isReading": 0,
     "id": 13,
-    "email": "basit.03.kg@gmail.com",
-    "password": "password123"
+    "book": 12,
+    "borrower": 8,
+    "borrowedDate": "15.10.2023",
+    "returnedDate": "05.11.2023"
   },
   {
-    "firstName": "Daniel",
-    "lastName": "Ajiev",
-    "isReading": 0,
     "id": 14,
-    "email": "Dancho@icloud.com",
-    "password": "password123"
+    "book": 10,
+    "borrower": 8,
+    "borrowedDate": "31.01.2024"
   },
   {
-    "firstName": "Jack ",
-    "lastName": "Sparrow",
-    "isReading": 0,
-    "id": 15,
-    "email": "captainjack@gmail.com",
-    "password": "password123"
-  },
-  {
-    "firstName": "Jayil",
-    "lastName": "Jayilovna",
-    "isReading": 0,
-    "id": 16,
-    "email": "Jayil@isuck.com",
-    "password": "password123"
-  },
-  {
-    "firstName": "Jack ",
-    "lastName": "Smith",
-    "isReading": 0,
-    "id": 17,
-    "email": "Jacky@opppa.com",
-    "password": "asd"
-  },
-  {
-    "firstName": "Janybek",
-    "lastName": "Bolotov",
-    "isReading": 0,
-    "id": 18,
-    "email": "Janybek@gmail.com",
-    "password": "123"
+    "id": 13,
+    "book": 2,
+    "borrower": 13,
+    "borrowedDate": "27.02.2024"
   }
 ]

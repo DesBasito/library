@@ -5,16 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/service/ProfileDataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/templates/exit.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/templates/profileError.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/templates/takeBook.ftlh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/login/login.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/login.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/about.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/about.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/books.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/employees.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/info.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/journal.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templates/profile.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/profile.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Journal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/BasicServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/Cookie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Cookie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BooksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/DataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ProfileDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ProfileDataModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +49,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/data/templates/profile.ftlh" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6

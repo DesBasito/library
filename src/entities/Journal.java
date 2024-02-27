@@ -1,7 +1,5 @@
 package entities;
 
-import service.BooksService;
-
 import java.util.Date;
 
 public class Journal {
@@ -18,18 +16,10 @@ public class Journal {
         this.id = id;
     }
 
-    public Book getBook() {
-        for (Book book : new BooksService().getBooks()){
-            if (this.book == book.getId()){
-                return book;
-            }
-        }
-        return null;
+    public int getBook() {
+       return book;
     }
 
-    public int getBookId(){
-        return id;
-    }
 
     public int getBorrower() {
         return borrower;

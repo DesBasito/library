@@ -33,7 +33,7 @@ public class Cookie<V> {
         this.httpOnly = httpOnly;
     }
 
-    public V getValue() {
+    private V getValue() {
         return value;
     }
 

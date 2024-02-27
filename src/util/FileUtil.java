@@ -1,6 +1,5 @@
 package util;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -70,8 +69,18 @@ public class FileUtil {
         return journal;
     }
 
-    public static void writeFile(List<Employee> tasks) {
-        String json = GSON.toJson(tasks);
+    public static void writeEmployee(List<Employee> employees) {
+        String json = GSON.toJson(employees);
+        try {
+            Files.writeString(EMPLOYEES_PATH, json);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeJournal(List<Journal> journal) {
+        String json = GSON.toJson(journal);
         try {
             Files.writeString(EMPLOYEES_PATH, json);
         } catch (IOException e) {

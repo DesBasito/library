@@ -84,7 +84,7 @@
     "author": "Oscar Wilde",
     "title": "The Picture of Dorian Gray",
     "description": "A philosophical novel about a young man named Dorian Gray who sells his soul for eternal youth and beauty, leading to moral corruption and tragedy.",
-    "written_date": 1890,
+    "writtenDate": 1890,
     "where": null
   },
   {
@@ -92,7 +92,7 @@
     "author": "Alexander Pushkin",
     "title": "Dubrovsky",
     "description": "A romantic novel following the story of a nobleman who seeks revenge for the wrongs done to his family, taking on the guise of a bandit.",
-    "written_date": 1832,
+    "writtenDate": 1832,
     "where": null
   }
 ]

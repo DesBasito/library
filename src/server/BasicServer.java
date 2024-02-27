@@ -76,6 +76,9 @@ public abstract class BasicServer {
     protected final void registerGet(String route, RouteHandler handler) {
         getRoutes().put("GET " + route, handler);
     }
+    protected void registerPost(String route, RouteHandler handler) {
+        getRoutes().put("POST " + route, handler);
+    }
 
     protected final void registerFileHandler(String fileExt, ContentType type) {
         registerGet(fileExt, exchange -> sendFile(exchange, makeFilePath(exchange), type));
@@ -192,12 +195,8 @@ public abstract class BasicServer {
 
     protected void setCookie(HttpExchange exchange, Cookie cookie) {
         exchange.getResponseHeaders().add("Set-Cookie", cookie.toString());
-    }
 
-    protected void registerPost(String rout, RouteHandler handler) {
-        getRoutes().put("POST " + rout, handler);
     }
-
 
     public final void start() {
         server.start();

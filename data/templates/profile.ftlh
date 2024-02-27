@@ -39,6 +39,9 @@
           <li class="mx-3 nav-item">
             <a class="nav-link " href="/journal">Журнал</a>
           </li>
+          <li class="mx-3 nav-item">
+            <a class="nav-link " href="/exit">Выйти с профиля</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -50,34 +53,54 @@
   <div class="container book-info">
     <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
       <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm w-75" src="../images/user.png" alt="Professor Dowel's head"><br>
-        <h1 class ="mt-3"></h1>
-        Position: position
-        <br>Hobby: hobby
-        <br>Birth date: birthdate
-        <br>Phone number: phone
-        <br>Email address:email
+        <h1 class ="mt-3">${user.firstName} ${user.lastName}</h1>
+        Email: ${user.email}
       </div>
       <div class="col deWALT text-light ps-5">
-        <h3>borrowed books:</h3>
+      <h3>Reading books:</h3>
+      <table class="table table-dark table-striped">
+              <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">id</th>
+                <th scope="col">Book</th>
+                <th scope="col">Author</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+              <#list readingBooks as reading>
+                <th>${reading?counter}</th>
+                <th>${reading.id}</th>
+                <th>${reading.title}</th>
+                <th>${reading.author}</th>
+                <td></#list>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+        <h3  class="mt-5">borrowed books:</h3>
+
       <table class="table table-dark table-striped">
         <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">id</th>
           <th scope="col">Book</th>
-          <th scope="col">Borrowed date</th>
-          <th scope="col">Returned date</th>
+          <th scope="col">Author</th>
         </tr>
         </thead>
+         <#list readBooks as journal>
         <tbody>
+
         <tr>
-          <th>book id</th>
-          <th>book </th>
-          <td>borrowed date</td>
-          <td>
-           returned date
-          </td>
+          <th>${journal?counter}</th>
+          <th>${journal.id}</th>
+          <th>${journal.title}</th>
+          <th>${journal.author}</th>
         </tr>
         </tbody>
+         </#list>
       </table>
 </div>
 </div>

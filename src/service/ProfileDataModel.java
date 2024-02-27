@@ -2,14 +2,12 @@ package service;
 
 import entities.Book;
 import entities.Employee;
-import entities.Journal;
-import server.Cookie;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class ProfileDataModel {
-    private static Employee user;
+    private final Employee user;
     private List<Book> readingBooks;
     private List<Book> readBooks;
 
@@ -19,20 +17,15 @@ public class ProfileDataModel {
         this.readBooks = readBooks;
     }
 
+    public Employee getUser() {
+        return user;
+    }
 
     public List<Book> getReadingBooks() {
         return readingBooks;
     }
 
-    public void setReadingBooks(List<Book> readingBooks) {
-        this.readingBooks = readingBooks;
-    }
-
     public List<Book> getReadBooks() {
         return readBooks;
-    }
-
-    public void setReadBooks(List<Book> readBooks) {
-        this.readBooks = readBooks;
     }
 }

@@ -43,6 +43,9 @@
                         <li class="mx-3 nav-item">
                             <a class="nav-link " href="/journal">Журнал</a>
                         </li>
+                         <li class="mx-3 nav-item">
+                                                            <a class="nav-link " href="/profile">Профиль</a>
+                                                          </li>
                     </ul>
                 </div>
                 <!-- Modal 1 -->
@@ -96,7 +99,7 @@
             </div>
             <div class="col deWALT text-light ps-5">
                 <#assign borrowerFound = false>
-                <#list journal as jour>
+                <#list journals as jour>
                     <#if jour.borrower == employees[7].id>
                         <#if !borrowerFound>
                                   <h3>borrowed books:</h3>
@@ -114,7 +117,7 @@
                            <tbody>
                            <tr>
                                <th>${jour.id}</th>
-                               <th>${jour.book.title}</th>
+                               <th>${books[jour.book - 1].title}</th>
                                <td>${jour.borrowedDate?string["dd.MM.yyyy"]}</td>
                                <td>
                                                <#if jour.returnedDate?has_content>

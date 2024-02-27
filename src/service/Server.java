@@ -23,8 +23,9 @@ import java.util.*;
 public class Server extends BasicServer {
     private final static Configuration freemarker = initFreeMarker();
     private static UserService userService = new UserService();
+    private static BookService bookService = new BookService();
 
-    private final static int ten = 600;
+    private final static int tenMinute = 600;
 
     public Server(String host, int port) throws IOException {
         super(host, port);
@@ -40,10 +41,13 @@ public class Server extends BasicServer {
         registerGet("/login", this::loginGet);
         registerPost("/login", this::loginPost);
         registerGet("/profile", this::profileGet);
+        registerGet("/takeBook", this::takeBookGet);
+        registerPost("/takeBook",this::takeBookPost);
     }
 
+
     private void booksHandler(HttpExchange exchange) {
-        renderTemplate(exchange, "books.ftlh", getBooksDataModel());
+        renderTemplate(exchange, "books.ftlh", getDataModel());
     }
 
     private void employeesHandler(HttpExchange exchange) {
@@ -55,37 +59,31 @@ public class Server extends BasicServer {
     }
 
     private void aboutBook(HttpExchange exchange) {
-        renderTemplate(exchange, "about.ftlh", getBooksDataModel());
+        renderTemplate(exchange, "about.ftlh", getDataModel());
     }
 
     private void employeeInfo(HttpExchange exchange) {
         renderTemplate(exchange, "info.ftlh", getDataModel());
     }
 
-    private UserService getDataModel() {
-        return new UserService();
+    private DataModel getDataModel() {
+        return new DataModel();
     }
 
-    private BooksService getBooksDataModel() {
-        return new BooksService();
-    }
 
     private void profileGet(HttpExchange exchange) {
-
         String cookieString = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieString);
-        int userId = Integer.parseInt(cookies.get("userId"));
-        var user = userService.getUserById(userId);
-        List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
-        List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
-
-        ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
+        try {
+            int userId = Integer.parseInt(cookies.get("userId"));
+            Employee user = userService.getUserById(userId);
+            List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
+            List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
+            ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
             renderTemplate(exchange, "profile.ftlh", authorized);
-//        if (cookie.getValue().equals(userService.getUser().getEmail())) {
-//        } else {
-//            redirect303(exchange, "/books");
-//        }
-
+        } catch (NumberFormatException e) {
+            redirect303(exchange, "templates/profileError.html");
+        }
     }
 
     private void registrationPost(HttpExchange exchange) {
@@ -103,9 +101,11 @@ public class Server extends BasicServer {
         String raw = getBody(exchange);
         Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
         if (userService.checkAuthorizedUser(parsed)) {
-            Employee user = userService.getUserById(userService.autorizedUserId(parsed));// логика по поиску юзера
+            Employee user = userService.getUserById(userService.authorizedUserId(parsed));
 
             Cookie cookie = Cookie.make("userId", user.getId());
+            cookie.setMaxAge(tenMinute);
+            cookie.setHttpOnly(true);
             setCookie(exchange, cookie);
 
             redirect303(exchange, "/profile");
@@ -115,6 +115,10 @@ public class Server extends BasicServer {
     }
 
     private void registrationGet(HttpExchange exchange) {
+//        Cookie deleteCookie = Cookie.make("userId", ""); // Empty value
+//        deleteCookie.setMaxAge(0); // Expire immediately
+//        deleteCookie.setHttpOnly(true);
+//        setCookie(exchange, deleteCookie);
         Path path = makeFilePath("login/register.ftlh");
         sendFile(exchange, path, ContentType.TEXT_HTML);
     }
@@ -122,6 +126,30 @@ public class Server extends BasicServer {
     private void loginGet(HttpExchange exchange) {
         Path path = makeFilePath("login/login.ftlh");
         sendFile(exchange, path, ContentType.TEXT_HTML);
+    }
+
+    private void takeBookGet(HttpExchange exchange) {
+        String cookieString = getCookies(exchange);
+        Map<String, String> cookies = Cookie.parse(cookieString);
+        if (cookies.containsKey("userId")) {
+            renderTemplate(exchange, "takeBook.ftlh", getDataModel());
+        } else {
+            redirect303(exchange, "templates/profileError.html");
+        }
+    }
+
+
+    private void takeBookPost(HttpExchange exchange) {
+        Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
+        Map<String, String> cookies = Cookie.parse(getCookies(exchange));
+        if (cookies.containsKey("userId")) {
+            if (bookService.checkIsBookFree(parsed)){
+                bookService.handleBook(Integer.parseInt(parsed.get("bookId")),Integer.parseInt(cookies.get("userId")));
+                redirect303(exchange, "/journal");
+            }
+        } else {
+            redirect303(exchange, "templates/profileError.html");
+        }
     }
 
 
