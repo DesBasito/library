@@ -100,7 +100,8 @@ public class Server extends BasicServer {
     private void loginPost(HttpExchange exchange) {
         String raw = getBody(exchange);
         Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
-        if (userService.checkAuthorizedUser(parsed)) {
+        boolean checkAuth = userService.checkAuthorizedUser(parsed);
+        if (checkAuth) {
             Employee user = userService.getUserById(userService.authorizedUserId(parsed));
 
             Cookie cookie = Cookie.make("userId", user.getId());

@@ -48,11 +48,7 @@ public class UserService {
         String providedEmail = parsed.get("email");
         for (Employee em : employees) {
             if (em.getEmail().equalsIgnoreCase(providedEmail)) {
-                if (em.getPassword().equals(providedPassword)) {
-                    return true;
-                } else {
-                    return false;
-                }
+                return em.getPassword().equals(providedPassword);
             }
         }
         return false;
