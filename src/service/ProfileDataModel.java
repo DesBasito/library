@@ -28,4 +28,8 @@ public class ProfileDataModel {
     public List<Book> getReadBooks() {
         return readBooks;
     }
+
+    public  boolean checkUserHand(){
+        return readingBooks.size() < 3;
+    }
 }

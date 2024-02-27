@@ -23,14 +23,12 @@ public class BookService {
 
     public boolean checkIsBookFree(Map<String, String> parsed) {
         int value = Integer.parseInt(parsed.get("bookId"));
-        for (Journal jour : journal) {
-            if (jour.getBook() == value) {
-                if (jour.getReturnedDate() != null) {
-                    return false;
-                }
+        for (Book book:books){
+            if (book.getId() == value){
+                return book.isFree();
             }
         }
-        return true;
+        return false;
     }
 
     public void handleBook(int bookId, int userId) {
@@ -39,8 +37,11 @@ public class BookService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         String formattedDate = borDate.format(formatter);
         Date borrowedDate = parseStringToDate(formattedDate);
-        Journal jour = new Journal(bookId,userId,borrowedDate,null,userId);
+        int id = journalList.size()+1;
+        Journal jour = new Journal(bookId,userId,borrowedDate,null,id);
         journalList.add(jour);
+        books.stream().filter(book -> book.getId() == bookId).forEach(book -> book.setFree(false));
+        FileUtil.writeBook(books);
         FileUtil.writeJournal(journalList);
     }
 

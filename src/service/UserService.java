@@ -27,8 +27,8 @@ public class UserService {
 
     public void handleUser(Map<String,String> parsed) {
         int n = employees.size() + 1;
-        String name = parsed.get("firstName");
-        String lastName = parsed.get("lastName");
+        String name = parsed.getOrDefault("firstName","user");
+        String lastName = parsed.getOrDefault("lastName","abuser");
         String email = parsed.get("email");
         String password = parsed.get("user-password");
         Employee emp = new Employee(name,lastName,n,email , password);
@@ -79,27 +79,19 @@ public class UserService {
     public List<Book> getJournalBooksByUserId(int userId) {
         List<Journal> journals = journal;
         List<Book> booksServices = FileUtil.readBook();
-        List<Book> books = new ArrayList<>();
-        for (Journal journal1 : journals) {
-            if (journal1.getReturnedDate() == null){
-                if (userId == journal1.getBorrower()) {
-                    books.add(booksServices.get(journal1.getBook()-1));
-                }
-            }
-
-        }
+        List<Book> books = journals.stream().filter(journal1 -> journal1.getReturnedDate() == null).filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
         return books;
     }
 
     public List<Book> getBooksOnHandByUserId(int userId) {
         List<Journal> journals = journal;
         List<Book> booksServices = FileUtil.readBook();
-        List<Book> books = new ArrayList<>();
-        for (Journal journal1 : journals) {
-            if (userId == journal1.getBorrower()) {
-                books.add(booksServices.get(journal1.getBook()-1));
-            }
-        }
+        List<Book> books = journals.stream().filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
         return books;
+    }
+
+
+    public boolean checkEmailPassword(Map<String, String> parsed) {
+        return !parsed.get("email").isBlank() || !parsed.get("user-password").isBlank();
     }
 }

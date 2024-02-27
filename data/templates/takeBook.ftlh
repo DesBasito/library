@@ -73,17 +73,13 @@
                             <tbody>
 
                             <#list books as book>
-                            <#list journals as jour>
-                            <#if jour.book == book.id>
-                            <#if jour.returnedDate??>
+                            <#if book.free==true>
                             <tr>
                                 <th>${book.id}</th>
                                 <td><a class = "nav-link" href="/about">${book.title}</a></td>
                                 <td>${book.author}</td>
                             </tr>
                             </#if>
-                            </#if>
-                      </#list>
                       </#list>
                       </tbody>
                     </table></div>

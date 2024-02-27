@@ -76,7 +76,7 @@
         <th>${journal.id}</th>
         <td>${books[journal.book-1].title}</td>
         <td>${books[journal.book-1].author}</td>
-        <td>${employees[journal.borrower-1].firstName} ${employees[journal.borrower-1].lastName}</td>
+        <td>${employees[journal.borrower - 1].firstName} ${employees[journal.borrower - 1].lastName}</td>
         <td>${journal.borrowedDate?string["dd.MM.yyyy"]}</td>
         <td>
                 <#if journal.returnedDate?has_content>

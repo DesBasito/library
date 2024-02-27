@@ -1,98 +1,106 @@
 [
   {
-    "id": 1,
     "author": "Alexander Belyaev",
     "title": "Lord of the World",
+    "id": 1,
     "description": "A science fiction novel exploring themes of utopia, dystopia, and the consequences of technological advancement.",
     "writtenDate": 1926,
-    "where": null
+    "free": true
   },
   {
-    "id": 2,
     "author": "Aleksandr Volkov",
     "title": "Wizard of the Emerald City",
-    "description": "A children's fantasy novel inspired by L. Frank Baum's Wizard of Oz series, set in the magical land of Magic Land.",
+    "id": 2,
+    "description": "A children\u0027s fantasy novel inspired by L. Frank Baum\u0027s Wizard of Oz series, set in the magical land of Magic Land.",
     "writtenDate": 1939,
-    "where": null
+    "free": false
   },
   {
-    "id": 3,
     "author": "Paulo Coelho",
     "title": "The Alchemist",
+    "id": 3,
     "description": "An allegorical novel about a young Andalusian shepherd who sets out to discover his personal legend and find treasure.",
     "writtenDate": 1988,
-    "where": null
+    "free": false
   },
   {
-    "id": 4,
     "author": "Harry Harrison",
     "title": "Invasion",
-    "description": "A science fiction novel depicting humanity's struggle against an alien invasion and its aftermath.",
+    "id": 4,
+    "description": "A science fiction novel depicting humanity\u0027s struggle against an alien invasion and its aftermath.",
     "writtenDate": 1982,
-    "where": null
+    "free": true
   },
   {
-    "id": 5,
     "author": "Alexander Belyaev",
-    "title": "Professor Dowell's Head",
-    "description": "A science fiction novel exploring the consequences of a scientist's experiment to transplant a living human head onto another body.",
+    "title": "Professor Dowell\u0027s Head",
+    "id": 5,
+    "description": "A science fiction novel exploring the consequences of a scientist\u0027s experiment to transplant a living human head onto another body.",
     "writtenDate": 1925,
-    "where": null
+    "free": true
   },
   {
-    "id": 6,
     "author": "Robert Kiyosaki",
     "title": "Rich Dad, Poor Dad",
-    "description": "A personal finance book discussing the differences in mindset between the author's 'rich dad' and 'poor dad'.",
+    "id": 6,
+    "description": "A personal finance book discussing the differences in mindset between the author\u0027s \u0027rich dad\u0027 and \u0027poor dad\u0027.",
     "writtenDate": 1997,
-    "where": null
+    "free": true
   },
   {
-    "id": 7,
     "author": "Tologon Kasymbekov",
     "title": "Broken Sword",
+    "id": 7,
     "description": "A historical novel set in Central Asia during the time of the Russian conquests, focusing on the clash of cultures and the struggles of the Kazakh people.",
     "writtenDate": 1938,
-    "where": null
+    "free": true
   },
   {
-    "id": 8,
     "author": "Mukay Elebayev",
     "title": "Long Haul",
+    "id": 8,
     "description": "Mukai Elebaev made a significant innovation in Kyrgyz literature in the 30s of the last century by writing the novel “Uzak Zhol”. With this first novel, he suddenly raised national prose to a professional level. The novel vividly describes the terrible tragic face of Urkun in 1916, the result of the hardships of the tsarist colonialists, and the fate of the people who fled to China.",
     "writtenDate": 1936,
-    "where": null
+    "free": true
   },
   {
-    "id": 9,
     "author": "Aaly Tokombayev",
     "title": "Bloody Years",
+    "id": 9,
     "description": "A historical novel set during the turbulent times of political upheaval in Kyrgyzstan, exploring themes of power, corruption, and revolution.",
     "writtenDate": 1982,
-    "where": null
+    "free": true
   },
   {
-    "id": 10,
     "author": "Joanne Rowling",
     "title": "Harry Potter",
+    "id": 10,
     "description": "A fantasy series following the life and adventures of a young wizard, Harry Potter, and his friends as they battle the dark wizard Voldemort.",
     "writtenDate": 1997,
-    "where": 8
+    "free": false
   },
   {
-    "id": 11,
     "author": "Oscar Wilde",
     "title": "The Picture of Dorian Gray",
+    "id": 11,
     "description": "A philosophical novel about a young man named Dorian Gray who sells his soul for eternal youth and beauty, leading to moral corruption and tragedy.",
     "writtenDate": 1890,
-    "where": null
+    "free": true
   },
   {
-    "id": 12,
     "author": "Alexander Pushkin",
     "title": "Dubrovsky",
+    "id": 12,
     "description": "A romantic novel following the story of a nobleman who seeks revenge for the wrongs done to his family, taking on the guise of a bandit.",
     "writtenDate": 1832,
-    "where": null
+    "free": true
+  },
+  {
+    "author": "New Author",
+    "title": "New Book",
+    "id": 13,
+    "description": "A description of the new book.",
+    "writtenDate": 2023,
+    "free": true
   }
 ]

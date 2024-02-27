@@ -94,7 +94,18 @@
     "id": 14,
     "book": 10,
     "borrower": 8,
-    "borrowedDate": "31.01.2024",
-    "returnedDate": null
+    "borrowedDate": "31.01.2024"
+  },
+  {
+    "id": 15,
+    "book": 2,
+    "borrower": 13,
+    "borrowedDate": "27.02.2024"
+  },
+  {
+    "id": 16,
+    "book": 3,
+    "borrower": 13,
+    "borrowedDate": "27.02.2024"
   }
 ]

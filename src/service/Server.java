@@ -89,7 +89,7 @@ public class Server extends BasicServer {
     private void registrationPost(HttpExchange exchange) {
         String raw = getBody(exchange);
         Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
-        if (userService.checkRegisteredUser(parsed)) {
+        if (userService.checkRegisteredUser(parsed) &&  userService.checkEmailPassword(parsed)) {
             userService.handleUser(parsed);
             redirect303(exchange, "/login");
         } else {
@@ -143,14 +143,33 @@ public class Server extends BasicServer {
     private void takeBookPost(HttpExchange exchange) {
         Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
         Map<String, String> cookies = Cookie.parse(getCookies(exchange));
+        if (!authorizedUser(exchange).checkUserHand()){
+            redirect303(exchange, "templates/profileError.html");
+            return;
+        }
+
         if (cookies.containsKey("userId")) {
             if (bookService.checkIsBookFree(parsed)){
                 bookService.handleBook(Integer.parseInt(parsed.get("bookId")),Integer.parseInt(cookies.get("userId")));
                 redirect303(exchange, "/journal");
+            }else {
+                redirect303(exchange,"/takeBook");
             }
+
         } else {
             redirect303(exchange, "templates/profileError.html");
         }
+    }
+
+    private ProfileDataModel authorizedUser(HttpExchange exchange){
+        String cookieString = getCookies(exchange);
+        Map<String, String> cookies = Cookie.parse(cookieString);
+        int userId = Integer.parseInt(cookies.get("userId"));
+        Employee user = userService.getUserById(userId);
+        List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
+        List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
+        ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
+        return authorized;
     }
 
 

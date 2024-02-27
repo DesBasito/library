@@ -67,22 +67,23 @@
                 <th scope="col">Author</th>
               </tr>
               </thead>
-              <tbody>
+
+              <tbody><#list readingBooks as reading>
               <tr>
-              <#list readingBooks as reading>
+
                 <th>${reading?counter}</th>
                 <th>${reading.id}</th>
                 <th>${reading.title}</th>
                 <th>${reading.author}</th>
-                <td></#list>
+                <td>
                 </td>
-              </tr>
+              </tr></#list>
               </tbody>
             </table>
         <h3  class="mt-5">borrowed books:</h3>
 
-      <table class="table table-dark table-striped">
-        <thead>
+
+        <thead><table class="table table-dark table-striped">
         <tr>
           <th scope="col">#</th>
           <th scope="col">id</th>

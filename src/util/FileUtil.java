@@ -82,7 +82,17 @@ public class FileUtil {
     public static void writeJournal(List<Journal> journal) {
         String json = GSON.toJson(journal);
         try {
-            Files.writeString(EMPLOYEES_PATH, json);
+            Files.writeString(JOURNAL_PATH, json);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+        public static void writeBook(List<Book> book) {
+        String json = GSON.toJson(book);
+        try {
+            Files.writeString(BOOKS_PATH, json);
         } catch (IOException e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
