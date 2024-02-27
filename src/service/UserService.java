@@ -5,25 +5,21 @@ import entities.Employee;
 import entities.Journal;
 import util.FileUtil;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class UserService {
     private  List<Employee> employees;
     private List<Journal> journal;
+    private List<Book> books;
 
-    public UserService() {
+    public UserService(){
         this.employees = FileUtil.readEmployee();
         this.journal = FileUtil.readJournal();
+        this.books = FileUtil.readBook();
     }
 
     public List<Employee> getEmployees() {
         return employees;
-    }
-
-    public List<Journal> getJournal() {
-        return journal;
     }
 
     public void setEmployees(List<Employee> employees) {
@@ -36,14 +32,14 @@ public class UserService {
         String lastName = parsed.get("lastName");
         String email = parsed.get("email");
         String password = parsed.get("user-password");
-        Employee emp = new Employee(name,lastName, 0, n,email , password);
+        Employee emp = new Employee(name,lastName,n,email , password);
         addUser(emp);
     }
 
     private void addUser(Employee emp){
         List<Employee> employeeList = employees;
         employeeList.add(emp);
-        FileUtil.writeFile(employeeList);
+        FileUtil.writeEmployee(employeeList);
     }
 
 
@@ -63,21 +59,6 @@ public class UserService {
         return false;
     }
 
-
-    private static Date birthDate(String birth) {
-        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy");
-        Date birthDate = null;
-        try {
-            Date date = inputFormat.parse(birth);
-            String formattedDate = outputFormat.format(date);
-            birthDate = outputFormat.parse(formattedDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return birthDate;
-    }
-
     public boolean checkRegisteredUser(Map<String, String> parsed) {
         for (Employee em : employees) {
             if (em.getEmail().equalsIgnoreCase(parsed.get("email"))) {
@@ -87,7 +68,7 @@ public class UserService {
         return true;
     }
 
-    public int autorizedUserId(Map<String,String> parsed){
+    public int authorizedUserId(Map<String,String> parsed){
         for (Employee em : employees) {
             if (em.getEmail().equalsIgnoreCase(parsed.get("email"))) {
                 return em.getId();
@@ -102,11 +83,11 @@ public class UserService {
 
     public List<Book> getBooksOnHandByUserId(int userId) {
         List<Book> books = new ArrayList<>();
-        List<Journal> journals = new UserService().getJournal();
-        List<Book> booksServices = new BooksService().getBooks();
+        List<Journal> journals = journal;
+        List<Book> booksServices = this.books;
         for (Journal journal : journals){
             if (userId == journal.getBorrower() && journal.getReturnedDate() == null){
-                books.add(booksServices.get(journal.getBook().getId()));
+                books.add(booksServices.get(journal.getBook()));
             }
         }
         return books;
@@ -114,11 +95,11 @@ public class UserService {
 
     public List<Book> getJournalBooksByUserId(int userId) {
         List<Book> books = new ArrayList<>();
-        List<Journal> journals = new UserService().getJournal();
-        List<Book> booksServices = new BooksService().getBooks();
+        List<Journal> journals = journal;
+        List<Book> booksServices = this.books;
         for (Journal journal : journals){
             if (userId == journal.getBorrower() && journal.getReturnedDate() != null){
-                books.add(booksServices.get(journal.getBook().getId()));
+                books.add(booksServices.get(journal.getBook()));
             }
         }
         return books;
