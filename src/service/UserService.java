@@ -76,17 +76,17 @@ public class UserService {
         return employees.stream().filter(u -> u.getId() == id).findFirst().orElseThrow();
     }
 
+    public List<Book> getBooksOnHandByUserId(int userId) {
+        List<Journal> journals = journal;
+        List<Book> booksServices = FileUtil.readBook();
+        List<Book> books = journals.stream().filter(journal1 -> journal1.getReturnedDate() != null).filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
+        return books;
+    }
+
     public List<Book> getJournalBooksByUserId(int userId) {
         List<Journal> journals = journal;
         List<Book> booksServices = FileUtil.readBook();
         List<Book> books = journals.stream().filter(journal1 -> journal1.getReturnedDate() == null).filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
-        return books;
-    }
-
-    public List<Book> getBooksOnHandByUserId(int userId) {
-        List<Journal> journals = journal;
-        List<Book> booksServices = FileUtil.readBook();
-        List<Book> books = journals.stream().filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
         return books;
     }
 

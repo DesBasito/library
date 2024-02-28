@@ -28,17 +28,14 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list-nested"></i>
                 </button>
-                <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
-                onclick="window.location.href='/login'"
-                    data-bs-toggle="tooltip" data-bs-placement="left" title="Authorisation">
-                    <i class="bi bi-person-circle"></i>
-                </button>
+                 <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
+                                    onclick="window.location.href='/profile'"
+                                    data-bs-toggle="tooltip" data-bs-placement="left" title="Profile">
+                                <i class="bi bi-person-circle"></i>
+                            </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
-                                        <li class="mx-3 nav-item">
-                                                                   <a class="nav-link" href="/register">Зарегестрироватся</a>
-                                                                </li>
                                             <li class="nav-item">
                                                 <a class="nav-link active" aria-current="page" href="/books">О книгах
                                                 </a>
@@ -62,6 +59,7 @@
             <div class="container book-info">
                 <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
                 <div class="col ">
+                <h2 class="text-light bg-secondary">Свободные книги:</h2>
                     <table class="table table-success table-striped">
                       <thead>
                          <tr>
@@ -94,8 +92,13 @@
                                                   </div>
                                                   </div>
 
-                                   <div class="d-grid gap-2 col-6 mx-auto">
-                                     <button class="btn btn-secondary" type="submit">взять книгу</button>
+                                   <div class="d-grid gap-2 col-7 mx-auto">
+                                   <#if readingBooks>
+                                   Больше 2 книг в одни руки не даем!
+                                   <button class="btn btn-secondary" disabled type="submit">взять книгу</button>
+                                   <#else>
+                                   <button class="btn btn-secondary" type="submit">взять книгу</button>
+                                   </#if>
                                    </div>
                                </fieldset>
                            </form>

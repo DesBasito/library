@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
@@ -20,16 +20,17 @@
 <head>
         <nav class="navbar navbar-expand-md bg-dark " data-bs-theme="dark">
             <div class="container-xxl">
-                <a class="navbar-brand" href="/books"><img class="logo" src="images/logo.png" alt="instroom"></a>
+                <a class="navbar-brand" href="/books"><img class="logo" src="../images/logo.png" alt="instroom"></a>
                 <button class="navbar-toggler text-light bg-orange btn-user ms-auto" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list-nested"></i>
                 </button>
-                <button type="button" class="btn btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
-                    data-bs-toggle="modal" data-bs-target="#Modal-form-registration">
-                    <i class="bi bi-person-circle"></i>
-                </button>
+                <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
+                                   onclick="window.location.href='/profile'"
+                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Profile">
+                               <i class="bi bi-person-circle"></i>
+                           </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
@@ -48,43 +49,6 @@
                                                           </li>
                     </ul>
                 </div>
-                <!-- Modal 1 -->
-                <div class="modal fade" id="Modal-form-registration" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content bg-light">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Авторизация</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body" id="myModal">
-                                <form id="touch" method="most">
-                                    <div class="mb-3">
-                                        <label for="guest" class="form-label">Имя</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Aaron Hizzler"
-                                            id="guest" autofocus>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="guest" class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control"
-                                            placeholder="name@example.com" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputPassword">Пароль</label>
-                                        <input type="password" name="password" class="form-control" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="inputPassword">Повторите пароль</label>
-                                        <input type="password" name="repeatPassword" class="form-control" required>
-                                    </div>
-                                </form>
-                            </div>
-                            <button form="touch" type="submit" class="btn btn-dark text-light border-0 rounded-0 py-3"
-                                >Зарегистрироваться </button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </nav>
     </head>
@@ -93,14 +57,13 @@
 <div class="bg-secondary py-5">
         <div class="container book-info">
             <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-                <div class="col "><img class="mw-100 rounded-2 shadow-sm" src="images/urkun.jpg" alt="Professor Dowel's head">
+                <div class="col "><img class="mw-100 rounded-2 shadow-sm" src="${book.imagePath}" alt="book image">
                 </div>
                 <div class="col deWALT  text-light ps-5">
-                <#assign b = books[7]>
-                    <h1 class="pt-5 pb-3">${b.title}</h1>
-                    <p class="pb-2 mb-5 ">${b.title} - ${b.description}</p>
-                    <p class"year">year: ${b.writtenDate}<br>author: ${b.author}</p>
-                    <a href="#" class="bg-orange text-decoration-none text-light" id="liveToastBtn">Читать книгу</a>
+                    <h1 class="pt-5 pb-3">${book.title}</h1>
+                    <p class="pb-2 mb-5 ">${book.title} - ${book.description}</p>
+                    <p class"year">year: ${book.writtenDate}<br>author: ${book.author}</p>
+                    <a href="/takeBook" class="bg-orange text-decoration-none text-light" id="liveToastBtn">Взять книгу</a>
                 </div>
             </div>
         </div>

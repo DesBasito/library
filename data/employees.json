@@ -2,7 +2,6 @@
   {
     "firstName": "John",
     "lastName": "Smith",
-    "isReading": 0,
     "id": 1,
     "email": "john.smith@example.com",
     "password": "password123"
@@ -10,7 +9,6 @@
   {
     "firstName": "Emma",
     "lastName": "Johnson",
-    "isReading": 0,
     "id": 2,
     "email": "emma.johnson@example.com",
     "password": "emma123"
@@ -18,7 +16,6 @@
   {
     "firstName": "Michael",
     "lastName": "Williams",
-    "isReading": 0,
     "id": 3,
     "email": "michael.williams@example.com",
     "password": "michael321"
@@ -26,7 +23,6 @@
   {
     "firstName": "Emily",
     "lastName": "Jones",
-    "isReading": 0,
     "id": 4,
     "email": "emily.jones@example.com",
     "password": "emily456"
@@ -34,7 +30,6 @@
   {
     "firstName": "Christopher",
     "lastName": "Brown",
-    "isReading": 0,
     "id": 5,
     "email": "christopher.brown@example.com",
     "password": "brown789"
@@ -42,7 +37,6 @@
   {
     "firstName": "Jessica",
     "lastName": "Davis",
-    "isReading": 0,
     "id": 6,
     "email": "jessica.davis@example.com",
     "password": "jessica123"
@@ -50,7 +44,6 @@
   {
     "firstName": "Daniel",
     "lastName": "Miller",
-    "isReading": 0,
     "id": 7,
     "email": "daniel.miller@example.com",
     "password": "miller567"
@@ -58,7 +51,6 @@
   {
     "firstName": "Olivia",
     "lastName": "Wilson",
-    "isReading": 10,
     "id": 8,
     "email": "olivia.wilson@example.com",
     "password": "olivia789"
@@ -66,7 +58,6 @@
   {
     "firstName": "Matthew",
     "lastName": "Moore",
-    "isReading": 0,
     "id": 9,
     "email": "matthew.moore@example.com",
     "password": "moore123"
@@ -74,7 +65,6 @@
   {
     "firstName": "Ava",
     "lastName": "Taylor",
-    "isReading": 0,
     "id": 10,
     "email": "ava.taylor@example.com",
     "password": "ava456"
@@ -82,7 +72,6 @@
   {
     "firstName": "David",
     "lastName": "Anderson",
-    "isReading": 0,
     "id": 11,
     "email": "david.anderson@example.com",
     "password": "anderson789"
@@ -90,7 +79,6 @@
   {
     "firstName": "Sophia",
     "lastName": "Thomas",
-    "isReading": 0,
     "id": 12,
     "email": "sophia.thomas@example.com",
     "password": "thomas123"
@@ -98,7 +86,6 @@
   {
     "firstName": "Абдулбасит",
     "lastName": "Мануров",
-    "isReading": 0,
     "id": 13,
     "email": "basit.03.kg@gmail.com",
     "password": "password123"
@@ -106,7 +93,6 @@
   {
     "firstName": "Daniel",
     "lastName": "Ajiev",
-    "isReading": 0,
     "id": 14,
     "email": "Dancho@icloud.com",
     "password": "password123"
@@ -114,7 +100,6 @@
   {
     "firstName": "Jack ",
     "lastName": "Sparrow",
-    "isReading": 0,
     "id": 15,
     "email": "captainjack@gmail.com",
     "password": "password123"
@@ -122,7 +107,6 @@
   {
     "firstName": "Jayil",
     "lastName": "Jayilovna",
-    "isReading": 0,
     "id": 16,
     "email": "Jayil@isuck.com",
     "password": "password123"
@@ -130,7 +114,6 @@
   {
     "firstName": "Jack ",
     "lastName": "Smith",
-    "isReading": 0,
     "id": 17,
     "email": "Jacky@opppa.com",
     "password": "asd"
@@ -138,9 +121,22 @@
   {
     "firstName": "Janybek",
     "lastName": "Bolotov",
-    "isReading": 0,
     "id": 18,
     "email": "Janybek@gmail.com",
     "password": "123"
+  },
+  {
+    "firstName": "Jayil",
+    "lastName": "Jail",
+    "id": 19,
+    "email": "Jayil@gmail.com",
+    "password": "222"
+  },
+  {
+    "firstName": "user",
+    "lastName": "abuser",
+    "id": 20,
+    "email": "sos@gmail.com",
+    "password": "sos"
   }
 ]

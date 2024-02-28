@@ -5,14 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Alchemist.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Broken sword.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Dorian Grey.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Dubrovsky.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Harry Potter.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Lord of the world.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Rich dad, poor dad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/The head of professor Dowell.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/Wizard of the Emerald City.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/bloody years.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/images/invasion-earth.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/templates/giveBack.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/journal.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/login/login.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/login.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/login/register.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/login/register.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/about.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/about.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/books.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/cookie.ftlh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/employees.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/employees.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/exit.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/exit.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/info.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templates/journal.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/journal.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templates/profile.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/profile.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templates/takeBook.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/takeBook.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/BasicServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/BasicServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/ResponseCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/ResponseCodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/DataModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ProfileDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ProfileDataModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
@@ -57,7 +79,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "HT-46",
+    "git-widget-placeholder": "HT-47",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/abu/IdeaProjects/HT-44",
     "project.structure.last.edited": "Libraries",

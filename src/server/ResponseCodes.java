@@ -2,10 +2,9 @@ package server;
 
 public enum ResponseCodes {
     OK(200),
-    REGISTRED(409),
+    REGISTERED(409),
     UNAUTHORIZED(401),
     NOT_FOUND(404);
-
 
     private final int code;
 

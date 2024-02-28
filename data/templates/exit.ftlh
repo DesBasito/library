@@ -63,52 +63,6 @@
 
     <div class="bg-secondary py-5">
             <div class="container book-info">
-                <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-                <div class="col ">
-                    <h3>Reading books:</h3>
-                          <table class="table table-dark table-striped">
-                                  <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">id</th>
-                                    <th scope="col">Book</th>
-                                    <th scope="col">Author</th>
-                                  </tr>
-                                  </thead>
-                                  <tbody>
-                                  <tr>
-                                  <#list readingBooks as reading>
-                                    <th>${reading?counter}</th>
-                                    <th>${reading.id}</th>
-                                    <th>${reading.title}</th>
-                                    <th>${reading.author}</th>
-                                    <td></#list>
-                                    </td>
-                                  </tr>
-                                  </tbody>
-                                </table>
-                            <h3>borrowed books:</h3>
-                          <table class="table table-dark table-striped">
-                            <thead>
-                            <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">id</th>
-                              <th scope="col">Book</th>
-                              <th scope="col">Author</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                            <#list readBooks as journal>
-                              <th>${journal?counter}</th>
-                              <th>${journal.id}</th>
-                              <th>${journal.title}</th>
-                              <th>${journal.author}</th>
-                             </#list>
-                            </tr>
-                            </tbody>
-                          </table></div>
-                    <div class="col deWALT  text-light ps-5 align-self-center">
                    <main>
                            <form action="/exit" method="post">
                                <fieldset>
@@ -120,9 +74,7 @@
                                            </div>
                                </fieldset>
                            </form>
-                       </main>
-                    </div>
-                </div>
+                      </main>
             </div>
         </div>
 

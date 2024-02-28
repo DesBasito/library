@@ -107,5 +107,17 @@
     "book": 3,
     "borrower": 13,
     "borrowedDate": "27.02.2024"
+  },
+  {
+    "id": 18,
+    "book": 1,
+    "borrower": 8,
+    "borrowedDate": "27.02.2024"
+  },
+  {
+    "id": 19,
+    "book": 4,
+    "borrower": 20,
+    "borrowedDate": "27.02.2024"
   }
 ]

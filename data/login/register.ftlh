@@ -27,8 +27,8 @@
                     <i class="bi bi-list-nested"></i>
                 </button>
                 <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
-                                               onclick="window.location.href='/login'"
-                                                   data-bs-toggle="tooltip" data-bs-placement="left" title="Authorisation">
+                                               onclick="window.location.href='/profile'"
+                                                   data-bs-toggle="tooltip" data-bs-placement="left" title="profile">
                                                    <i class="bi bi-person-circle"></i>
                                                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -77,6 +77,9 @@
                 <div class="form-element">
                     <button class="register-button" type="submit">Register!</button>
                 </div>
+                 <div class="form-element">
+                         <button class="register-button btn-link text-decoration-none"  onclick="window.location.href='/login'">Have an account?</button>
+                  </div>
             </fieldset>
         </form>
     </main>

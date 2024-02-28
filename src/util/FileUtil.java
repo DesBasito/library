@@ -7,6 +7,9 @@ import entities.Book;
 import entities.Employee;
 import entities.Journal;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -67,6 +70,16 @@ public class FileUtil {
             e.printStackTrace();
         }
         return journal;
+    }
+
+    public static BufferedImage readImage(String imagePath) {
+        try {
+            File file = new File(imagePath);
+            return ImageIO.read(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static void writeEmployee(List<Employee> employees) {

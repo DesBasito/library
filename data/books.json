@@ -5,7 +5,8 @@
     "id": 1,
     "description": "A science fiction novel exploring themes of utopia, dystopia, and the consequences of technological advancement.",
     "writtenDate": 1926,
-    "free": true
+    "imagePath": "../images/Lord of the world.jpg",
+    "free": false
   },
   {
     "author": "Aleksandr Volkov",
@@ -13,6 +14,7 @@
     "id": 2,
     "description": "A children\u0027s fantasy novel inspired by L. Frank Baum\u0027s Wizard of Oz series, set in the magical land of Magic Land.",
     "writtenDate": 1939,
+    "imagePath": "../images/Wizard of the Emerald City.jpg",
     "free": false
   },
   {
@@ -21,15 +23,17 @@
     "id": 3,
     "description": "An allegorical novel about a young Andalusian shepherd who sets out to discover his personal legend and find treasure.",
     "writtenDate": 1988,
+    "imagePath": "../images/Alchemist.jpg",
     "free": false
   },
   {
     "author": "Harry Harrison",
-    "title": "Invasion",
+    "title": "Invasion: Earth",
     "id": 4,
     "description": "A science fiction novel depicting humanity\u0027s struggle against an alien invasion and its aftermath.",
     "writtenDate": 1982,
-    "free": true
+    "imagePath": "../images/invasion-earth.jpg",
+    "free": false
   },
   {
     "author": "Alexander Belyaev",
@@ -37,14 +41,16 @@
     "id": 5,
     "description": "A science fiction novel exploring the consequences of a scientist\u0027s experiment to transplant a living human head onto another body.",
     "writtenDate": 1925,
+    "imagePath": "../images/The head of professor Dowell.jpg",
     "free": true
   },
   {
     "author": "Robert Kiyosaki",
     "title": "Rich Dad, Poor Dad",
     "id": 6,
-    "description": "A personal finance book discussing the differences in mindset between the author\u0027s \u0027rich dad\u0027 and \u0027poor dad\u0027.",
+    "description": "A personal finance book discussing the differences in mindset between the author\u0027s rich dad and poor dad.",
     "writtenDate": 1997,
+    "imagePath": "../images/Rich dad, poor dad.jpg",
     "free": true
   },
   {
@@ -53,6 +59,7 @@
     "id": 7,
     "description": "A historical novel set in Central Asia during the time of the Russian conquests, focusing on the clash of cultures and the struggles of the Kazakh people.",
     "writtenDate": 1938,
+    "imagePath": "../images/Broken sword.jpg",
     "free": true
   },
   {
@@ -61,6 +68,7 @@
     "id": 8,
     "description": "Mukai Elebaev made a significant innovation in Kyrgyz literature in the 30s of the last century by writing the novel “Uzak Zhol”. With this first novel, he suddenly raised national prose to a professional level. The novel vividly describes the terrible tragic face of Urkun in 1916, the result of the hardships of the tsarist colonialists, and the fate of the people who fled to China.",
     "writtenDate": 1936,
+    "imagePath": "../images/urkun.jpg",
     "free": true
   },
   {
@@ -69,6 +77,7 @@
     "id": 9,
     "description": "A historical novel set during the turbulent times of political upheaval in Kyrgyzstan, exploring themes of power, corruption, and revolution.",
     "writtenDate": 1982,
+    "imagePath": "../images/bloody years.jpg",
     "free": true
   },
   {
@@ -77,6 +86,7 @@
     "id": 10,
     "description": "A fantasy series following the life and adventures of a young wizard, Harry Potter, and his friends as they battle the dark wizard Voldemort.",
     "writtenDate": 1997,
+    "imagePath": "../images/Harry Potter.jpg",
     "free": false
   },
   {
@@ -85,6 +95,7 @@
     "id": 11,
     "description": "A philosophical novel about a young man named Dorian Gray who sells his soul for eternal youth and beauty, leading to moral corruption and tragedy.",
     "writtenDate": 1890,
+    "imagePath": "../images/Dorian Grey.jpg",
     "free": true
   },
   {
@@ -93,6 +104,7 @@
     "id": 12,
     "description": "A romantic novel following the story of a nobleman who seeks revenge for the wrongs done to his family, taking on the guise of a bandit.",
     "writtenDate": 1832,
+    "imagePath": "../images/Dubrovsky.jpg",
     "free": true
   },
   {
@@ -101,6 +113,7 @@
     "id": 13,
     "description": "A description of the new book.",
     "writtenDate": 2023,
+    "imagePath": "",
     "free": true
   }
 ]

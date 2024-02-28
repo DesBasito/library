@@ -28,12 +28,11 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <i class="bi bi-list-nested"></i>
                 </button>
-                <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
-                onclick="window.location.href='/login'"
-                    data-bs-toggle="tooltip" data-bs-placement="left" title="Authorisation">
-                    <i class="bi bi-person-circle"></i>
-                </button>
-
+    <button type="button" class="btn btn-link btn-user bg-orange rounded-1 text-light bg-orange order-md-1 ms-3"
+                       onclick="window.location.href='/profile'"
+                       data-bs-toggle="tooltip" data-bs-placement="left" title="Profile">
+                   <i class="bi bi-person-circle"></i>
+               </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav fw-medium mx-auto">
                                         <li class="mx-3 nav-item">
@@ -49,9 +48,6 @@
                                             <li class="mx-3 nav-item">
                                                 <a class="nav-link" href="/journal">Журнал</a>
                                             </li>
-                                             <li class="mx-3 nav-item">
-                                                  <a class="nav-link " href="/profile">Профиль</a>
-                                                </li>
                                                 <li class="mx-3 nav-item">
                                                   <a class="nav-link " href="/takeBook">взять книгу</a>
                                                 </li>
@@ -78,7 +74,7 @@
     <#list books as book>
     <tr>
         <th>${book.id}</th>
-        <td><a class = "nav-link" href="/about">${book.title}</a></td>
+        <td><a class = "nav-link" href="/books/about?id=${book.id}">${book.title}</a></td>
         <td>${book.author}</td>
         <td>${book.writtenDate} - year</td>
     </tr>

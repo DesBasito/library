@@ -52,7 +52,7 @@
 <div class="bg-secondary py-5">
   <div class="container book-info">
     <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
-      <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm w-75" src="../images/user.png" alt="Professor Dowel's head"><br>
+      <div class="col text-light"><img class="mw-100 rounded-2 shadow-sm w-75" src="../images/user.png" alt="${user.firstName} ${user.lastName}"><br>
         <h1 class ="mt-3">${user.firstName} ${user.lastName}</h1>
         Email: ${user.email}
       </div>
@@ -81,7 +81,6 @@
               </tbody>
             </table>
         <h3  class="mt-5">borrowed books:</h3>
-
 
         <thead><table class="table table-dark table-striped">
         <tr>

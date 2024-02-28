@@ -33,8 +33,8 @@ public class Server extends BasicServer {
         registerGet("/books", this::booksHandler);
         registerGet("/employees", this::employeesHandler);
         registerGet("/journal", this::journalHandler);
-        registerGet("/about", this::aboutBook);
-        registerGet("/info", this::employeeInfo);
+        registerGet("/books/about", this::aboutBook);
+        registerGet("/employees/info", this::employeeInfo);
         // lesson 45-46
         registerGet("/register", this::registrationGet);
         registerPost("/register", this::registrationPost);
@@ -42,34 +42,65 @@ public class Server extends BasicServer {
         registerPost("/login", this::loginPost);
         registerGet("/profile", this::profileGet);
         registerGet("/takeBook", this::takeBookGet);
-        registerPost("/takeBook",this::takeBookPost);
+        registerPost("/takeBook", this::takeBookPost);
     }
-
-
     private void booksHandler(HttpExchange exchange) {
-        renderTemplate(exchange, "books.ftlh", getDataModel());
+        renderTemplate(exchange, "books.ftlh", getModel());
     }
 
     private void employeesHandler(HttpExchange exchange) {
-        renderTemplate(exchange, "employees.ftlh", getDataModel());
+        renderTemplate(exchange, "employees.ftlh", getModel());
     }
 
     private void journalHandler(HttpExchange exchange) {
-        renderTemplate(exchange, "journal.ftlh", getDataModel());
+        renderTemplate(exchange, "journal.ftlh", getModel());
     }
 
     private void aboutBook(HttpExchange exchange) {
-        renderTemplate(exchange, "about.ftlh", getDataModel());
+        String query = getQueryParams(exchange);
+        Map<String, String> params = FileUtil.parseUrlEncoded(query, "&");
+        int id = Integer.parseInt(params.getOrDefault("id", null));
+        try {
+            Book book = FileUtil.readBook().stream()
+                    .filter(e -> e.getId() == id)
+                    .findFirst()
+                    .orElseThrow(() -> new Exception("Book not found!"));
+            Map<String,Book> data = new HashMap<>();
+            data.put("book",book);
+            renderTemplate(exchange, "about.ftlh",data);
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+
     }
 
     private void employeeInfo(HttpExchange exchange) {
-        renderTemplate(exchange, "info.ftlh", getDataModel());
+        String query = getQueryParams(exchange);
+        Map<String, String> params = FileUtil.parseUrlEncoded(query, "&");
+        int id = Integer.parseInt(params.getOrDefault("id", null));
+        try {
+            Employee employee = FileUtil.readEmployee().stream()
+                    .filter(e -> e.getId() == id)
+                    .findFirst()
+                    .orElseThrow(() -> new NullPointerException("employee not found!"));
+            Map<String,Object> data = new HashMap<>();
+            data.put("employee",employee);
+            data.put("journals",FileUtil.readJournal());
+            data.put("books",FileUtil.readBook());
+            renderTemplate(exchange, "info.ftlh",data);
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
     }
 
-    private DataModel getDataModel() {
-        return new DataModel();
+    private Map<String,Object> getModel(){
+        Map<String,Object> model = new HashMap<>();
+        model.put("employees",FileUtil.readEmployee());
+        model.put("books",FileUtil.readBook());
+        model.put("journals",FileUtil.readJournal());
+        return model;
     }
-
 
     private void profileGet(HttpExchange exchange) {
         String cookieString = getCookies(exchange);
@@ -77,8 +108,8 @@ public class Server extends BasicServer {
         try {
             int userId = Integer.parseInt(cookies.get("userId"));
             Employee user = userService.getUserById(userId);
-            List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
-            List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
+            var bookOnHand = userService.getBooksOnHandByUserId(userId);
+            var historyBooks = userService.getJournalBooksByUserId(userId);
             ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
             renderTemplate(exchange, "profile.ftlh", authorized);
         } catch (NumberFormatException e) {
@@ -89,7 +120,7 @@ public class Server extends BasicServer {
     private void registrationPost(HttpExchange exchange) {
         String raw = getBody(exchange);
         Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
-        if (userService.checkRegisteredUser(parsed) &&  userService.checkEmailPassword(parsed)) {
+        if (userService.checkRegisteredUser(parsed) && userService.checkEmailPassword(parsed)) {
             userService.handleUser(parsed);
             redirect303(exchange, "/login");
         } else {
@@ -133,7 +164,11 @@ public class Server extends BasicServer {
         String cookieString = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieString);
         if (cookies.containsKey("userId")) {
-            renderTemplate(exchange, "takeBook.ftlh", getDataModel());
+            var model = getModel();
+            int readingBooksCount = authorizedUser(exchange).getReadingBooks().size();
+            boolean hasReadingBooks = readingBooksCount > 1; // Check if there are more than 1 reading books
+            model.put("readingBooks", hasReadingBooks);
+            renderTemplate(exchange, "takeBook.ftlh",model);
         } else {
             redirect303(exchange, "templates/profileError.html");
         }
@@ -142,18 +177,15 @@ public class Server extends BasicServer {
 
     private void takeBookPost(HttpExchange exchange) {
         Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
-        Map<String, String> cookies = Cookie.parse(getCookies(exchange));
-        if (!authorizedUser(exchange).checkUserHand()){
-            redirect303(exchange, "templates/profileError.html");
-            return;
-        }
-
-        if (cookies.containsKey("userId")) {
-            if (bookService.checkIsBookFree(parsed)){
-                bookService.handleBook(Integer.parseInt(parsed.get("bookId")),Integer.parseInt(cookies.get("userId")));
-                redirect303(exchange, "/journal");
-            }else {
-                redirect303(exchange,"/takeBook");
+        ProfileDataModel user = authorizedUser(exchange);
+        if (userService.getEmployees().contains(user.getUser())) {
+            if (bookService.checkIsBookFree(parsed)) {
+                if (user.checkUserHand()){
+                    bookService.handleBook(Integer.parseInt(parsed.get("bookId")), user.getUser().getId());
+                    redirect303(exchange, "/journal");
+                }
+            } else {
+                redirect303(exchange, "/takeBook");
             }
 
         } else {
@@ -161,15 +193,14 @@ public class Server extends BasicServer {
         }
     }
 
-    private ProfileDataModel authorizedUser(HttpExchange exchange){
+    private ProfileDataModel authorizedUser(HttpExchange exchange) {
         String cookieString = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieString);
         int userId = Integer.parseInt(cookies.get("userId"));
         Employee user = userService.getUserById(userId);
         List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
         List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
-        ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
-        return authorized;
+        return new ProfileDataModel(user, bookOnHand, historyBooks);
     }
 
 

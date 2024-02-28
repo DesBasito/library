@@ -30,6 +30,6 @@ public class ProfileDataModel {
     }
 
     public  boolean checkUserHand(){
-        return readingBooks.size() < 3;
+        return readingBooks.size() < 2;
     }
 }

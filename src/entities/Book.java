@@ -7,7 +7,7 @@ public class Book {
     private int id;
     private String description;
     private int writtenDate;
-
+private String imagePath;
     private boolean free;
 
     public void setFree(boolean free) {
@@ -18,13 +18,14 @@ public class Book {
         return free;
     }
 
-    public Book(String author, String name, int id, String description, int writtenDate, boolean free) {
+    public Book(String author, String name, int id, String description, int writtenDate, boolean free,String imagePath) {
         this.author = author;
         this.title = name;
         this.id = id;
         this.description = description;
         this.writtenDate = writtenDate;
         this.free = free;
+        this.imagePath = imagePath;
     }
 
     public String getAuthor() {
@@ -45,5 +46,9 @@ public class Book {
 
     public int getWrittenDate() {
         return writtenDate;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 }
