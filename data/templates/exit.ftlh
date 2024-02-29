@@ -64,13 +64,13 @@
     <div class="bg-secondary py-5">
             <div class="container book-info">
                    <main>
-                           <form action="/exit" method="post">
+                           <form action="/logout" method="post">
                                <fieldset>
-                               <div class="d-grid gap-2 col-7 mx-auto">
+                               <div class="d-grid gap-2 col-7 mx-auto text-light">
                                            <div class="d-grid gap-2 col-6 mx-auto form-element">
                                             <label for="guest">Вы действительно хотите выйти?</label>
                                                <input type="hidden" name="confirm" value="true">
-                                               <button class="btn btn-secondary" type="submit">взять книгу</button>
+                                               <button class="btn text-light" type="submit">Выйти</button>
                                            </div>
                                </fieldset>
                            </form>

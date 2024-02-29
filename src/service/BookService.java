@@ -1,6 +1,7 @@
 package service;
 
 import entities.Book;
+import entities.Employee;
 import entities.Journal;
 import util.FileUtil;
 
@@ -11,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class BookService {
     private List<Book> books;
@@ -33,10 +35,7 @@ public class BookService {
 
     public void handleBook(int bookId, int userId) {
         List<Journal> journalList = journal;
-        LocalDate borDate = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String formattedDate = borDate.format(formatter);
-        Date borrowedDate = parseStringToDate(formattedDate);
+        Date borrowedDate = currentDate();
         int id = journalList.size()+1;
         Journal jour = new Journal(bookId,userId,borrowedDate,null,id);
         journalList.add(jour);
@@ -45,10 +44,27 @@ public class BookService {
         FileUtil.writeJournal(journalList);
     }
 
+    public void returnBook(int bookId) {
+        List<Book> bookList = books;
+        Book book = bookList.stream().filter(book1 -> bookId == book1.getId()).findFirst().orElseThrow();
+        bookList.get(bookId-1).setFree(true);
+        List<Journal> jrl = journal;
+        for (Journal jour : jrl){
+            if (jour.getBook()==book.getId()){
+                jour.setReturnedDate(currentDate());
+            }
+        }
+        FileUtil.writeJournal(jrl);
+        FileUtil.writeBook(bookList);
+    }
 
-    public static Date parseStringToDate(String dateString) {
+
+    public static Date currentDate() {
         try {
-            return new SimpleDateFormat("dd.MM.yyyy").parse(dateString);
+            LocalDate borDate = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+            String formattedDate = borDate.format(formatter);
+            return new SimpleDateFormat("dd.MM.yyyy").parse(formattedDate);
         } catch (ParseException e) {
             e.printStackTrace();
             return null;

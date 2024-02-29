@@ -10,11 +10,9 @@ import java.util.stream.Collectors;
 
 public class UserService {
     private  List<Employee> employees;
-    private List<Journal> journal;
 
     public UserService(){
         this.employees = FileUtil.readEmployee();
-        this.journal = FileUtil.readJournal();
     }
 
     public List<Employee> getEmployees() {
@@ -77,14 +75,14 @@ public class UserService {
     }
 
     public List<Book> getBooksOnHandByUserId(int userId) {
-        List<Journal> journals = journal;
+        List<Journal> journals = FileUtil.readJournal();
         List<Book> booksServices = FileUtil.readBook();
         List<Book> books = journals.stream().filter(journal1 -> journal1.getReturnedDate() != null).filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
         return books;
     }
 
     public List<Book> getJournalBooksByUserId(int userId) {
-        List<Journal> journals = journal;
+        List<Journal> journals = FileUtil.readJournal();
         List<Book> booksServices = FileUtil.readBook();
         List<Book> books = journals.stream().filter(journal1 -> journal1.getReturnedDate() == null).filter(journal1 -> userId == journal1.getBorrower()).map(journal1 -> booksServices.get(journal1.getBook() - 1)).collect(Collectors.toList());
         return books;

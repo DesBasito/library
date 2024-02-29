@@ -7,6 +7,11 @@ public class Journal {
     private int book;
     private int borrower;
     private Date borrowedDate;
+
+    public void setReturnedDate(Date returnedDate) {
+        this.returnedDate = returnedDate;
+    }
+
     private Date returnedDate;
     public Journal(int book, int borrower, Date borrowedDate, Date returnedDate,int id) {
         this.book = book;

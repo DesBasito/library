@@ -63,7 +63,11 @@
                     <h1 class="pt-5 pb-3">${book.title}</h1>
                     <p class="pb-2 mb-5 ">${book.title} - ${book.description}</p>
                     <p class"year">year: ${book.writtenDate}<br>author: ${book.author}</p>
+                    <#if book.free>
                     <a href="/takeBook" class="bg-orange text-decoration-none text-light" id="liveToastBtn">Взять книгу</a>
+                    <#else>
+                    <a href="/takeBook" class="bg-orange text-decoration-none text-light"  id="liveToastBtn">Взять книгу</a>
+                    </#if>
                 </div>
             </div>
         </div>

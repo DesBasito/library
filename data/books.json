@@ -24,7 +24,7 @@
     "description": "An allegorical novel about a young Andalusian shepherd who sets out to discover his personal legend and find treasure.",
     "writtenDate": 1988,
     "imagePath": "../images/Alchemist.jpg",
-    "free": false
+    "free": true
   },
   {
     "author": "Harry Harrison",
@@ -87,7 +87,7 @@
     "description": "A fantasy series following the life and adventures of a young wizard, Harry Potter, and his friends as they battle the dark wizard Voldemort.",
     "writtenDate": 1997,
     "imagePath": "../images/Harry Potter.jpg",
-    "free": false
+    "free": true
   },
   {
     "author": "Oscar Wilde",

@@ -66,7 +66,7 @@
         <th scope="col">#</th>
         <th scope="col">Book</th>
         <th scope="col">Author</th>
-        <th scope="col">Written year</th>
+        <th scope="col">Status</th>
     </tr>
     </thead>
     <tbody>
@@ -76,7 +76,11 @@
         <th>${book.id}</th>
         <td><a class = "nav-link" href="/books/about?id=${book.id}">${book.title}</a></td>
         <td>${book.author}</td>
-        <td>${book.writtenDate} - year</td>
+        <td><#if book.free>
+                                            <span class="badge bg-success">In Library</span>
+                                        <#else>
+                                            <span class="badge bg-danger">On Hand</span>
+                                        </#if></td>
     </tr>
 </#list>
 

@@ -72,16 +72,6 @@ public class FileUtil {
         return journal;
     }
 
-    public static BufferedImage readImage(String imagePath) {
-        try {
-            File file = new File(imagePath);
-            return ImageIO.read(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public static void writeEmployee(List<Employee> employees) {
         String json = GSON.toJson(employees);
         try {
@@ -121,6 +111,18 @@ public class FileUtil {
                 .map(Optional::get);
 
         return stream.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    public static Boolean parseUrlEncodedBool(String raw, String delimiter) {
+        String[] pairs = raw.split(delimiter);
+
+        Stream<Map.Entry<String, String>> stream = Arrays.stream(pairs)
+                .map(FileUtil::decode)
+                .filter(Optional::isPresent)
+                .map(Optional::get);
+
+        var bool = stream.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        return Boolean.parseBoolean(bool.get("true"));
     }
 
     static Optional<Map.Entry<String, String>> decode(String kv) {

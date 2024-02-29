@@ -39,11 +39,13 @@
           <li class="mx-3 nav-item">
             <a class="nav-link " href="/journal">Журнал</a>
           </li>
-          <li class="mx-3 nav-item">
-            <a class="nav-link " href="/exit">Выйти с профиля</a>
-          </li>
         </ul>
       </div>
+      <button type="button" class="btn btn-link text-decoration-none text-light"
+          onclick="window.location.href='/logout'"
+          data-bs-toggle="tooltip" data-bs-placement="left" title="Log out">
+          Выйти с профиля
+      </button>
     </div>
   </nav>
 </head>
@@ -73,7 +75,7 @@
 
                 <th>${reading?counter}</th>
                 <th>${reading.id}</th>
-                <th>${reading.title}</th>
+                <td><a class = "nav-link" href="/books/about?id=${reading.id}">${reading.title}</a></td>
                 <th>${reading.author}</th>
                 <td>
                 </td>
@@ -96,7 +98,7 @@
         <tr>
           <th>${journal?counter}</th>
           <th>${journal.id}</th>
-          <th>${journal.title}</th>
+           <td><a class = "nav-link" href="/books/about?id=${journal.id}">${journal.title}</a></td>
           <th>${journal.author}</th>
         </tr>
         </tbody>

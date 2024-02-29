@@ -39,11 +39,36 @@ public class Server extends BasicServer {
         registerGet("/register", this::registrationGet);
         registerPost("/register", this::registrationPost);
         registerGet("/login", this::loginGet);
+        registerGet("/logout", this::logoutGet);
         registerPost("/login", this::loginPost);
+        registerPost("/logout", this::logoutPost);
         registerGet("/profile", this::profileGet);
         registerGet("/takeBook", this::takeBookGet);
+        registerGet("/giveBack", this::giveBackGet);
         registerPost("/takeBook", this::takeBookPost);
+        registerPost("/giveBack", this::giveBackPost);
     }
+
+    private void logoutGet(HttpExchange exchange) {
+        if (checkCookieIsPresent(exchange)){
+            renderTemplate(exchange, "exit.ftlh", authorizedUser(exchange));
+        }else {
+            redirect303(exchange,"/login");
+        }
+    }
+
+    private void logoutPost(HttpExchange exchange){
+        if (checkCookieIsPresent(exchange)) {
+            Cookie deleteCookie = Cookie.make("userId", "");
+            deleteCookie.setMaxAge(0);
+            deleteCookie.setHttpOnly(true);
+            setCookie(exchange, deleteCookie);
+            redirect303(exchange, "/login");
+        } else {
+            registerErr(exchange);
+        }
+    }
+
     private void booksHandler(HttpExchange exchange) {
         renderTemplate(exchange, "books.ftlh", getModel());
     }
@@ -64,13 +89,14 @@ public class Server extends BasicServer {
             Book book = FileUtil.readBook().stream()
                     .filter(e -> e.getId() == id)
                     .findFirst()
-                    .orElseThrow(() -> new Exception("Book not found!"));
-            Map<String,Book> data = new HashMap<>();
-            data.put("book",book);
-            renderTemplate(exchange, "about.ftlh",data);
-        }catch (Exception e){
-            e.printStackTrace();
-
+                    .orElseThrow(() -> new NumberFormatException("Book not found!"));
+            Map<String, Object> data = new HashMap<>();
+            data.put("book", book);
+            data.put("employee",FileUtil.readEmployee());
+            data.put("journal",FileUtil.readJournal());
+            renderTemplate(exchange, "about.ftlh", data);
+        } catch (NumberFormatException e) {
+            redirect303(exchange,"/books");
         }
 
     }
@@ -83,22 +109,22 @@ public class Server extends BasicServer {
             Employee employee = FileUtil.readEmployee().stream()
                     .filter(e -> e.getId() == id)
                     .findFirst()
-                    .orElseThrow(() -> new NullPointerException("employee not found!"));
-            Map<String,Object> data = new HashMap<>();
-            data.put("employee",employee);
-            data.put("journals",FileUtil.readJournal());
-            data.put("books",FileUtil.readBook());
-            renderTemplate(exchange, "info.ftlh",data);
-        }catch (NullPointerException e){
-            e.printStackTrace();
+                    .orElseThrow(() -> new NumberFormatException("employee not found!"));
+            Map<String, Object> data = new HashMap<>();
+            data.put("employee", employee);
+            data.put("journals", FileUtil.readJournal());
+            data.put("books", FileUtil.readBook());
+            renderTemplate(exchange, "info.ftlh", data);
+        } catch (NumberFormatException e) {
+            redirect303(exchange,"/employees");
         }
     }
 
-    private Map<String,Object> getModel(){
-        Map<String,Object> model = new HashMap<>();
-        model.put("employees",FileUtil.readEmployee());
-        model.put("books",FileUtil.readBook());
-        model.put("journals",FileUtil.readJournal());
+    private Map<String, Object> getModel() {
+        Map<String, Object> model = new HashMap<>();
+        model.put("employees", FileUtil.readEmployee());
+        model.put("books", FileUtil.readBook());
+        model.put("journals", FileUtil.readJournal());
         return model;
     }
 
@@ -106,14 +132,10 @@ public class Server extends BasicServer {
         String cookieString = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieString);
         try {
-            int userId = Integer.parseInt(cookies.get("userId"));
-            Employee user = userService.getUserById(userId);
-            var bookOnHand = userService.getBooksOnHandByUserId(userId);
-            var historyBooks = userService.getJournalBooksByUserId(userId);
-            ProfileDataModel authorized = new ProfileDataModel(user, bookOnHand, historyBooks);
-            renderTemplate(exchange, "profile.ftlh", authorized);
+            ProfileDataModel user = authorizedUser(exchange);
+            renderTemplate(exchange, "profile.ftlh", user);
         } catch (NumberFormatException e) {
-            redirect303(exchange, "templates/profileError.html");
+            redirect303(exchange, "/login");
         }
     }
 
@@ -147,10 +169,6 @@ public class Server extends BasicServer {
     }
 
     private void registrationGet(HttpExchange exchange) {
-//        Cookie deleteCookie = Cookie.make("userId", ""); // Empty value
-//        deleteCookie.setMaxAge(0); // Expire immediately
-//        deleteCookie.setHttpOnly(true);
-//        setCookie(exchange, deleteCookie);
         Path path = makeFilePath("login/register.ftlh");
         sendFile(exchange, path, ContentType.TEXT_HTML);
     }
@@ -166,11 +184,27 @@ public class Server extends BasicServer {
         if (cookies.containsKey("userId")) {
             var model = getModel();
             int readingBooksCount = authorizedUser(exchange).getReadingBooks().size();
-            boolean hasReadingBooks = readingBooksCount > 1; // Check if there are more than 1 reading books
+            boolean hasReadingBooks = readingBooksCount > 1;
             model.put("readingBooks", hasReadingBooks);
-            renderTemplate(exchange, "takeBook.ftlh",model);
+            renderTemplate(exchange, "takeBook.ftlh", model);
         } else {
-            redirect303(exchange, "templates/profileError.html");
+            redirect303(exchange, "/login");
+        }
+    }
+
+    private void giveBackGet(HttpExchange exchange) {
+        String cookieString = getCookies(exchange);
+        Map<String, String> cookies = Cookie.parse(cookieString);
+        if (cookies.containsKey("userId")) {
+            var model = new HashMap<>();
+            var user = authorizedUser(exchange);
+            int readingBooksCount = user.getReadingBooks().size();
+            boolean hasReadingBooks = readingBooksCount < 1;
+            model.put("readingBooks", hasReadingBooks);
+            model.put("user", user);
+            renderTemplate(exchange, "giveBack.ftlh", model);
+        } else {
+            redirect303(exchange, "/login");
         }
     }
 
@@ -180,16 +214,31 @@ public class Server extends BasicServer {
         ProfileDataModel user = authorizedUser(exchange);
         if (userService.getEmployees().contains(user.getUser())) {
             if (bookService.checkIsBookFree(parsed)) {
-                if (user.checkUserHand()){
+                if (user.getReadingBooks().size()<2) {
                     bookService.handleBook(Integer.parseInt(parsed.get("bookId")), user.getUser().getId());
-                    redirect303(exchange, "/journal");
+                    renderTemplate(exchange, "profile.ftlh",user);
                 }
             } else {
                 redirect303(exchange, "/takeBook");
             }
 
         } else {
-            redirect303(exchange, "templates/profileError.html");
+            redirect303(exchange, "/login");
+        }
+    }
+
+    private void giveBackPost(HttpExchange exchange) {
+        Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
+        ProfileDataModel user = authorizedUser(exchange);
+        int bookId = Integer.parseInt(parsed.get("bookId"));
+        if (userService.getEmployees().contains(user.getUser())) {
+            if (!user.getReadingBooks().isEmpty() && user.checkUserHand(bookId)){
+                bookService.returnBook(bookId);
+                redirect303(exchange, "/profile");
+            }
+
+        } else {
+            redirect303(exchange, "/login");
         }
     }
 
@@ -201,6 +250,13 @@ public class Server extends BasicServer {
         List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
         List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
         return new ProfileDataModel(user, bookOnHand, historyBooks);
+    }
+
+    private boolean checkCookieIsPresent(HttpExchange exchange){
+        String raw = getBody(exchange);
+        String cookie  = getCookies(exchange);
+        Map<String,String> cookies = FileUtil.parseUrlEncoded(raw,cookie);
+        return cookies.containsKey("userId");
     }
 
 

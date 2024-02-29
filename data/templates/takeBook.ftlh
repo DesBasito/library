@@ -46,6 +46,9 @@
                                             <li class="mx-3 nav-item">
                                                 <a class="nav-link" href="/journal">Журнал</a>
                                             </li>
+                                            <li class="mx-3 nav-item">
+                                              <a class="nav-link" href="/giveBack">Вернуть книгу</a>
+                                           </li>
                                         </ul>
                 </div>
 
@@ -74,7 +77,7 @@
                             <#if book.free==true>
                             <tr>
                                 <th>${book.id}</th>
-                                <td><a class = "nav-link" href="/about">${book.title}</a></td>
+                                <td><a class = "nav-link" href="/books/about?id=${book.id}">${book.title}</a></td>
                                 <td>${book.author}</td>
                             </tr>
                             </#if>
