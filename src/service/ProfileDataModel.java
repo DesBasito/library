@@ -5,18 +5,18 @@ import entities.Employee;
 
 
 import java.util.List;
+import java.util.Set;
 
 public class ProfileDataModel {
     private final Employee user;
     private List<Book> readingBooks;
-    private List<Book> readBooks;
+    private Set<Book> readBooks;
 
-    public ProfileDataModel(Employee user,List<Book> readBooks,List<Book> readingBooks) {
+    public ProfileDataModel(Employee user,Set<Book> readBooks,List<Book> readingBooks) {
         this.user = user;
         this.readingBooks = readingBooks;
         this.readBooks = readBooks;
     }
-
     public Employee getUser() {
         return user;
     }
@@ -25,7 +25,7 @@ public class ProfileDataModel {
         return readingBooks;
     }
 
-    public List<Book> getReadBooks() {
+    public Set<Book> getReadBooks() {
         return readBooks;
     }
 

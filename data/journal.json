@@ -148,6 +148,7 @@
     "id": 22,
     "book": 2,
     "borrower": 13,
-    "borrowedDate": "29.02.2024"
+    "borrowedDate": "29.02.2024",
+    "returnedDate": "29.02.2024"
   }
 ]

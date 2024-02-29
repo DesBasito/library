@@ -44,7 +44,7 @@
       <button type="button" class="btn btn-link text-decoration-none text-light"
           onclick="window.location.href='/logout'"
           data-bs-toggle="tooltip" data-bs-placement="left" title="Log out">
-          Выйти с профиля
+          Выйти из профиля
       </button>
     </div>
   </nav>
@@ -59,7 +59,7 @@
         Email: ${user.email}
       </div>
       <div class="col deWALT text-light ps-5">
-      <h3>Reading books:</h3>
+      <h3>Читаемые книги:</h3>
       <table class="table table-dark table-striped">
               <thead>
               <tr>
@@ -82,7 +82,7 @@
               </tr></#list>
               </tbody>
             </table>
-        <h3  class="mt-5">borrowed books:</h3>
+        <h3  class="mt-5">Прочитанные книги:</h3>
 
         <thead><table class="table table-dark table-striped">
         <tr>
@@ -94,7 +94,6 @@
         </thead>
          <#list readBooks as journal>
         <tbody>
-
         <tr>
           <th>${journal?counter}</th>
           <th>${journal.id}</th>

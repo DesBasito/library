@@ -8,19 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/journal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/about.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/about.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/books.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/books.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/exit.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/exit.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/giveBack.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/giveBack.ftlh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/templates/profile.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/profile.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/profileError.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/takeBook.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/takeBook.ftlh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Journal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Journal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ProfileDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ProfileDataModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

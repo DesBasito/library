@@ -15,7 +15,7 @@
     "description": "A children\u0027s fantasy novel inspired by L. Frank Baum\u0027s Wizard of Oz series, set in the magical land of Magic Land.",
     "writtenDate": 1939,
     "imagePath": "../images/Wizard of the Emerald City.jpg",
-    "free": false
+    "free": true
   },
   {
     "author": "Paulo Coelho",

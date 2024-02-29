@@ -50,15 +50,18 @@ public class Server extends BasicServer {
     }
 
     private void logoutGet(HttpExchange exchange) {
-        if (checkCookieIsPresent(exchange)){
+        try {
+            checkIsCookiePresent(exchange);
             renderTemplate(exchange, "exit.ftlh", authorizedUser(exchange));
-        }else {
-            redirect303(exchange,"/login");
+        } catch (NumberFormatException e) {
+            redirect303(exchange, "/login");
         }
     }
 
-    private void logoutPost(HttpExchange exchange){
-        if (checkCookieIsPresent(exchange)) {
+    private void logoutPost(HttpExchange exchange) {
+        String cookieString = getCookies(exchange);
+        Map<String, String> cookies = Cookie.parse(cookieString);
+        if (cookies.containsKey("userId")) {
             Cookie deleteCookie = Cookie.make("userId", "");
             deleteCookie.setMaxAge(0);
             deleteCookie.setHttpOnly(true);
@@ -92,11 +95,11 @@ public class Server extends BasicServer {
                     .orElseThrow(() -> new NumberFormatException("Book not found!"));
             Map<String, Object> data = new HashMap<>();
             data.put("book", book);
-            data.put("employee",FileUtil.readEmployee());
-            data.put("journal",FileUtil.readJournal());
+            data.put("employee", FileUtil.readEmployee());
+            data.put("journal", FileUtil.readJournal());
             renderTemplate(exchange, "about.ftlh", data);
         } catch (NumberFormatException e) {
-            redirect303(exchange,"/books");
+            redirect303(exchange, "/books");
         }
 
     }
@@ -116,7 +119,7 @@ public class Server extends BasicServer {
             data.put("books", FileUtil.readBook());
             renderTemplate(exchange, "info.ftlh", data);
         } catch (NumberFormatException e) {
-            redirect303(exchange,"/employees");
+            redirect303(exchange, "/employees");
         }
     }
 
@@ -132,6 +135,9 @@ public class Server extends BasicServer {
         String cookieString = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieString);
         try {
+            if (!cookies.containsKey("userId")) {
+                throw new NumberFormatException();
+            }
             ProfileDataModel user = authorizedUser(exchange);
             renderTemplate(exchange, "profile.ftlh", user);
         } catch (NumberFormatException e) {
@@ -214,9 +220,9 @@ public class Server extends BasicServer {
         ProfileDataModel user = authorizedUser(exchange);
         if (userService.getEmployees().contains(user.getUser())) {
             if (bookService.checkIsBookFree(parsed)) {
-                if (user.getReadingBooks().size()<2) {
+                if (user.getReadingBooks().size() < 2) {
                     bookService.handleBook(Integer.parseInt(parsed.get("bookId")), user.getUser().getId());
-                    renderTemplate(exchange, "profile.ftlh",user);
+                    renderTemplate(exchange, "profile.ftlh", user);
                 }
             } else {
                 redirect303(exchange, "/takeBook");
@@ -232,7 +238,7 @@ public class Server extends BasicServer {
         ProfileDataModel user = authorizedUser(exchange);
         int bookId = Integer.parseInt(parsed.get("bookId"));
         if (userService.getEmployees().contains(user.getUser())) {
-            if (!user.getReadingBooks().isEmpty() && user.checkUserHand(bookId)){
+            if (!user.getReadingBooks().isEmpty() && user.checkUserHand(bookId)) {
                 bookService.returnBook(bookId);
                 redirect303(exchange, "/profile");
             }
@@ -242,21 +248,25 @@ public class Server extends BasicServer {
         }
     }
 
+    private Object checkIsCookiePresent(HttpExchange exchange) {
+        String raw = getBody(exchange);
+        String cookie = getCookies(exchange);
+        Map<String, String> cookies = FileUtil.parseUrlEncoded(raw, cookie);
+        if (cookies.containsKey("userId")) {
+            return true;
+        } else {
+            return new NumberFormatException();
+        }
+    }
+
     private ProfileDataModel authorizedUser(HttpExchange exchange) {
         String cookieString = getCookies(exchange);
         Map<String, String> cookies = Cookie.parse(cookieString);
         int userId = Integer.parseInt(cookies.get("userId"));
         Employee user = userService.getUserById(userId);
-        List<Book> bookOnHand = userService.getBooksOnHandByUserId(userId);
-        List<Book> historyBooks = userService.getJournalBooksByUserId(userId);
-        return new ProfileDataModel(user, bookOnHand, historyBooks);
-    }
-
-    private boolean checkCookieIsPresent(HttpExchange exchange){
-        String raw = getBody(exchange);
-        String cookie  = getCookies(exchange);
-        Map<String,String> cookies = FileUtil.parseUrlEncoded(raw,cookie);
-        return cookies.containsKey("userId");
+        Set<Book> bookOnHand =userService.getJournalBooksByUserId(userId);
+        List<Book> historyBooks = userService.getBooksOnHandByUserId(userId);
+        return new ProfileDataModel(user,bookOnHand,historyBooks);
     }
 
 
