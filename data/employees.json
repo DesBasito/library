@@ -146,5 +146,12 @@
     "id": 21,
     "email": "amir@gmail.com",
     "password": "amir"
+  },
+  {
+    "firstName": "Sofia",
+    "lastName": "Oliwia",
+    "id": 22,
+    "email": "Sofi@gmail.com",
+    "password": "sofi123"
   }
 ]

@@ -25,8 +25,8 @@ public class UserService {
 
     public void handleUser(Map<String,String> parsed) {
         int n = employees.size() + 1;
-        String name = parsed.getOrDefault("firstName","user");
-        String lastName = parsed.getOrDefault("lastName","abuser");
+        String name = parsed.getOrDefault("firstName",UUID.randomUUID().toString());
+        String lastName = parsed.getOrDefault("lastName",UUID.randomUUID().toString());
         String email = parsed.get("email");
         String password = parsed.get("user-password");
         Employee emp = new Employee(name,lastName,n,email , password,null);
@@ -79,6 +79,6 @@ public class UserService {
 
 
     public boolean checkEmailPassword(Map<String, String> parsed) {
-        return !parsed.get("email").isBlank() || !parsed.get("user-password").isBlank();
+        return !parsed.get("email").isBlank() || !parsed.get("user-password").isBlank() && !parsed.get("email").isEmpty() || !parsed.get("user-password").isEmpty();
     }
 }

@@ -149,12 +149,16 @@ public class Server extends BasicServer {
     }
 
     private void registrationPost(HttpExchange exchange) {
-        String raw = getBody(exchange);
-        Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
-        if (userService.checkRegisteredUser(parsed) && userService.checkEmailPassword(parsed)) {
-            userService.handleUser(parsed);
-            redirect303(exchange, "/login");
-        } else {
+        try {
+            String raw = getBody(exchange);
+            Map<String, String> parsed = FileUtil.parseUrlEncoded(raw, "&");
+            if (userService.checkRegisteredUser(parsed) && userService.checkEmailPassword(parsed)) {
+                userService.handleUser(parsed);
+                redirect303(exchange, "/login");
+            } else {
+                registerErr(exchange);
+            }
+        }catch (NullPointerException e){
             registerErr(exchange);
         }
     }
