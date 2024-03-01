@@ -7,13 +7,15 @@ public class Employee {
     private int id;
     private String email;
     private String password;
+    private String imagePath;
 
-    public Employee(String firstName, String lastName,  int id,String email,String password) {
+    public Employee(String firstName, String lastName,  int id,String email,String password,String imagePath) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.id = id;
         this.email = email;
         this.password = password;
+        this.imagePath = imagePath;
     }
 
     public String getFirstName() {
@@ -34,5 +36,9 @@ public class Employee {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 }

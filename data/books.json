@@ -42,7 +42,7 @@
     "description": "A science fiction novel exploring the consequences of a scientist\u0027s experiment to transplant a living human head onto another body.",
     "writtenDate": 1925,
     "imagePath": "../images/The head of professor Dowell.jpg",
-    "free": true
+    "free": false
   },
   {
     "author": "Robert Kiyosaki",
@@ -51,7 +51,7 @@
     "description": "A personal finance book discussing the differences in mindset between the author\u0027s rich dad and poor dad.",
     "writtenDate": 1997,
     "imagePath": "../images/Rich dad, poor dad.jpg",
-    "free": true
+    "free": false
   },
   {
     "author": "Tologon Kasymbekov",
@@ -82,9 +82,9 @@
   },
   {
     "author": "Joanne Rowling",
-    "title": "Harry Potter",
+    "title": "Harry Potter and the Philosopher\u0027s Stone",
     "id": 10,
-    "description": "A fantasy series following the life and adventures of a young wizard, Harry Potter, and his friends as they battle the dark wizard Voldemort.",
+    "description": "\"Harry Potter and the Philosopher\u0027s Stone\" is the first book in the iconic fantasy series by J.K. Rowling. It follows the story of a young boy named Harry Potter who discovers he is a wizard on his eleventh birthday. He is invited to attend Hogwarts School of Witchcraft and Wizardry, where he learns about his magical abilities and his destiny as the only one who survived an attack by the dark wizard Voldemort as an infant. With his newfound friends Ron and Hermione, Harry embarks on adventures, uncovers secrets about his past, and confronts the forces of darkness threatening the wizarding world. The novel is a tale of friendship, courage, and the triumph of good over evil in a world filled with magic and mystery.",
     "writtenDate": 1997,
     "imagePath": "../images/Harry Potter.jpg",
     "free": true

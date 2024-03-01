@@ -61,13 +61,8 @@
     <div class="container book-info">
         <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1">
             <div class="col text-light">
-                <#if employee.id == 8>
-                <img class="mw-100 rounded-2 shadow-sm w-100" src="../images/Oliwia.jpg"
+                <img class="mw-100 rounded-2 shadow-sm w-75" src="${employee.imagePath!"../images/user.png"}"
                      alt="${employee.firstName} ${employee.lastName}">
-                <#else>
-                <img class="mw-100 rounded-2 shadow-sm w-75" src="../images/user.png"
-                     alt="${employee.firstName} ${employee.lastName}">
-            </#if>
             <br>
             <h1 class="mt-3">${employee.firstName} ${employee.lastName}</h1>
             <br>Email address: ${employee.email}
@@ -80,29 +75,18 @@
                     <th scope="col">id</th>
                     <th scope="col">Book</th>
                     <th scope="col">Author</th>
-                    <th scope="col">borrowed date</th>
                 </tr>
                 </thead>
 
-                <#list journals as jour>
                 <#list books as book>
                 <tbody>
                 <tr>
-                    <#if jour.borrower == employee.id>
-                    <#if jour.returnedDate??>
-                    <#else>
-                    <#if book.id == jour.book>
-                    <th>${book.id}</th>
+                    <th>book.id}</th>
                     <th>${book.title}</th>
                     <th>${book.author}</th>
-                    <th>${jour.borrowedDate?string["dd.MM.yyyy"]!"Still read"}</th>
                     <td>
                     </td>
                 </tr>
-                </#if>
-            </#if>
-        </#if>
-    </#list>
 </#list>
 </tbody>
 </table>
@@ -117,28 +101,18 @@
             <th scope="col">id</th>
             <th scope="col">Book</th>
             <th scope="col">Author</th>
-            <th scope="col">Borrowed date</th>
-            <th scope="col">Returned date</th>
         </tr>
         </thead>
 
         <#list journals as jour>
-        <#list books as book>
         <tbody>
         <tr>
-            <#if jour.borrower == employee.id && jour.returnedDate??>
-            <#if book.id == jour.book>
-            <th>${book.id}</th>
-            <th>${book.title}</th>
-            <th>${book.author}</th>
-            <th>${jour.borrowedDate?string["dd.MM.yyyy"]}</th>
-            <th>${jour.borrowedDate?string["dd.MM.yyyy"]}</th>
+            <th>${jour.id}</th>
+            <th>${jour.title}</th>
+            <th>${jour.author}</th>
             <td>
             </td>
         </tr>
-        </#if>
-    </#if>
-</#list>
 </#list>
 </tbody>
 </table>

@@ -53,7 +53,8 @@
     "lastName": "Wilson",
     "id": 8,
     "email": "olivia.wilson@example.com",
-    "password": "olivia789"
+    "password": "olivia789",
+    "imagePath": "../images/Oliwia.jpg"
   },
   {
     "firstName": "Matthew",
@@ -138,5 +139,12 @@
     "id": 20,
     "email": "sos@gmail.com",
     "password": "sos"
+  },
+  {
+    "firstName": "Султан",
+    "lastName": "Амиров",
+    "id": 21,
+    "email": "amir@gmail.com",
+    "password": "amir"
   }
 ]

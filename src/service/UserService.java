@@ -29,7 +29,7 @@ public class UserService {
         String lastName = parsed.getOrDefault("lastName","abuser");
         String email = parsed.get("email");
         String password = parsed.get("user-password");
-        Employee emp = new Employee(name,lastName,n,email , password);
+        Employee emp = new Employee(name,lastName,n,email , password,null);
         List<Employee> employeeList = employees;
         employeeList.add(emp);
         FileUtil.writeEmployee(employeeList);

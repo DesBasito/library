@@ -7,8 +7,13 @@
     <list default="true" id="abece546-02f1-4bf9-b067-894784904960" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/books.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/books.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/employees.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/journal.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/journal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/templates/profile.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/profile.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/giveBack.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/giveBack.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/info.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/info.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/templates/takeBook.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/data/templates/takeBook.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ProfileDataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ProfileDataModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
@@ -22,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -143,6 +148,10 @@
           <line>29</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

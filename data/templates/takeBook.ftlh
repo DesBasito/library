@@ -91,14 +91,14 @@
                                <div class="d-grid gap-2 col-7 mx-auto">
                                   <div class="form-element">
                                                       <label for="guest">Введите ID книги которую хотите взять</label>
-                                                      <input type="number" class="form-control mt-2 mb-5" name="bookId" required placeholder="Id книги" autofocus>
+                                                      <input type="number" class="form-control mt-2 mb-4" name="bookId" required placeholder="Id книги" autofocus>
                                                   </div>
                                                   </div>
 
                                    <div class="d-grid gap-2 col-7 mx-auto">
                                    <#if readingBooks>
+                                   <button class="btn btn-danger" disabled type="submit">взять книгу</button>
                                    Больше 2 книг в одни руки не даем!
-                                   <button class="btn btn-secondary" disabled type="submit">взять книгу</button>
                                    <#else>
                                    <button class="btn btn-secondary" type="submit">взять книгу</button>
                                    </#if>

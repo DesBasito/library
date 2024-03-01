@@ -29,7 +29,4 @@ public class ProfileDataModel {
         return readBooks;
     }
 
-    public  boolean checkUserHand(int bookId){
-        return readingBooks.stream().anyMatch(book -> bookId == book.getId());
-    }
 }

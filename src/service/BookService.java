@@ -1,7 +1,6 @@
 package service;
 
 import entities.Book;
-import entities.Employee;
 import entities.Journal;
 import util.FileUtil;
 
@@ -12,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 public class BookService {
     private List<Book> books;
@@ -49,15 +47,11 @@ public class BookService {
         Book book = bookList.stream().filter(book1 -> bookId == book1.getId()).findFirst().orElseThrow();
         bookList.get(bookId-1).setFree(true);
         List<Journal> jrl = journal;
-        for (Journal jour : jrl){
-            if (jour.getBook()==book.getId()){
-                jour.setReturnedDate(currentDate());
-            }
-        }
+        jrl.stream().filter(jour -> jour.getBook() == book.getId()).forEach(jour -> jour.setReturnedDate(currentDate()));
+        System.out.println(currentDate());
         FileUtil.writeJournal(jrl);
         FileUtil.writeBook(bookList);
     }
-
 
     public static Date currentDate() {
         try {

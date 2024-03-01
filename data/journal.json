@@ -18,14 +18,14 @@
     "book": 4,
     "borrower": 4,
     "borrowedDate": "15.04.2023",
-    "returnedDate": "10.05.2023"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 4,
     "book": 5,
     "borrower": 5,
     "borrowedDate": "20.05.2023",
-    "returnedDate": "05.06.2023"
+    "returnedDate": "29.02.2024"
   },
   {
     "id": 5,
@@ -39,7 +39,7 @@
     "book": 7,
     "borrower": 7,
     "borrowedDate": "01.08.2023",
-    "returnedDate": "20.08.2023"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 7,
@@ -60,21 +60,21 @@
     "book": 11,
     "borrower": 11,
     "borrowedDate": "20.12.2023",
-    "returnedDate": "29.02.2024"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 10,
     "book": 12,
     "borrower": 12,
     "borrowedDate": "25.01.2024",
-    "returnedDate": "10.02.2024"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 11,
     "book": 12,
     "borrower": 8,
     "borrowedDate": "15.10.2023",
-    "returnedDate": "05.11.2023"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 12,
@@ -94,7 +94,8 @@
     "id": 14,
     "book": 4,
     "borrower": 20,
-    "borrowedDate": "27.02.2024"
+    "borrowedDate": "27.02.2024",
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 15,
@@ -108,7 +109,7 @@
     "book": 11,
     "borrower": 13,
     "borrowedDate": "29.02.2024",
-    "returnedDate": "29.02.2024"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 17,
@@ -129,7 +130,7 @@
     "book": 3,
     "borrower": 13,
     "borrowedDate": "29.02.2024",
-    "returnedDate": "29.02.2024"
+    "returnedDate": "01.03.2024"
   },
   {
     "id": 20,
@@ -150,5 +151,72 @@
     "borrower": 13,
     "borrowedDate": "29.02.2024",
     "returnedDate": "29.02.2024"
+  },
+  {
+    "id": 23,
+    "book": 9,
+    "borrower": 21,
+    "borrowedDate": "29.02.2024",
+    "returnedDate": "29.02.2024"
+  },
+  {
+    "id": 24,
+    "book": 11,
+    "borrower": 21,
+    "borrowedDate": "29.02.2024",
+    "returnedDate": "01.03.2024"
+  },
+  {
+    "id": 25,
+    "book": 3,
+    "borrower": 21,
+    "borrowedDate": "29.02.2024",
+    "returnedDate": "01.03.2024"
+  },
+  {
+    "id": 26,
+    "book": 5,
+    "borrower": 21,
+    "borrowedDate": "29.02.2024",
+    "returnedDate": "29.02.2024"
+  },
+  {
+    "id": 27,
+    "book": 12,
+    "borrower": 21,
+    "borrowedDate": "29.02.2024",
+    "returnedDate": "01.03.2024"
+  },
+  {
+    "id": 28,
+    "book": 6,
+    "borrower": 21,
+    "borrowedDate": "29.02.2024"
+  },
+  {
+    "id": 29,
+    "book": 3,
+    "borrower": 13,
+    "borrowedDate": "01.03.2024",
+    "returnedDate": "01.03.2024"
+  },
+  {
+    "id": 30,
+    "book": 5,
+    "borrower": 20,
+    "borrowedDate": "01.03.2024"
+  },
+  {
+    "id": 31,
+    "book": 3,
+    "borrower": 13,
+    "borrowedDate": "01.03.2024",
+    "returnedDate": "01.03.2024"
+  },
+  {
+    "id": 32,
+    "book": 4,
+    "borrower": 13,
+    "borrowedDate": "01.03.2024"
   }
 ]

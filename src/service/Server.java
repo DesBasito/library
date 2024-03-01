@@ -47,11 +47,16 @@ public class Server extends BasicServer {
         registerGet("/giveBack", this::giveBackGet);
         registerPost("/takeBook", this::takeBookPost);
         registerPost("/giveBack", this::giveBackPost);
+        registerGet("/notification", this::notificationGet);
+    }
+
+    private void notificationGet(HttpExchange exchange) {
+        renderTemplate(exchange, "authWarning.ftlh", null);
     }
 
     private void logoutGet(HttpExchange exchange) {
         try {
-            checkIsCookiePresent(exchange);
+//            checkIsCookiePresent(exchange);
             renderTemplate(exchange, "exit.ftlh", authorizedUser(exchange));
         } catch (NumberFormatException e) {
             redirect303(exchange, "/login");
@@ -105,21 +110,24 @@ public class Server extends BasicServer {
     }
 
     private void employeeInfo(HttpExchange exchange) {
-        String query = getQueryParams(exchange);
-        Map<String, String> params = FileUtil.parseUrlEncoded(query, "&");
-        int id = Integer.parseInt(params.getOrDefault("id", null));
-        try {
-            Employee employee = FileUtil.readEmployee().stream()
-                    .filter(e -> e.getId() == id)
-                    .findFirst()
-                    .orElseThrow(() -> new NumberFormatException("employee not found!"));
+        if (getCookies(exchange).contains("userId")) {
+            String query = getQueryParams(exchange);
+            Map<String, String> params = FileUtil.parseUrlEncoded(query, "&");
+            int id = Integer.parseInt(params.getOrDefault("id", null));
+            Optional<Employee> employees = FileUtil.readEmployee().stream()
+                    .filter(e -> e.getId() == id).findFirst();
+            if (employees.isEmpty()) {
+                redirect303(exchange, "/employees");
+                return;
+            }
+            Employee employee = employees.get();
             Map<String, Object> data = new HashMap<>();
             data.put("employee", employee);
-            data.put("journals", FileUtil.readJournal());
-            data.put("books", FileUtil.readBook());
+            data.put("journals", userService.getJournalBooksByUserId(employee.getId()));
+            data.put("books", userService.getBooksOnHandByUserId(employee.getId()));
             renderTemplate(exchange, "info.ftlh", data);
-        } catch (NumberFormatException e) {
-            redirect303(exchange, "/employees");
+        } else {
+            redirect303(exchange, "/notification");
         }
     }
 
@@ -132,16 +140,11 @@ public class Server extends BasicServer {
     }
 
     private void profileGet(HttpExchange exchange) {
-        String cookieString = getCookies(exchange);
-        Map<String, String> cookies = Cookie.parse(cookieString);
         try {
-            if (!cookies.containsKey("userId")) {
-                throw new NumberFormatException();
-            }
             ProfileDataModel user = authorizedUser(exchange);
             renderTemplate(exchange, "profile.ftlh", user);
         } catch (NumberFormatException e) {
-            redirect303(exchange, "/login");
+            redirect303(exchange, "/notification");
         }
     }
 
@@ -194,7 +197,7 @@ public class Server extends BasicServer {
             model.put("readingBooks", hasReadingBooks);
             renderTemplate(exchange, "takeBook.ftlh", model);
         } else {
-            redirect303(exchange, "/login");
+            redirect303(exchange, "/notification");
         }
     }
 
@@ -210,52 +213,43 @@ public class Server extends BasicServer {
             model.put("user", user);
             renderTemplate(exchange, "giveBack.ftlh", model);
         } else {
-            redirect303(exchange, "/login");
+            redirect303(exchange, "/notification");
         }
     }
 
 
     private void takeBookPost(HttpExchange exchange) {
-        Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
-        ProfileDataModel user = authorizedUser(exchange);
-        if (userService.getEmployees().contains(user.getUser())) {
-            if (bookService.checkIsBookFree(parsed)) {
-                if (user.getReadingBooks().size() < 2) {
+        try {
+            Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
+            ProfileDataModel user = authorizedUser(exchange);
+            if (userService.getEmployees().contains(user.getUser())) {
+                if (bookService.checkIsBookFree(parsed) && user.getReadingBooks().size() < 2) {
                     bookService.handleBook(Integer.parseInt(parsed.get("bookId")), user.getUser().getId());
-                    renderTemplate(exchange, "profile.ftlh", user);
+                    ProfileDataModel modifiedUser = authorizedUser(exchange);
+                    renderTemplate(exchange, "profile.ftlh", modifiedUser);
                 }
             } else {
-                redirect303(exchange, "/takeBook");
+                redirect303(exchange, "/notification");
             }
-
-        } else {
-            redirect303(exchange, "/login");
+        } catch (NumberFormatException e) {
+            redirect303(exchange, "/takeBook");
         }
     }
 
     private void giveBackPost(HttpExchange exchange) {
-        Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
-        ProfileDataModel user = authorizedUser(exchange);
-        int bookId = Integer.parseInt(parsed.get("bookId"));
-        if (userService.getEmployees().contains(user.getUser())) {
-            if (!user.getReadingBooks().isEmpty() && user.checkUserHand(bookId)) {
+        try {
+            Map<String, String> parsed = FileUtil.parseUrlEncoded(getBody(exchange), "&");
+            ProfileDataModel user = authorizedUser(exchange);
+            int bookId = Integer.parseInt(parsed.get("bookId"));
+            if (userService.getEmployees().contains(user.getUser())) {
                 bookService.returnBook(bookId);
                 redirect303(exchange, "/profile");
+            } else {
+                redirect303(exchange, "/notification");
             }
 
-        } else {
-            redirect303(exchange, "/login");
-        }
-    }
-
-    private Object checkIsCookiePresent(HttpExchange exchange) {
-        String raw = getBody(exchange);
-        String cookie = getCookies(exchange);
-        Map<String, String> cookies = FileUtil.parseUrlEncoded(raw, cookie);
-        if (cookies.containsKey("userId")) {
-            return true;
-        } else {
-            return new NumberFormatException();
+        } catch (NumberFormatException e) {
+            redirect303(exchange, "/giveBack");
         }
     }
 
@@ -264,9 +258,9 @@ public class Server extends BasicServer {
         Map<String, String> cookies = Cookie.parse(cookieString);
         int userId = Integer.parseInt(cookies.get("userId"));
         Employee user = userService.getUserById(userId);
-        Set<Book> bookOnHand =userService.getJournalBooksByUserId(userId);
+        Set<Book> bookOnHand = userService.getJournalBooksByUserId(userId);
         List<Book> historyBooks = userService.getBooksOnHandByUserId(userId);
-        return new ProfileDataModel(user,bookOnHand,historyBooks);
+        return new ProfileDataModel(user, bookOnHand, historyBooks);
     }
 
 
