@@ -7,9 +7,6 @@ import entities.Book;
 import entities.Employee;
 import entities.Journal;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
